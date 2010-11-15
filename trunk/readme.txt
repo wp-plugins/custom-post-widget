@@ -15,16 +15,14 @@ Even though you could use the text widget that comes with the default WordPress 
 * It enables users to use the WYSIWYG editor for editing the content and adding images
 * If you are using widgets to display content on various areas of your template, this content can only be edited by users with administrator access. If you would like editors to modify the widget content, you can use this plugin to provide them access to the custom posts that provide the content for the widget areas.
 
-This plugin creates a ‘content_block’ custom post type. The title is never displayed, use this to describe the position of the widget on the page. Note that these content blocks can only be displayed in the context of the page. I have added ‘public’ => false to the custom post type which means that it is not accessible outside the page context.
+This plugin creates a 'content_block' custom post type. The title is never displayed, use this to describe the position of the widget on the page. Note that these content blocks can only be displayed in the context of the page. I have added 'public' => false to the custom post type which means that it is not accessible outside the page context.
 
 To add content to a widget, drag it to the required position in the sidebar and select the title of the custom post in the widget configuration.
 
 == Screenshots ==
 
 1. After activating the plugin a new post type called 'Content Blocks' is added.
-
 2. The widget has a select box to choose the content block.
-
 
 == Installation ==
 
