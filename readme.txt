@@ -4,7 +4,7 @@ Donate link: http://www.vanderwijk.com/
 Tags: custom post, widget, sidebar
 Requires at least: 2.9
 Tested up to: 3.0.1
-Stable tag: 1.0
+Stable tag: 1.1.1
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
@@ -26,7 +26,7 @@ To add content to a widget, drag it to the required position in the sidebar and 
 
 == Installation ==
 
-1. First you will have to upload the plugin to the plugin folder.
+1. First you will have to upload the plugin to the `/wp-content/plugins/` folder.
 2. Then activate the plugin in the plugin panel.
 You will see that a new custom post type has been added called Content Block.
 3. Type some content for the widget. The title can be used to describe the position of the content on the page, It will not be displayed in the actual widget.
@@ -48,6 +48,9 @@ It is recommended to install the Widget Logic plugin, this will give you complet
 
 = 1.0 =
 First release
+
+= 1.1.1 =
+Added showposts=-1 to the post query to display more than 10 custom posts in the widget configuration select box.
 
 == Upgrade Notice ==
 
