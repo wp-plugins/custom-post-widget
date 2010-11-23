@@ -28,7 +28,7 @@ class custom_post_widget extends WP_Widget
       <p>
         <label for="<?php echo $this->get_field_id('custom_post_id'); ?>"> <?php echo __('Content Block to Display:') ?>
           <select id="<?php echo $this->get_field_id('custom_post_id'); ?>" name="<?php echo $this->get_field_name('custom_post_id'); ?>">
-            <?php query_posts('post_type=content_block&orderby=ID&order=ASC');
+            <?php query_posts('post_type=content_block&orderby=ID&order=ASC&showposts=-1');
               if ( have_posts() ) : while ( have_posts() ) : the_post();
                 $currentID = get_the_ID();
                 if($currentID == $custom_post_id)
