@@ -3,7 +3,7 @@ Contributors: vanderwijk
 Donate link: http://www.vanderwijk.com/
 Tags: custom post, widget, sidebar
 Tested up to: 3.0.1
-Stable tag: 1.1.1
+Stable tag: 1.2
 Requires at least: 2.9.2
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
@@ -20,6 +20,8 @@ Even though you could use the text widget that comes with the default WordPress 
 This plugin creates a 'content_block' custom post type. The title is never displayed, use this to describe the position of the widget on the page. Note that these content blocks can only be displayed in the context of the page. I have added 'public' => false to the custom post type which means that it is not accessible outside the page context.
 
 To add content to a widget, drag it to the required position in the sidebar and select the title of the custom post in the widget configuration.
+
+You can find more information about this plugin and a screencast video which shows the plugin in action on the [plugin homepage](http://www.vanderwijk.com/services/web-design/wordpress-custom-post-widget/).
 
 == Screenshots ==
 
@@ -56,6 +58,9 @@ Fixed screenshots for plugin directory
 
 = 1.1.1 =
 Added showposts=-1 to the post query to display more than 10 custom posts in the widget configuration select box.
+
+= 1.2 =
+Added a checkbox in the widget to make it possible to show the custom post title in the widget area
 
 == Upgrade Notice ==
 

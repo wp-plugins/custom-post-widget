@@ -3,11 +3,11 @@
  Plugin Name: Custom Post Widget
  Plugin URI: http://www.vanderwijk.com/services/web-design/wordpress-custom-post-widget/
  Description: Show the content of a custom post of the type 'content_block' in a widget.
- Version: 1.1.1
+ Version: 1.2
  Author: Johan van der Wijk
  Author URI: http://www.vanderwijk.com
 
- Release notes: 1.0 First version
+ Release notes: 1.2 Added the option for displaying the post title
 
 */
 
@@ -23,11 +23,12 @@ class custom_post_widget extends WP_Widget
   function form($instance)
   {
     $custom_post_id = esc_attr($instance['custom_post_id']);
+	$show_custom_post_title  = isset($instance['show_custom_post_title ']) ? $instance['show_custom_post_title '] : true;
     
     ?>
       <p>
         <label for="<?php echo $this->get_field_id('custom_post_id'); ?>"> <?php echo __('Content Block to Display:') ?>
-          <select id="<?php echo $this->get_field_id('custom_post_id'); ?>" name="<?php echo $this->get_field_name('custom_post_id'); ?>">
+          <select class="widefat" id="<?php echo $this->get_field_id('custom_post_id'); ?>" name="<?php echo $this->get_field_name('custom_post_id'); ?>">
             <?php query_posts('post_type=content_block&orderby=ID&order=ASC&showposts=-1');
               if ( have_posts() ) : while ( have_posts() ) : the_post();
                 $currentID = get_the_ID();
@@ -42,13 +43,21 @@ class custom_post_widget extends WP_Widget
             wp_reset_query(); ?>
           </select>
         </label>
-      </p><?php
+      </p>
+      <p>
+        <input class="checkbox" type="checkbox" <?php checked( (bool) $instance['show_custom_post_title'], true ); ?> id="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>" name="<?php echo $this->get_field_name( 'show_custom_post_title' ); ?>" />
+        <label for="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>"><?php echo __('Show Post Title') ?></label>
+      </p>
+
+      <?php
   }
 
   function update($new_instance, $old_instance)
   {
     $instance = $old_instance;
     $instance['custom_post_id'] = strip_tags($new_instance['custom_post_id']);
+    $instance['show_custom_post_title'] = $new_instance['show_custom_post_title'];
+
     return $instance;
   }
 
@@ -58,12 +67,20 @@ class custom_post_widget extends WP_Widget
     
     $custom_post_id  = ( $instance['custom_post_id'] != '' ) ? esc_attr($instance['custom_post_id']) : 'Zoeken';
     
-    // Output title & $before_widget
-        echo $title . $before_widget;
+        /* Our variables from the widget settings. */
+        $show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
+
+        /* Before widget (defined by themes). */
+        echo $before_widget;
     
     // Output the query to find the custom post
     query_posts( 'post_type=content_block&p=' . $custom_post_id );
       while (have_posts()) : the_post();
+      
+              if ( $show_custom_post_title )
+                echo the_title('<h2 class="widgettitle">', '</h2>'); // This is the line that displays the title 
+            
+      
         echo the_content();
         endwhile;
     wp_reset_query();
