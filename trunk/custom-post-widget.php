@@ -78,8 +78,7 @@ class custom_post_widget extends WP_Widget
       while (have_posts()) : the_post();
       
               if ( $show_custom_post_title )
-                echo the_title('<h2 class="widgettitle">', '</h2>'); // This is the line that displays the title 
-            
+                echo the_title($before_title, $after_title); // This is the line that displays the title           
       
         echo the_content();
         endwhile;
