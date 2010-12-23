@@ -21,7 +21,7 @@ This plugin creates a 'content_block' custom post type. The title is never displ
 
 To add content to a widget, drag it to the required position in the sidebar and select the title of the custom post in the widget configuration.
 
-You can find more information about this plugin and a screencast video which shows the plugin in action on the [plugin homepage](http://www.vanderwijk.com/services/web-design/wordpress-custom-post-widget/).
+You can find more information about this plugin and a screencast video which shows the plugin in action on the [plugin homepage](http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/).
 
 == Screenshots ==
 
