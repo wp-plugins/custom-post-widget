@@ -1,10 +1,11 @@
 === Custom Post Widget ===
 Contributors: vanderwijk
-Donate link: http://www.vanderwijk.com/
+Author URI: http://www.vanderwijk.com/
+Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom post, widget, sidebar
-Tested up to: 3.0.1
-Stable tag: 1.2.1
 Requires at least: 2.9.2
+Tested up to: 3.0.3
+Stable tag: 1.2.1
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
