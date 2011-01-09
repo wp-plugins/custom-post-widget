@@ -3,11 +3,11 @@
  Plugin Name: Custom Post Widget
  Plugin URI: http://www.vanderwijk.com/services/web-design/wordpress-custom-post-widget/
  Description: Show the content of a custom post of the type 'content_block' in a widget.
- Version: 1.2
+ Version: 1.3
  Author: Johan van der Wijk
  Author URI: http://www.vanderwijk.com
 
- Release notes: 1.2 Added the option for displaying the post title
+ Release notes: 1.3 Now the title of the content block is displayed in the admin widget
 
 */
 
@@ -33,17 +33,22 @@ class custom_post_widget extends WP_Widget
               if ( have_posts() ) : while ( have_posts() ) : the_post();
                 $currentID = get_the_ID();
                 if($currentID == $custom_post_id)
-                  $extra = 'selected';
+                  $extra = 'selected' and
+				  $widgetExtraTitle = get_the_title();
                 else
                   $extra = '';
                 echo '<option value="'.$currentID.'" '.$extra.'>'.get_the_title().'</option>';
                 endwhile; else:
                 echo '<option value="empty">No content blocks available</option>';
               endif;
-            wp_reset_query(); ?>
+            ?>
           </select>
         </label>
       </p>
+	 <?php ?>
+     <input type="hidden" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $widgetExtraTitle; ?>" />
+     <?php wp_reset_query(); ?>
+	  
       <p>
         <input class="checkbox" type="checkbox" <?php checked( (bool) $instance['show_custom_post_title'], true ); ?> id="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>" name="<?php echo $this->get_field_name( 'show_custom_post_title' ); ?>" />
         <label for="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>"><?php echo __('Show Post Title') ?></label>

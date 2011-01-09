@@ -4,8 +4,8 @@ Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar
 Requires at least: 2.9.2
-Tested up to: 3.0.3
-Stable tag: 1.2.1
+Tested up to: 3.0.4
+Stable tag: 1.3
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
@@ -65,6 +65,9 @@ Added a checkbox in the widget to make it possible to show the custom post title
 
 = 1.2.1 =
 The widget title now uses $before_title and $after_title to generate the appropriate tags to display it on the page. Hat tip: Etienne Proust.
+
+= 1.3 =
+Now the title of the content block is displayed in the admin interface to make it easy to manage the widgets.
 
 == Upgrade Notice ==
 
