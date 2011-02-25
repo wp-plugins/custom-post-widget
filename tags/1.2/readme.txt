@@ -1,10 +1,11 @@
 === Custom Post Widget ===
 Contributors: vanderwijk
-Donate link: http://www.vanderwijk.com/
-Tags: custom post, widget, sidebar
-Tested up to: 3.0.1
-Stable tag: 1.2
+Author URI: http://www.vanderwijk.com/
+Donate link: http://www.vanderwijk.com/wordpress/support/
+Tags: custom-post, widget, sidebar
 Requires at least: 2.9.2
+Tested up to: 3.0.4
+Stable tag: 1.3
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
@@ -21,7 +22,7 @@ This plugin creates a 'content_block' custom post type. The title is never displ
 
 To add content to a widget, drag it to the required position in the sidebar and select the title of the custom post in the widget configuration.
 
-You can find more information about this plugin and a screencast video which shows the plugin in action on the [plugin homepage](http://www.vanderwijk.com/services/web-design/wordpress-custom-post-widget/).
+You can find more information about this plugin and a screencast video which shows the plugin in action on the [plugin homepage](http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/).
 
 == Screenshots ==
 
@@ -33,7 +34,7 @@ You can find more information about this plugin and a screencast video which sho
 1. First you will have to upload the plugin to the `/wp-content/plugins/` folder.
 2. Then activate the plugin in the plugin panel.
 You will see that a new custom post type has been added called Content Block.
-3. Type some content for the widget. The title can be used to describe the position of the content on the page, It will not be displayed in the actual widget.
+3. Type some content for the widget. You can choose to either use the title to describe the of the content on the page, or to display it. Check 'Show Post Title' to display the title on the page.
 4. Go to 'Appearance' > 'Widgets' and drag the Content Block widget to the required position in the sidebar.
 5. Select a Content Block from the drop-down list.
 6. Click save.
@@ -61,6 +62,12 @@ Added showposts=-1 to the post query to display more than 10 custom posts in the
 
 = 1.2 =
 Added a checkbox in the widget to make it possible to show the custom post title in the widget area
+
+= 1.2.1 =
+The widget title now uses $before_title and $after_title to generate the appropriate tags to display it on the page. Hat tip: Etienne Proust.
+
+= 1.3 =
+Now the title of the content block is displayed in the admin interface to make it easy to manage the widgets.
 
 == Upgrade Notice ==
 
