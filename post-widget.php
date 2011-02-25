@@ -1,6 +1,6 @@
 <?php
 
-/* First create the widget for the admin panel */
+// First create the widget for the admin panel
 class custom_post_widget extends WP_Widget
 {
   function custom_post_widget()
@@ -66,22 +66,22 @@ class custom_post_widget extends WP_Widget
         /* Before widget (defined by themes). */
         echo $before_widget;
 
-    /* Output the query to find the custom post */
+    // Output the query to find the custom post
     query_posts( 'post_type=content_block&p=' . $custom_post_id );
       while (have_posts()) : the_post();
       
               if ( $show_custom_post_title )
-                echo the_title($before_title, $after_title); /* This is the line that displays the title */
+                echo the_title($before_title, $after_title); // This is the line that displays the title
         echo the_content();
         endwhile;
     wp_reset_query();
 
-    /* Output $after_widget */
+    // Output $after_widget
     echo $after_widget;
   }
 }
 
-/* Create the Content Block custom post type */
+// Create the Content Block custom post type
 
 add_action('init', 'my_content_block_post_type_init');
 
