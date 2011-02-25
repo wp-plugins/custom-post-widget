@@ -70,7 +70,7 @@ The widget title now uses $before_title and $after_title to generate the appropr
 Now the title of the content block is displayed in the admin interface to make it easy to manage the widgets.
 
 = 1.4 =
-The plugin has been translated into Dutch and German. Hat tip: Caspar Hübinger
+The plugin has been translated into Dutch and German. Hat tip: Caspar Hübinger - glueckpress.com
 
 
 == Upgrade Notice ==
