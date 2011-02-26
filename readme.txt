@@ -70,12 +70,10 @@ The widget title now uses $before_title and $after_title to generate the appropr
 Now the title of the content block is displayed in the admin interface to make it easy to manage the widgets.
 
 = 1.4 =
-The plugin has been translated into Dutch and German. Hat tip: Caspar Hübinger
+The plugin has been translated into Dutch and German. Hat tip: Caspar H&uuml;binger - glueckpress.com
 
 
 == Upgrade Notice ==
 
 = 1.1.1 =
 Now supports more than 10 custom posts in the select box. Note that after upgrading you might have to save the widget state before the correct posts are being displayed.
-
-
