@@ -49,6 +49,24 @@ Of course you can always use the default text widget, but if you prefer to use t
 
 It is recommended to install the Widget Logic plugin, this will give you complete flexibility on widget placement.
 
+= How can I display the featured image in the widget? =
+
+This plugin has built-in support for the featured image functionality on the edit screen. But to display the image you will have to add the following code to your functions.php:
+
+`function InsertFeaturedImage($content) {
+    global $post;
+    $original_content = $content;
+    if (current_theme_supports('post-thumbnails')) {
+        if ('content_block' == get_post_type()) {
+            $content = the_post_thumbnail('medium');
+            $content .= $original_content;
+        }
+    }
+    return $content;
+}
+add_filter('the_content', 'InsertFeaturedImage');`
+
+
 == Changelog ==
 
 = 1.0 =
