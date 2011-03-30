@@ -3,12 +3,14 @@
  Plugin Name: Custom Post Widget
  Plugin URI: http://www.vanderwijk.com/services/web-design/wordpress-custom-post-widget/
  Description: Show the content of a custom post of the type 'content_block' in a widget.
- Version: 1.4
+ Version: 1.5
  Author: Johan van der Wijk
  Author URI: http://www.vanderwijk.com
  License: GPL2
 
- Release notes: 1.4 Thanks to Caspar from GlückPress (http://glueckpress.com) the Custom Post Widget plugin is now fully localized.
+ Release notes: 1.5 Thanks to Caspar from GlückPress (http://glueckpress.com) the plugin 
+ now has its own icon and as requested by Stephen James the author field has been added 
+ to the Content Block edit screen.
  
  Copyright 2011 Johan van der Wijk (email: info@vanderwijk.com)
  
@@ -28,6 +30,7 @@
 
 /* Set constant path to the custom-post-widget plugin directory. */
 define( 'CUSTOM_POST_WIDGET_DIR', plugin_dir_path( __FILE__ ) );
+define( 'CUSTOM_POST_WIDGET_URL', WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),'',plugin_basename(__FILE__)) );
 define( 'CUSTOM_POST_WIDGET_TEXTDOMAIN', 'custom-post-widget' );
 
 /* Launch the plugin. */
