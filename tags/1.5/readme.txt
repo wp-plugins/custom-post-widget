@@ -5,7 +5,7 @@ Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar
 Requires at least: 2.9.2
 Tested up to: 3.1
-Stable tag: 1.4
+Stable tag: 1.5
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
@@ -72,10 +72,12 @@ Now the title of the content block is displayed in the admin interface to make i
 = 1.4 =
 The plugin has been translated into Dutch and German. Hat tip: Caspar H&uuml;binger - glueckpress.com
 
+= 1.5 =
+Thanks to Caspar Huebinger the plugin 
+ now has its own icon and as requested by Stephen James the author field has been added to the Content Block edit screen.
+
 
 == Upgrade Notice ==
 
 = 1.1.1 =
 Now supports more than 10 custom posts in the select box. Note that after upgrading you might have to save the widget state before the correct posts are being displayed.
-
-
