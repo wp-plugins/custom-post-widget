@@ -112,10 +112,29 @@ add_action('init', 'my_content_block_post_type_init');
       'capability_type' => 'post',
       'hierarchical' => false,
       'menu_position' => null,
-      'supports' => array('title','editor','revisions','thumbnail')
+      'supports' => array('title','editor','revisions','thumbnail','author')
     );
     register_post_type('content_block',$options);
   }
+ 
+ 
+// Add custom styles to admin screen and menu
+
+add_action('admin_head', 'content_block_header');
+
+	function content_block_header() {
+		
+		global $post_type; ?>
+		
+		<style type="text/css"><!--
+		<?php if (($post_type == 'content_block')) : ?>
+			#icon-edit { background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL; ?>images/contentblock-32.png') no-repeat 0 0 !important; }
+		<?php endif; ?>
+			#adminmenu #menu-posts-contentblock div.wp-menu-image{background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL;?>images/contentblock.png') no-repeat center -32px;}
+			#adminmenu #menu-posts-contentblock:hover div.wp-menu-image,#adminmenu #menu-posts-contentblock.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL;?>images/contentblock.png') no-repeat center 0px;}
+		--></style><?php
+		
+	}
 
 add_filter('post_updated_messages', 'content_block_messages');
   
