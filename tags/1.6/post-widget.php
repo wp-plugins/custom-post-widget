@@ -63,17 +63,19 @@ class custom_post_widget extends WP_Widget
     /* Variables from the widget settings. */
     $show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
 
-    /* Before widget (defined by themes). */
+    $content_post = get_post($custom_post_id);
+    $content = $content_post->post_content;
+    $content = apply_filters('the_content', $content);
+    $content = str_replace(']]>', ']]>', $content);
+
     echo $before_widget;
-    $cb_post = get_post($custom_post_id);
-
-    apply_filters('the_content', $cb_post->post_content);
     if ( $show_custom_post_title )
-      echo $cb_post->post_title; // This is the line that displays the title
-    echo do_shortcode($cb_post->post_content);
-
-    // Output $after_widget
+    {
+      echo $before_title . $content_post->post_title . $after_title; // This is the line that displays the title (only if show title is set)
+    } 
+    echo $content; // This is where the actual content of the custom post is being displayed
     echo $after_widget;
+
   }
 }
 
