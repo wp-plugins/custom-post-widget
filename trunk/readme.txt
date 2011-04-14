@@ -92,7 +92,10 @@ The plugin has been translated into Dutch and German. Hat tip: Caspar H&uuml;bin
 
 = 1.5 =
 Thanks to Caspar Huebinger the plugin 
- now has its own icon and as requested by Stephen James the author field has been added to the Content Block edit screen.
+now has its own icon and as requested by Stephen James the author field has been added to the Content Block edit screen.
+
+= 1.6 =
+The Custom Post Widget plugin is now using the more efficient get_post instead of query_posts to display the content block on the page. The code for this change has been graciously provided by Paul de Wouters.
 
 
 == Upgrade Notice ==
