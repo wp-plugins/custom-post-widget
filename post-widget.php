@@ -1,6 +1,6 @@
 <?php
 
-/* First create the widget for the admin panel */
+// First create the widget for the admin panel
 class custom_post_widget extends WP_Widget
 {
   function custom_post_widget()
@@ -57,32 +57,27 @@ class custom_post_widget extends WP_Widget
   function widget($args, $instance)
   {
     extract($args);
-    
+
     $custom_post_id  = ( $instance['custom_post_id'] != '' ) ? esc_attr($instance['custom_post_id']) : __('Find', CUSTOM_POST_WIDGET_TEXTDOMAIN);
-    
-        /* Our variables from the widget settings. */
-        $show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
 
-        /* Before widget (defined by themes). */
-        echo $before_widget;
+    /* Variables from the widget settings. */
+    $show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
 
-    /* Output the query to find the custom post */
-    query_posts( 'post_type=content_block&p=' . $custom_post_id );
-      while (have_posts()) : the_post();
-      
-              if ( $show_custom_post_title )
-                echo the_title($before_title, $after_title); /* This is the line that displays the title */
-        echo the_content();
-        endwhile;
-    wp_reset_query();
+    /* Before widget (defined by themes). */
+    echo $before_widget;
+    $cb_post = get_post($custom_post_id);
 
-    /* Output $after_widget */
+    apply_filters('the_content', $cb_post->post_content);
+    if ( $show_custom_post_title )
+      echo $cb_post->post_title; // This is the line that displays the title
+    echo do_shortcode($cb_post->post_content);
+
+    // Output $after_widget
     echo $after_widget;
   }
 }
 
-/* Create the Content Block custom post type */
-
+// Create the Content Block custom post type
 add_action('init', 'my_content_block_post_type_init');
 
   function my_content_block_post_type_init()
@@ -112,9 +107,27 @@ add_action('init', 'my_content_block_post_type_init');
       'capability_type' => 'post',
       'hierarchical' => false,
       'menu_position' => null,
-      'supports' => array('title','editor','revisions','thumbnail')
+      'supports' => array('title','editor','revisions','thumbnail','author')
     );
     register_post_type('content_block',$options);
+  }
+ 
+ 
+// Add custom styles to admin screen and menu
+add_action('admin_head', 'content_block_header');
+
+  function content_block_header() {
+    
+    global $post_type; ?>
+    
+    <style type="text/css"><!--
+    <?php if (($post_type == 'content_block')) : ?>
+      #icon-edit { background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL; ?>images/contentblock-32.png') no-repeat 0 0 !important; }
+    <?php endif; ?>
+      #adminmenu #menu-posts-contentblock div.wp-menu-image{background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL;?>images/contentblock.png') no-repeat center -32px;}
+      #adminmenu #menu-posts-contentblock:hover div.wp-menu-image,#adminmenu #menu-posts-contentblock.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL;?>images/contentblock.png') no-repeat center 0px;}
+    --></style><?php
+    
   }
 
 add_filter('post_updated_messages', 'content_block_messages');

@@ -4,8 +4,8 @@ Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar
 Requires at least: 2.9.2
-Tested up to: 3.0.4
-Stable tag: 1.3
+Tested up to: 3.1
+Stable tag: 1.5
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
@@ -49,6 +49,24 @@ Of course you can always use the default text widget, but if you prefer to use t
 
 It is recommended to install the Widget Logic plugin, this will give you complete flexibility on widget placement.
 
+= How can I display the featured image in the widget? =
+
+This plugin has built-in support for the featured image functionality on the edit screen. But to display the image you will have to add the following code to your functions.php:
+
+`function InsertFeaturedImage($content) {
+    global $post;
+    $original_content = $content;
+    if (current_theme_supports('post-thumbnails')) {
+        if ('content_block' == get_post_type()) {
+            $content = the_post_thumbnail('medium');
+            $content .= $original_content;
+        }
+    }
+    return $content;
+}
+add_filter('the_content', 'InsertFeaturedImage');`
+
+
 == Changelog ==
 
 = 1.0 =
@@ -68,6 +86,17 @@ The widget title now uses $before_title and $after_title to generate the appropr
 
 = 1.3 =
 Now the title of the content block is displayed in the admin interface to make it easy to manage the widgets.
+
+= 1.4 =
+The plugin has been translated into Dutch and German. Hat tip: Caspar H&uuml;binger - glueckpress.com
+
+= 1.5 =
+Thanks to Caspar Huebinger the plugin 
+now has its own icon and as requested by Stephen James the author field has been added to the Content Block edit screen.
+
+= 1.6 =
+The Custom Post Widget plugin is now using the more efficient get_post instead of query_posts to display the content block on the page. The code for this change has been graciously provided by Paul de Wouters.
+
 
 == Upgrade Notice ==
 

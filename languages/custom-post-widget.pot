@@ -2,9 +2,9 @@
 # This file is distributed under the same license as the Custom Post Widget package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Custom Post Widget 1.3\n"
+"Project-Id-Version: Custom Post Widget 1.4\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/custom-post-widget\n"
-"POT-Creation-Date: 2011-02-25 17:33:14+00:00\n"
+"POT-Creation-Date: 2011-02-25 20:06:24+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,15 +12,15 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: post-widget.php:8 custom-post-widget.php:19
+#: post-widget.php:8
 msgid "Displays custom post content in a widget"
 msgstr ""
 
-#: post-widget.php:9 custom-post-widget.php:20
+#: post-widget.php:9
 msgid "Content Block"
 msgstr ""
 
-#: post-widget.php:19 custom-post-widget.php:30
+#: post-widget.php:19
 msgid "Content Block to Display:"
 msgstr ""
 
@@ -28,7 +28,7 @@ msgstr ""
 msgid "No content blocks available"
 msgstr ""
 
-#: post-widget.php:42 custom-post-widget.php:54
+#: post-widget.php:42
 msgid "Show Post Title"
 msgstr ""
 
@@ -36,12 +36,12 @@ msgstr ""
 msgid "Find"
 msgstr ""
 
-#: post-widget.php:91 custom-post-widget.php:105
+#: post-widget.php:91
 msgctxt "post type general name"
 msgid "Content Blocks"
 msgstr ""
 
-#: post-widget.php:92 custom-post-widget.php:106
+#: post-widget.php:92
 msgctxt "post type singular name"
 msgid "Content Block"
 msgstr ""
@@ -51,84 +51,84 @@ msgctxt "post type plural name"
 msgid "Content Blocks"
 msgstr ""
 
-#: post-widget.php:94 custom-post-widget.php:107
+#: post-widget.php:94
 msgctxt "block"
 msgid "Add Content Block"
 msgstr ""
 
-#: post-widget.php:95 custom-post-widget.php:108
+#: post-widget.php:95
 msgid "Add New Content Block"
 msgstr ""
 
-#: post-widget.php:96 custom-post-widget.php:109
+#: post-widget.php:96
 msgid "Edit Content Block"
 msgstr ""
 
-#: post-widget.php:97 custom-post-widget.php:110
+#: post-widget.php:97
 msgid "New Content Block"
 msgstr ""
 
-#: post-widget.php:98 custom-post-widget.php:111
+#: post-widget.php:98
 msgid "View Content Block"
 msgstr ""
 
-#: post-widget.php:99 custom-post-widget.php:112
+#: post-widget.php:99
 msgid "Search Content Blocks"
 msgstr ""
 
-#: post-widget.php:100 custom-post-widget.php:113
+#: post-widget.php:100
 msgid "No Content Blocks Found"
 msgstr ""
 
-#: post-widget.php:101 custom-post-widget.php:114
+#: post-widget.php:101
 msgid "No Content Blocks found in Trash"
 msgstr ""
 
-#: post-widget.php:126 custom-post-widget.php:139
+#: post-widget.php:126
 msgid "Content Block updated. <a href=\"%s\">View Content Block</a>"
 msgstr ""
 
-#: post-widget.php:127 custom-post-widget.php:140
+#: post-widget.php:127
 msgid "Custom field updated."
 msgstr ""
 
-#: post-widget.php:128 custom-post-widget.php:141
+#: post-widget.php:128
 msgid "Custom field deleted."
 msgstr ""
 
-#: post-widget.php:129 custom-post-widget.php:142
+#: post-widget.php:129
 msgid "Content Block updated."
 msgstr ""
 
-#: post-widget.php:130 custom-post-widget.php:143
+#: post-widget.php:130
 msgid "Content Block restored to revision from %s"
 msgstr ""
 
-#: post-widget.php:131 custom-post-widget.php:144
+#: post-widget.php:131
 msgid "Content Block published. <a href=\"%s\">View Content Block</a>"
 msgstr ""
 
-#: post-widget.php:132 custom-post-widget.php:145
+#: post-widget.php:132
 msgid "Block saved."
 msgstr ""
 
-#: post-widget.php:133 custom-post-widget.php:146
+#: post-widget.php:133
 msgid ""
 "Content Block submitted. <a target=\"_blank\" href=\"%s\">Preview Content "
 "Block</a>"
 msgstr ""
 
-#: post-widget.php:134 custom-post-widget.php:147
+#: post-widget.php:134
 msgid ""
 "Content Block scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
 "href=\"%2$s\">Preview block</a>"
 msgstr ""
 
-#: post-widget.php:135 custom-post-widget.php:148
+#: post-widget.php:135
 msgid "M j, Y @ G:i"
 msgstr ""
 
-#: post-widget.php:136 custom-post-widget.php:149
+#: post-widget.php:136
 msgid ""
 "Content Block draft updated. <a target=\"_blank\" href=\"%s\">Preview "
 "Content Block</a>"

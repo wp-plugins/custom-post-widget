@@ -3,153 +3,56 @@
  Plugin Name: Custom Post Widget
  Plugin URI: http://www.vanderwijk.com/services/web-design/wordpress-custom-post-widget/
  Description: Show the content of a custom post of the type 'content_block' in a widget.
- Version: 1.3
+ Version: 1.6
  Author: Johan van der Wijk
  Author URI: http://www.vanderwijk.com
+ License: GPL2
 
- Release notes: 1.3 Now the title of the content block is displayed in the admin widget
+ Release notes: Version 1.6 of the Custom Post Widget plugin now uses the much more efficient
+ get_post instead of query_post to display the widget content.
+ 
+ Copyright 2011 Johan van der Wijk (email: info@vanderwijk.com)
+ 
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License, version 2, as 
+ published by the Free Software Foundation.
 
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
-// First create the widget for the admin panel
-class custom_post_widget extends WP_Widget
-{
-  function custom_post_widget()
-  {
-    $widget_ops = array('description' => __('Displays custom post content in a widget'));
-    $this->WP_Widget('custom_post_widget', __('Content Block'), $widget_ops);
-  }
+/* Set constant path to the custom-post-widget plugin directory. */
+define( 'CUSTOM_POST_WIDGET_DIR', plugin_dir_path( __FILE__ ) );
+define( 'CUSTOM_POST_WIDGET_URL', WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),'',plugin_basename(__FILE__)) );
+define( 'CUSTOM_POST_WIDGET_TEXTDOMAIN', 'custom-post-widget' );
 
-  function form($instance)
-  {
-    $custom_post_id = esc_attr($instance['custom_post_id']);
-	$show_custom_post_title  = isset($instance['show_custom_post_title ']) ? $instance['show_custom_post_title '] : true;
-    
-    ?>
-      <p>
-        <label for="<?php echo $this->get_field_id('custom_post_id'); ?>"> <?php echo __('Content Block to Display:') ?>
-          <select class="widefat" id="<?php echo $this->get_field_id('custom_post_id'); ?>" name="<?php echo $this->get_field_name('custom_post_id'); ?>">
-            <?php query_posts('post_type=content_block&orderby=ID&order=ASC&showposts=-1');
-              if ( have_posts() ) : while ( have_posts() ) : the_post();
-                $currentID = get_the_ID();
-                if($currentID == $custom_post_id)
-                  $extra = 'selected' and
-				  $widgetExtraTitle = get_the_title();
-                else
-                  $extra = '';
-                echo '<option value="'.$currentID.'" '.$extra.'>'.get_the_title().'</option>';
-                endwhile; else:
-                echo '<option value="empty">No content blocks available</option>';
-              endif;
-            ?>
-          </select>
-        </label>
-      </p>
-	 <?php ?>
-     <input type="hidden" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $widgetExtraTitle; ?>" />
-     <?php wp_reset_query(); ?>
-	  
-      <p>
-        <input class="checkbox" type="checkbox" <?php checked( (bool) $instance['show_custom_post_title'], true ); ?> id="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>" name="<?php echo $this->get_field_name( 'show_custom_post_title' ); ?>" />
-        <label for="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>"><?php echo __('Show Post Title') ?></label>
-      </p>
+/* Launch the plugin. */
+add_action( 'plugins_loaded', 'custom_post_widget_plugin_init' );
 
-      <?php
-  }
+/**
+ Initialize the plugin. This function loads the required files needed for the plugin
+ to run in the proper order and adds needed functions to the required hooks.
+*/
+function custom_post_widget_plugin_init() {
 
-  function update($new_instance, $old_instance)
-  {
-    $instance = $old_instance;
-    $instance['custom_post_id'] = strip_tags($new_instance['custom_post_id']);
-    $instance['show_custom_post_title'] = $new_instance['show_custom_post_title'];
+	/* Load the translation of the plugin. */
+	load_plugin_textdomain( CUSTOM_POST_WIDGET_TEXTDOMAIN, false, 'custom-post-widget/languages' );
 
-    return $instance;
-  }
-
-  function widget($args, $instance)
-  {
-    extract($args);
-    
-    $custom_post_id  = ( $instance['custom_post_id'] != '' ) ? esc_attr($instance['custom_post_id']) : 'Zoeken';
-    
-        /* Our variables from the widget settings. */
-        $show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
-
-        /* Before widget (defined by themes). */
-        echo $before_widget;
-    
-    // Output the query to find the custom post
-    query_posts( 'post_type=content_block&p=' . $custom_post_id );
-      while (have_posts()) : the_post();
-      
-              if ( $show_custom_post_title )
-                echo the_title($before_title, $after_title); // This is the line that displays the title           
-      
-        echo the_content();
-        endwhile;
-    wp_reset_query();
-
-    // Output $after_widget
-    echo $after_widget;
-  }
+	add_action( 'widgets_init', 'custom_post_widget_load_widgets' );
 }
-add_action('widgets_init', create_function('', 'return register_widget("custom_post_widget");'));
 
-// Create the Content Block custom post type
-
-add_action('init', 'my_content_block_post_type_init');
-
-  function my_content_block_post_type_init()
-  {
-    $labels = array(
-      'name' => _x('Content Blocks', 'post type general name'),
-      'singular_name' => _x('Content Block', 'post type singular name'),
-      'add_new' => _x('Add Content Block', 'block'),
-      'add_new_item' => __('Add New Content Block'),
-      'edit_item' => __('Edit Content Block'),
-      'new_item' => __('New Content Block'),
-      'view_item' => __('View Content Block'),
-      'search_items' => __('Search Content Blocks'),
-      'not_found' =>  __('No Content Blocks Found'),
-      'not_found_in_trash' => __('No Content Blocks found in Trash'),
-      'parent_item_colon' => ''
-    );
-    $options = array(
-      'labels' => $labels,
-      'public' => false,
-      'publicly_queryable' => false,
-    'exclude_from_search' => true,
-      'show_ui' => true,
-      'query_var' => true,
-      'rewrite' => true,
-      'capability_type' => 'post',
-      'hierarchical' => false,
-      'menu_position' => null,
-      'supports' => array('title','editor','revisions','thumbnail')
-    );
-    register_post_type('content_block',$options);
-  }
-
-add_filter('post_updated_messages', 'content_block_messages');
-  
-  function content_block_messages( $messages ) {
-   
-    $messages['content_block'] = array(
-    0 => '', 
-    1 => sprintf( __('Content Block updated. <a href="%s">View Content Block</a>'), esc_url( get_permalink($post_ID) ) ),
-    2 => __('Custom field updated.'),
-    3 => __('Custom field deleted.'),
-    4 => __('Content Block updated.'),
-    5 => isset($_GET['revision']) ? sprintf( __('Content Block restored to revision from %s'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-    6 => sprintf( __('Content Block published. <a href="%s">View Content Block</a>'), esc_url( get_permalink($post_ID) ) ),
-    7 => __('Block saved.'),
-    8 => sprintf( __('Content Block submitted. <a target="_blank" href="%s">Preview Content Block</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
-    9 => sprintf( __('Content Block scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview block</a>'),
-      date_i18n( __( 'M j, Y @ G:i' ), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
-    10 => sprintf( __('Content Block draft updated. <a target="_blank" href="%s">Preview Content Block</a>'), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
-    );
-   
-    return $messages;
-  }
+/**
+ Loads the widgets packaged with the plugin.
+*/
+function custom_post_widget_load_widgets() {
+	require_once( CUSTOM_POST_WIDGET_DIR . '/post-widget.php' );
+	register_widget( 'custom_post_widget' );
+}
 
 ?>
