@@ -3,13 +3,13 @@
  Plugin Name: Custom Post Widget
  Plugin URI: http://www.vanderwijk.com/services/web-design/wordpress-custom-post-widget/
  Description: Show the content of a custom post of the type 'content_block' in a widget.
- Version: 1.7
+ Version: 1.6
  Author: Johan van der Wijk
  Author URI: http://www.vanderwijk.com
  License: GPL2
 
- Release notes: Version 1.7 fixes all the error messages that Yoast discovered when reviewing this plugin.
- It also adds the option to use the [content_block id= ] shortcode to insert a content block in a post.
+ Release notes: Version 1.6 of the Custom Post Widget plugin now uses the much more efficient
+ get_post instead of query_post to display the widget content.
  
  Copyright 2011 Johan van der Wijk (email: info@vanderwijk.com)
  
@@ -30,7 +30,6 @@
 /* Set constant path to the custom-post-widget plugin directory. */
 define( 'CUSTOM_POST_WIDGET_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CUSTOM_POST_WIDGET_URL', WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),'',plugin_basename(__FILE__)) );
-define( 'CUSTOM_POST_WIDGET_TEXTDOMAIN', 'custom-post-widget' );
 
 /* Launch the plugin. */
 add_action( 'plugins_loaded', 'custom_post_widget_plugin_init' );
@@ -42,7 +41,7 @@ add_action( 'plugins_loaded', 'custom_post_widget_plugin_init' );
 function custom_post_widget_plugin_init() {
 
 	/* Load the translation of the plugin. */
-	load_plugin_textdomain( CUSTOM_POST_WIDGET_TEXTDOMAIN, false, 'custom-post-widget/languages' );
+	load_plugin_textdomain( 'custom-post-widget', false, 'custom-post-widget/languages' );
 
 	add_action( 'widgets_init', 'custom_post_widget_load_widgets' );
 }
