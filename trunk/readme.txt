@@ -15,8 +15,8 @@ The Custom Post Widget allows you to display the contents of a specific custom p
 
 Even though you could use the text widget that comes with the default WordPress install, this plugin has some clear benefits:
 
-* If you are using widgets to display content on various areas of your template, this content can only be edited by users with administrator access. If you would like editors to modify the widget content, you can use this plugin to provide them access to the custom posts that provide the content for the widget areas.
-* It enables users to use the WYSIWYG editor for editing the content and adding images
+* If you are using the standard WordPress text widgets to display content on various areas of your template, this content can only be edited by users with administrator access. If you would like editors to modify the widget content, you can use this plugin to provide them access to the custom posts that provide the content for the widget areas.
+* The Custom Post Widget plugin enables users to use the WYSIWYG editor for editing the content and adding images.
 
 This plugin creates a 'content_block' custom post type. The title is never displayed, use this to describe the position of the widget on the page. Note that these content blocks can only be displayed in the context of the page. I have added 'public' => false to the custom post type which means that it is not accessible outside the page context.
 
@@ -97,6 +97,8 @@ now has its own icon and as requested by Stephen James the author field has been
 = 1.6 =
 The Custom Post Widget plugin is now using the more efficient get_post instead of query_posts to display the content block on the page. A code example for this change has been graciously provided by Paul de Wouters.
 
+= 1.7 =
+This release fixes all the debug error messages Yoast discovered when [reviewing this plugin](http://yoast.com/wp-plugin-review/custom-post-widget/). As requested by Tony Allsopp the option of using the shortcode [content_block id= ] to pull in the content of a content block in a page or post has been added.
 
 == Upgrade Notice ==
 

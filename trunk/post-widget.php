@@ -138,20 +138,45 @@ add_filter('post_updated_messages', 'content_block_messages');
    
     $messages['content_block'] = array(
     0 => '', 
-    1 => sprintf( __('Content Block updated. <a href="%s">View Content Block</a>', CUSTOM_POST_WIDGET_TEXTDOMAIN), esc_url( get_permalink($post_ID) ) ),
+    1 => sprintf( __('Content Block updated. <a href="%s">View Content Block</a>', CUSTOM_POST_WIDGET_TEXTDOMAIN), esc_url( get_permalink(isset($post->ID) ? $post->ID : null) ) ),
     2 => __('Custom field updated.', CUSTOM_POST_WIDGET_TEXTDOMAIN),
     3 => __('Custom field deleted.', CUSTOM_POST_WIDGET_TEXTDOMAIN),
     4 => __('Content Block updated.', CUSTOM_POST_WIDGET_TEXTDOMAIN),
     5 => isset($_GET['revision']) ? sprintf( __('Content Block restored to revision from %s', CUSTOM_POST_WIDGET_TEXTDOMAIN), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-    6 => sprintf( __('Content Block published. <a href="%s">View Content Block</a>', CUSTOM_POST_WIDGET_TEXTDOMAIN), esc_url( get_permalink($post_ID) ) ),
+    6 => sprintf( __('Content Block published. <a href="%s">View Content Block</a>', CUSTOM_POST_WIDGET_TEXTDOMAIN), esc_url( get_permalink(isset($post->ID) ? $post->ID : null) ) ),
     7 => __('Block saved.', CUSTOM_POST_WIDGET_TEXTDOMAIN),
-    8 => sprintf( __('Content Block submitted. <a target="_blank" href="%s">Preview Content Block</a>', CUSTOM_POST_WIDGET_TEXTDOMAIN), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
-    9 => sprintf( __('Content Block scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview block</a>', CUSTOM_POST_WIDGET_TEXTDOMAIN),
-      date_i18n( __( 'M j, Y @ G:i' , CUSTOM_POST_WIDGET_TEXTDOMAIN), strtotime( $post->post_date ) ), esc_url( get_permalink($post_ID) ) ),
-    10 => sprintf( __('Content Block draft updated. <a target="_blank" href="%s">Preview Content Block</a>', CUSTOM_POST_WIDGET_TEXTDOMAIN), esc_url( add_query_arg( 'preview', 'true', get_permalink($post_ID) ) ) ),
+    8 => sprintf( __('Content Block submitted. <a target="_blank" href="%s">Preview Content Block</a>', CUSTOM_POST_WIDGET_TEXTDOMAIN), esc_url( add_query_arg( 'preview', 'true', get_permalink(isset($post->ID) ? $post->ID : null) ) ) ),
+    9 => sprintf( __('Content Block scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview block</a>', CUSTOM_POST_WIDGET_TEXTDOMAIN), date_i18n( __( 'M j, Y @ G:i' , CUSTOM_POST_WIDGET_TEXTDOMAIN), strtotime(isset($post->post_date) ? $post->post_date : null) ), esc_url( get_permalink(isset($post->ID) ? $post->ID : null) ) ),
+    10 => sprintf( __('Content Block draft updated. <a target="_blank" href="%s">Preview Content Block</a>', CUSTOM_POST_WIDGET_TEXTDOMAIN), esc_url( add_query_arg( 'preview', 'true', get_permalink(isset($post->ID) ? $post->ID : null) ) ) ),
     );
    
     return $messages;
   }
+  
+// Add the ability to display the content block in a reqular post using a shortcode
+function custom_post_widget_shortcode($atts) {
+	extract(shortcode_atts(array(
+		'id' => '',
+	), $atts));
+	
+	$content = "";
+	
+	if($id != "") {
+		$args = array(
+			'post__in' => array($id),
+			'post_type' => 'content_block',
+		);
+		
+		$content_post = get_posts($args);
+		
+		foreach( $content_post as $post ) :
+			$content .= apply_filters('the_content', $post->post_content);
+		endforeach;
+	}
+	
+	return $content;
+}
+
+add_shortcode('content_block', 'custom_post_widget_shortcode');
 
 ?>
