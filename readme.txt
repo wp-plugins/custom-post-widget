@@ -5,7 +5,7 @@ Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar
 Requires at least: 2.9.2
 Tested up to: 3.1
-Stable tag: 1.6
+Stable tag: 1.8
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
@@ -100,9 +100,12 @@ The Custom Post Widget plugin is now using the more efficient get_post instead o
 = 1.7 =
 This release fixes all the debug error messages Yoast discovered when [reviewing this plugin](http://yoast.com/wp-plugin-review/custom-post-widget/). As requested by Tony Allsopp the option of using the shortcode [content_block id= ] to pull in the content of a content block in a page or post has been added.
 
+= 1.8 =
+Added a button above to content editor to make it easier to add the shortcode (no need for looking up the id).
+
 == Upgrade Notice ==
 
-= 1.1.1 =
-Now supports more than 10 custom posts in the select box. Note that after upgrading you might have to save the widget state before the correct posts are being displayed.
+= 1.8 =
+I would appreciate some feedback on the newly introduced shortcode functionality. Is this useful or not? Any issues found? Thanks!
 
 
