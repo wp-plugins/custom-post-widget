@@ -4,8 +4,8 @@ Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar
 Requires at least: 2.9.2
-Tested up to: 3.1
-Stable tag: 1.8.1
+Tested up to: 3.2
+Stable tag: 1.8.2
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
@@ -102,6 +102,9 @@ This release fixes all the debug error messages Yoast discovered when [reviewing
 
 = 1.8 =
 Added a button above to content editor to make it easier to add the shortcode (no need for looking up the id).
+
+= 1.8.2 =
+Updated German translation and various bugfixes.
 
 == Upgrade Notice ==
 
