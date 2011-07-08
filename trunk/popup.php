@@ -41,7 +41,7 @@ function add_mce_popup(){ ?>
 				  	</select>
 					<br/>
 					<div style="padding:15px;">
-						<input type="button" class="button-primary" value="Insert Content Block" onclick="InsertContentBlockForm();"/>&nbsp;&nbsp;&nbsp;
+                        <input type="button" class="button-primary" value="<?php _e("Insert Content Block", 'custom-post-widget') ?>" onclick="InsertContentBlockForm();"/>&nbsp;&nbsp;&nbsp;
 						<a class="button" style="color:#bbb;" href="#" onclick="tb_remove(); return false;"><?php _e("Cancel", 'custom-post-widget'); ?></a>
 					</div>
 				</div>
