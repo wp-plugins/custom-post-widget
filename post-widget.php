@@ -126,8 +126,8 @@ add_action('admin_head', 'content_block_header');
     <?php if (($post_type == 'content_block')) : ?>
       #icon-edit { background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL; ?>images/contentblock-32.png') no-repeat 0 0 !important; }
     <?php endif; ?>
-      #adminmenu #menu-posts-contentblock div.wp-menu-image{background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL;?>images/contentblock.png') no-repeat center -32px;}
-      #adminmenu #menu-posts-contentblock:hover div.wp-menu-image,#adminmenu #menu-posts-contentblock.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL;?>images/contentblock.png') no-repeat center 0px;}
+	  #adminmenu #menu-posts-content_block div.wp-menu-image{background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL;?>images/contentblock.png') no-repeat center -32px;}
+	  #adminmenu #menu-posts-content_block:hover div.wp-menu-image,#adminmenu #menu-posts-content_block.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL;?>images/contentblock.png') no-repeat center 0px;}
     --></style><?php
     
   }
@@ -183,7 +183,7 @@ add_shortcode('content_block', 'custom_post_widget_shortcode');
 // Add button above editor
 function add_content_block_icon($initcontext) {
     return $initcontext.
-   '<a id="add_content_block" class="thickbox" title="' . __("Add Content Block", 'custom-post-widget') . '" href="' . CUSTOM_POST_WIDGET_URL . 'popup.php#TB_inline?width=450&inlineId=select_form">
+   '<a id="add_content_block" style="text-decoration:none;" class="thickbox" title="' . __("Add Content Block", 'custom-post-widget') . '" href="' . CUSTOM_POST_WIDGET_URL . 'popup.php#TB_inline?width=450&inlineId=select_form">
 	<img onclick="return false;" alt="' . __("Add Content Block", 'custom-post-widget') . '" src="' . CUSTOM_POST_WIDGET_URL . 'images/contentblock-13.png">
 	</a>';
 }
