@@ -106,6 +106,9 @@ Added a button above to content editor to make it easier to add the shortcode (n
 = 1.8.2 =
 Updated German translation and various bugfixes.
 
+= 1.8.3 =
+The widget now emulates the $post loop. This means you can now make use of WordPress functionality such as inserting a [gallery]. Thanks to Jari Pennanen for providing the code.
+
 == Upgrade Notice ==
 
 = 1.8 =
