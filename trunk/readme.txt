@@ -5,7 +5,7 @@ Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar
 Requires at least: 2.9.2
 Tested up to: 3.2
-Stable tag: 1.8.3
+Stable tag: 1.8.2
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
@@ -106,7 +106,7 @@ Added a button above to content editor to make it easier to add the shortcode (n
 = 1.8.2 =
 Updated German translation and various bugfixes.
 
-= 1.8.3 =
+= 1.8.3 -> rolled-back because of some reported issues with social media icons being added to the widget areas =
 The widget now emulates the $post loop. This means you can now make use of WordPress functionality such as inserting a [gallery]. Thanks to Jari Pennanen for providing the code.
 
 == Upgrade Notice ==
