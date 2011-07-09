@@ -45,11 +45,13 @@ class custom_post_widget extends WP_Widget {
 	}
 
 	function widget($args, $instance) {
+		global $post;
 		extract($args);
 		$custom_post_id  = ( $instance['custom_post_id'] != '' ) ? esc_attr($instance['custom_post_id']) : __('Find', 'custom-post-widget');
 		/* Variables from the widget settings. */
 		$show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
-		$content_post = get_post($custom_post_id);
+		$old_post = &$post;
+		$post = $content_post = get_post($custom_post_id);
 		$content = $content_post->post_content;
 		$content = apply_filters('the_content', $content);
 		$content = str_replace(']]>', ']]>', $content);
@@ -59,7 +61,9 @@ class custom_post_widget extends WP_Widget {
 		} 
 		echo $content; // This is where the actual content of the custom post is being displayed
 		echo $after_widget;
+		$post = &$old_post;
 	}
+	
 }
 
 // Create the Content Block custom post type
