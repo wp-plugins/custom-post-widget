@@ -52,12 +52,11 @@ class custom_post_widget extends WP_Widget {
 		$content_post = get_post($custom_post_id);
 		$content = $content_post->post_content;
 		$content = apply_filters('the_content', $content);
-		$content = str_replace(']]>', ']]>', $content);
 		echo $before_widget;
 		if ( $show_custom_post_title ) {
 			echo $before_title . $content_post->post_title . $after_title; // This is the line that displays the title (only if show title is set)
 		} 
-		echo $content; // This is where the actual content of the custom post is being displayed
+		echo do_shortcode($content); // This is where the actual content of the custom post is being displayed
 		echo $after_widget;
 	}
 	
