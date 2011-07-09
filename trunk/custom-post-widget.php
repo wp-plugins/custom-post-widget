@@ -26,28 +26,21 @@
  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA
 */
 
-/* Set constant path to the custom-post-widget plugin directory. */
+// Set constant path to the custom-post-widget plugin directory.
 define( 'CUSTOM_POST_WIDGET_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CUSTOM_POST_WIDGET_URL', WP_PLUGIN_URL.'/'.str_replace(basename( __FILE__),'',plugin_basename(__FILE__)) );
 
-/* Launch the plugin. */
+// Launch the plugin.
 add_action( 'plugins_loaded', 'custom_post_widget_plugin_init' );
 
-/**
- Initialize the plugin. This function loads the required files needed for the plugin
- to run in the proper order and adds needed functions to the required hooks.
-*/
+// Load the required files needed for the plugin to run in the proper order and add needed functions to the required hooks.
 function custom_post_widget_plugin_init() {
-
-	/* Load the translation of the plugin. */
+	// Load the translation of the plugin.
 	load_plugin_textdomain( 'custom-post-widget', false, 'custom-post-widget/languages' );
-
 	add_action( 'widgets_init', 'custom_post_widget_load_widgets' );
 }
 
-/**
- Loads the widgets packaged with the plugin.
-*/
+// Loads the widgets packaged with the plugin.
 function custom_post_widget_load_widgets() {
 	require_once( CUSTOM_POST_WIDGET_DIR . '/post-widget.php' );
 	register_widget( 'custom_post_widget' );

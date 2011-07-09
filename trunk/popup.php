@@ -1,6 +1,6 @@
-<?php //Action target that displays the popup to insert a content block to a post/page
+<?php // Action target that displays the popup to insert a content block to a post/page
 
-function add_mce_popup(){ ?>
+function add_content_block_popup(){ ?>
 
 	<script>
 		function InsertContentBlockForm(){

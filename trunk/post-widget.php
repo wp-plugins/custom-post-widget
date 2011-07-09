@@ -47,7 +47,7 @@ class custom_post_widget extends WP_Widget {
 	function widget($args, $instance) {
 		extract($args);
 		$custom_post_id  = ( $instance['custom_post_id'] != '' ) ? esc_attr($instance['custom_post_id']) : __('Find', 'custom-post-widget');
-		/* Variables from the widget settings. */
+		// Variables from the widget settings.
 		$show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
 		$content_post = get_post($custom_post_id);
 		$content = $content_post->post_content;
@@ -162,7 +162,7 @@ add_shortcode('content_block', 'custom_post_widget_shortcode');
 // Add button above editor
 function add_content_block_icon($initcontext) {
 	return $initcontext.
-	'<a id="add_content_block" style="text-decoration:none;" class="thickbox" title="' . __("Add Content Block", 'custom-post-widget') . '" href="' . CUSTOM_POST_WIDGET_URL . 'popup.php?type=add_mce_popup&amp;TB_inline=true&amp;inlineId=select_form">
+	'<a id="add_content_block" style="text-decoration:none;" class="thickbox" title="' . __("Add Content Block", 'custom-post-widget') . '" href="' . CUSTOM_POST_WIDGET_URL . 'popup.php?type=add_content_block_popup&amp;TB_inline=true&amp;inlineId=select_form">
 		<img onclick="return false;" alt="' . __("Add Content Block", 'custom-post-widget') . '" src="' . CUSTOM_POST_WIDGET_URL . 'images/contentblock-13.png">
 	</a>';
 }
@@ -174,6 +174,6 @@ require_once( CUSTOM_POST_WIDGET_DIR . '/popup.php' );
 if(!defined( 'CUSTOM_POST_WIDGET_CURRENT_PAGE' ))
 	define( 'CUSTOM_POST_WIDGET_CURRENT_PAGE', basename($_SERVER['PHP_SELF']) );
 if(in_array(CUSTOM_POST_WIDGET_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'))) {
-	add_action('admin_footer', 'add_mce_popup');
+	add_action('admin_footer', 'add_content_block_popup');
 }
 ?>
