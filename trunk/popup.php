@@ -14,7 +14,7 @@ function add_content_block_popup(){ ?>
 		}
 	</script>
 
-	<div id="select_form" style="display:none;">
+	<div id="content_block_form" style="display:none;">
 		<div class="wrap">
 			<div>
 				<div style="padding:15px 15px 0 15px;">

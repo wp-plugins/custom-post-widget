@@ -162,7 +162,7 @@ add_shortcode('content_block', 'custom_post_widget_shortcode');
 // Add button above editor
 function add_content_block_icon($initcontext) {
 	return $initcontext.
-	'<a id="add_content_block" style="text-decoration:none;" class="thickbox" title="' . __("Add Content Block", 'custom-post-widget') . '" href="' . CUSTOM_POST_WIDGET_URL . 'popup.php?type=add_content_block_popup&amp;TB_inline=true&amp;inlineId=select_form">
+	'<a id="add_content_block" style="text-decoration:none;" class="thickbox" title="' . __("Add Content Block", 'custom-post-widget') . '" href="' . CUSTOM_POST_WIDGET_URL . 'popup.php?type=add_content_block_popup&amp;TB_inline=true&amp;inlineId=content_block_form">
 		<img onclick="return false;" alt="' . __("Add Content Block", 'custom-post-widget') . '" src="' . CUSTOM_POST_WIDGET_URL . 'images/contentblock-13.png">
 	</a>';
 }
