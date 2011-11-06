@@ -8,7 +8,7 @@
  Author URI: http://www.vanderwijk.com
  License: GPL2
 
- Release notes: Version 1.8.2 Various bugfixes.
+ Release notes: Version 1.8.4 Usability improvements.
  
  Copyright 2011 Johan van der Wijk (email: info@vanderwijk.com)
  
