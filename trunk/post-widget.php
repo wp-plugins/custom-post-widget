@@ -29,8 +29,17 @@ class custom_post_widget extends WP_Widget {
 				</select>
 			</label>
 		</p>
+		
 		<input type="hidden" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $widgetExtraTitle; ?>" />
+
+		<p>
+			<?php
+				echo '<a href="post.php?post=' . $currentID . '&action=edit">Edit Content Block</a>' ;
+			?>
+		</p>
+
 				<?php wp_reset_query(); ?>
+
 		<p>
 			<input class="checkbox" type="checkbox" <?php checked( (bool) $instance['show_custom_post_title'], true ); ?> id="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>" name="<?php echo $this->get_field_name( 'show_custom_post_title' ); ?>" />
 			<label for="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>"><?php echo __('Show Post Title', 'custom-post-widget') ?></label>
@@ -104,7 +113,8 @@ function content_block_header() {
 	<style type="text/css">
 	<!--
 	<?php if (($post_type == 'content_block')) : ?>
-		#icon-edit { background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL; ?>images/contentblock-32.png') no-repeat 0 0 !important; }
+		#icon-edit { background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL; ?>images/contentblock-32.png') no-repeat 0 0 !important;}
+		#minor-publishing-actions { display:none; /* Hide the Save Draft and Preview buttons */}
 	<?php endif; ?>
 		#adminmenu #menu-posts-content_block div.wp-menu-image{background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL;?>images/contentblock.png') no-repeat center -32px;}
 		#adminmenu #menu-posts-content_block:hover div.wp-menu-image,#adminmenu #menu-posts-content_block.wp-has-current-submenu div.wp-menu-image{background:transparent url('<?php echo CUSTOM_POST_WIDGET_URL;?>images/contentblock.png') no-repeat center 0px;}
@@ -118,16 +128,16 @@ add_filter('post_updated_messages', 'content_block_messages');
 function content_block_messages( $messages ) {
 	$messages['content_block'] = array(
 		0 => '', 
-		1 => sprintf( __('Content Block updated. <a href="%s">View Content Block</a>', 'custom-post-widget'), esc_url( get_permalink(isset($post->ID) ? $post->ID : null) ) ),
+		1 => current_user_can( 'edit_theme_options' ) ? sprintf( __('Content Block updated. <a href="%s">Manage Widgets</a>', 'custom-post-widget'), esc_url( 'widgets.php' ) ) : sprintf( __('Content Block updated.', 'custom-post-widget'), esc_url( 'widgets.php' ) ),
 		2 => __('Custom field updated.', 'custom-post-widget'),
 		3 => __('Custom field deleted.', 'custom-post-widget'),
 		4 => __('Content Block updated.', 'custom-post-widget'),
 		5 => isset($_GET['revision']) ? sprintf( __('Content Block restored to revision from %s', 'custom-post-widget'), wp_post_revision_title( (int) $_GET['revision'], false ) ) : false,
-		6 => sprintf( __('Content Block published. <a href="%s">View Content Block</a>', 'custom-post-widget'), esc_url( get_permalink(isset($post->ID) ? $post->ID : null) ) ),
+		6 => current_user_can( 'edit_theme_options' ) ? sprintf( __('Content Block published. <a href="%s">Manage Widgets</a>', 'custom-post-widget'), esc_url( 'widgets.php' ) ) : sprintf( __('Content Block published.', 'custom-post-widget'), esc_url( 'widgets.php' ) ),
 		7 => __('Block saved.', 'custom-post-widget'),
-		8 => sprintf( __('Content Block submitted. <a target="_blank" href="%s">Preview Content Block</a>', 'custom-post-widget'), esc_url( add_query_arg( 'preview', 'true', get_permalink(isset($post->ID) ? $post->ID : null) ) ) ),
-		9 => sprintf( __('Content Block scheduled for: <strong>%1$s</strong>. <a target="_blank" href="%2$s">Preview block</a>', 'custom-post-widget'), date_i18n( __( 'M j, Y @ G:i' , 'custom-post-widget'), strtotime(isset($post->post_date) ? $post->post_date : null) ), esc_url( get_permalink(isset($post->ID) ? $post->ID : null) ) ),
-		10 => sprintf( __('Content Block draft updated. <a target="_blank" href="%s">Preview Content Block</a>', 'custom-post-widget'), esc_url( add_query_arg( 'preview', 'true', get_permalink(isset($post->ID) ? $post->ID : null) ) ) ),
+		8 => current_user_can( 'edit_theme_options' ) ? sprintf( __('Content Block submitted. <a href="%s">Manage Widgets</a>', 'custom-post-widget'), esc_url( 'widgets.php' ) ) : sprintf( __('Content Block submitted.', 'custom-post-widget'), esc_url( 'widgets.php' ) ),
+		9 => sprintf( __('Content Block scheduled for: <strong>%1$s</strong>.', 'custom-post-widget'), date_i18n( __( 'M j, Y @ G:i' , 'custom-post-widget'), strtotime(isset($post->post_date) ? $post->post_date : null) ), esc_url( 'widgets.php' ) ),
+		10 => current_user_can( 'edit_theme_options' ) ? sprintf( __('Content Block draft updated. <a href="%s">Manage Widgets</a>', 'custom-post-widget'), esc_url( 'widgets.php' ) ) : sprintf( __('Content Block draft updated.', 'custom-post-widget'), esc_url( 'widgets.php' ) ),
 	);
 	return $messages;
 }
@@ -176,4 +186,5 @@ if(!defined( 'CUSTOM_POST_WIDGET_CURRENT_PAGE' ))
 if(in_array(CUSTOM_POST_WIDGET_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'))) {
 	add_action('admin_footer', 'add_content_block_popup');
 }
+
 ?>
