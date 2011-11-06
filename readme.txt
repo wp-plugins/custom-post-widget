@@ -26,8 +26,8 @@ You can find more information about this plugin and a screencast video which sho
 
 == Screenshots ==
 
-1. After activating the plugin a new post type called 'Content Blocks' is added.
-2. The widget has a select box to choose the content block.
+1. After activating the plugin a new post type called 'Content Blocks' is added. You can also see the little icon above the WYSIWYG editor that allows you to insert the content block using the shortcode.
+2. The widget has a select box to choose the content block. Click on the 'Edit Content Block' link to edit the selected Content Block custom post.
 
 == Installation ==
 
