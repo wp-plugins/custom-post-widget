@@ -109,6 +109,10 @@ Updated German translation and various bugfixes.
 = 1.8.3 -> rolled-back because of some reported issues with social media icons being added to the widget areas =
 The widget now emulates the $post loop. This means you can now make use of WordPress functionality such as inserting a [gallery]. Thanks to Jari Pennanen for providing the code.
 
+= 1.8.4 =
+Added edit content block link to the widget editor and changed 'view content' block message to 'manage widgets'. Draft and Preview buttons hidden via CSS, this should be default behaviour: http://core.trac.wordpress.org/ticket/18956
+Thanks to Julian Gardner-Hobbs (http://www.hobwebs.com/) for requesting this functionality.
+
 == Upgrade Notice ==
 
 = 1.8 =
