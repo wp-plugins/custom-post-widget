@@ -18,7 +18,7 @@ Even though you could use the text widget that comes with the default WordPress 
 * If you are using the standard WordPress text widgets to display content on various areas of your template, this content can only be edited by users with administrator access. If you would like editors to modify the widget content, you can use this plugin to provide them access to the custom posts that provide the content for the widget areas.
 * The Custom Post Widget plugin enables users to use the WYSIWYG editor for editing the content and adding images.
 
-This plugin creates a 'content_block' custom post type. The title is never displayed, use this to describe the position of the widget on the page. Note that these content blocks can only be displayed in the context of the page. I have added 'public' => false to the custom post type which means that it is not accessible outside the page context.
+This plugin creates a 'content_block' custom post type. You can choose to either display the title on the page or use it to describe the contents and widget position of the content block. Note that these content blocks can only be displayed in the context of the page. I have added 'public' => false to the custom post type which means that it is not accessible outside the page context.
 
 To add content to a widget, drag it to the required position in the sidebar and select the title of the custom post in the widget configuration.
 
@@ -110,7 +110,7 @@ Updated German translation and various bugfixes.
 The widget now emulates the $post loop. This means you can now make use of WordPress functionality such as inserting a [gallery]. Thanks to Jari Pennanen for providing the code.
 
 = 1.8.4 =
-Added edit content block link to the widget editor and changed 'view content' block message to 'manage widgets'. Draft and Preview buttons hidden via CSS, this should be default behaviour: http://core.trac.wordpress.org/ticket/18956
+Added edit content block link to the widget editor and changed the 'view content block' message to include a 'manage widgets' link. The 'Draft' and 'Preview' buttons are now hidden via CSS, hopefully this will soon be default WordPress behaviour (see related ticket: http://core.trac.wordpress.org/ticket/18956).
 Thanks to Julian Gardner-Hobbs (http://www.hobwebs.com/) for requesting this functionality.
 
 == Upgrade Notice ==
