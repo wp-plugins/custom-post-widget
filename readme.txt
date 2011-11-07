@@ -5,7 +5,7 @@ Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar
 Requires at least: 2.9.2
 Tested up to: 3.3
-Stable tag: 1.8.4
+Stable tag: 1.8.5
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
@@ -112,6 +112,10 @@ The widget now emulates the $post loop. This means you can now make use of WordP
 = 1.8.4 =
 Added edit content block link to the widget editor and changed the 'view content block' message to include a 'manage widgets' link. The 'Draft' and 'Preview' buttons are now hidden via CSS, hopefully this will soon be default WordPress behaviour (see related ticket: http://core.trac.wordpress.org/ticket/18956).
 Thanks to Julian Gardner-Hobbs (http://www.hobwebs.com/) for requesting this functionality.
+
+= 1.8.5 =
+This release is to fix an issue with the WordPress plugin repository.
+
 
 == Upgrade Notice ==
 
