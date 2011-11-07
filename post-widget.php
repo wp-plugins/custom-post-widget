@@ -34,7 +34,7 @@ class custom_post_widget extends WP_Widget {
 
 		<p>
 			<?php
-				echo '<a href="post.php?post=' . $currentID . '&action=edit">Edit Content Block</a>' ;
+				echo '<a href="post.php?post=' . $custom_post_id . '&action=edit">Edit Content Block</a>' ;
 			?>
 		</p>
 
