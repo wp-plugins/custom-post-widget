@@ -146,12 +146,12 @@ function content_block_messages( $messages ) {
 function custom_post_widget_shortcode($atts) {
 	extract(shortcode_atts(array(
 		'id' => '',
+		'class' => 'content_block'
 	), $atts));
 	
 	$content = "";
 	
-	if($id != "")
-	{
+	if($id != "") {
 		$args = array(
 			'post__in' => array($id),
 			'post_type' => 'content_block',
@@ -160,13 +160,14 @@ function custom_post_widget_shortcode($atts) {
 		$content_post = get_posts($args);
 		
 		foreach( $content_post as $post ) :
+			$content .= '<div class="'. esc_attr($class) .'">';
 			$content .= apply_filters('the_content', $post->post_content);
+			$content .= '</div>';
 		endforeach;
 	}
 	
 	return $content;
 }
-
 add_shortcode('content_block', 'custom_post_widget_shortcode');
 
 // Add button above editor
