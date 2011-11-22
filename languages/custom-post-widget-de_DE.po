@@ -19,152 +19,123 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: post-widget.php:8
+#: post-widget.php:6
 #@ custom-post-widget
 msgid "Displays custom post content in a widget"
 msgstr "Zeigt benutzerdefinierte Inhalte in einem Widget an"
 
-#: post-widget.php:9
+#: post-widget.php:7
 #@ custom-post-widget
 msgid "Content Block"
 msgstr "Inhaltsblock"
 
-#: post-widget.php:19
+#: post-widget.php:15
 #@ custom-post-widget
 msgid "Content Block to Display:"
 msgstr "Anzuzeigender Inhaltsblock"
 
-#: popup.php:38
-#: post-widget.php:31
+#: popup.php:43
+#: post-widget.php:27
 #@ custom-post-widget
 msgid "No content blocks available"
 msgstr "Keine Inhaltsblöcke verfügbar"
 
-#: post-widget.php:42
+#: post-widget.php:45
 #@ custom-post-widget
 msgid "Show Post Title"
 msgstr "Beitragstitel anzeigen"
 
-#: post-widget.php:61
+#: post-widget.php:58
 #@ custom-post-widget
 msgid "Find"
 msgstr "Finden"
 
-#: post-widget.php:88
+#: post-widget.php:79
 #@ custom-post-widget
 msgctxt "post type general name"
 msgid "Content Blocks"
 msgstr "Inhaltsblöcke"
 
-#: post-widget.php:89
+#: post-widget.php:80
 #@ custom-post-widget
 msgctxt "post type singular name"
 msgid "Content Block"
 msgstr "Inhaltsblock"
 
-#: post-widget.php:91
+#: post-widget.php:82
 #@ custom-post-widget
 msgctxt "block"
 msgid "Add Content Block"
 msgstr "Inhaltsblock erstellen"
 
-#: post-widget.php:92
+#: post-widget.php:83
 #@ custom-post-widget
 msgid "Add New Content Block"
 msgstr "Neuen Inhaltsblock erstellen"
 
-#: post-widget.php:93
+#: post-widget.php:84
 #@ custom-post-widget
 msgid "Edit Content Block"
 msgstr "Inhaltsblock bearbeiten"
 
-#: post-widget.php:94
+#: post-widget.php:85
 #@ custom-post-widget
 msgid "New Content Block"
 msgstr "Neuer Inhaltsblock"
 
-#: post-widget.php:95
+#: post-widget.php:86
 #@ custom-post-widget
 msgid "View Content Block"
 msgstr "Inhaltsblock ansehen"
 
-#: post-widget.php:96
+#: post-widget.php:87
 #@ custom-post-widget
 msgid "Search Content Blocks"
 msgstr "Inhaltsblöcke durchsuchen"
 
-#: post-widget.php:97
+#: post-widget.php:88
 #@ custom-post-widget
 msgid "No Content Blocks Found"
 msgstr "Keine Inhaltsblöcke gefunden"
 
-#: post-widget.php:98
+#: post-widget.php:89
 #@ custom-post-widget
 msgid "No Content Blocks found in Trash"
 msgstr "Keine Inhaltsblöcke im Papierkorb gefunden"
 
-#: post-widget.php:141
-#, php-format
-#@ custom-post-widget
-msgid "Content Block updated. <a href=\"%s\">View Content Block</a>"
-msgstr "Inhaltsblock aktualisiert.  <a href=\"%s\">Ansehen</a>"
-
-#: post-widget.php:142
+#: post-widget.php:132
 #@ custom-post-widget
 msgid "Custom field updated."
 msgstr "Benutzerdefiniertes Feld aktualisiert."
 
-#: post-widget.php:143
+#: post-widget.php:133
 #@ custom-post-widget
 msgid "Custom field deleted."
 msgstr "Benutzerdefiniertes Feld gelöscht."
 
-#: post-widget.php:144
+#: post-widget.php:131
+#: post-widget.php:134
 #@ custom-post-widget
 msgid "Content Block updated."
 msgstr "Inhaltsblock aktualisiert."
 
-#: post-widget.php:145
+#: post-widget.php:135
 #, php-format
 #@ custom-post-widget
 msgid "Content Block restored to revision from %s"
 msgstr "Inhaltsblock wiederhergestellt als Revision vom %s"
 
-#: post-widget.php:146
-#, php-format
-#@ custom-post-widget
-msgid "Content Block published. <a href=\"%s\">View Content Block</a>"
-msgstr "Inhaltsblock publiziert. <a href=\"%s\">Ansehen</a>"
-
-#: post-widget.php:147
+#: post-widget.php:137
 #@ custom-post-widget
 msgid "Block saved."
 msgstr "Inhaltsblock gespeichert."
 
-#: post-widget.php:148
-#, php-format
-#@ custom-post-widget
-msgid "Content Block submitted. <a target=\"_blank\" href=\"%s\">Preview Content Block</a>"
-msgstr "Inhaltsblock gesendet. <a target=\"_blank\" href=\"%s\">Vorschau anzeigen</a>"
-
-#: post-widget.php:149
-#, php-format
-#@ custom-post-widget
-msgid "Content Block scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Preview block</a>"
-msgstr "Inhaltsblock terminiert zum: <strong>%1$s</strong>. <a target=\"_blank\" href=\"%2$s\">Vorschau ansehen</a>"
-
-#: post-widget.php:149
+#: post-widget.php:139
 #@ custom-post-widget
 msgid "M j, Y @ G:i"
 msgstr "j. M Y @ H:M"
 
-#: post-widget.php:150
-#, php-format
-#@ custom-post-widget
-msgid "Content Block draft updated. <a target=\"_blank\" href=\"%s\">Preview Content Block</a>"
-msgstr "Entwurf aktualisiert. <a target=\"_blank\" href=\"%s\">Vorschau ansehen</a>"
-
-#: post-widget.php:90
+#: post-widget.php:81
 #@ custom-post-widget
 msgctxt "post type plural name"
 msgid "Content Blocks"
@@ -173,30 +144,76 @@ msgstr "Inhaltsblöcke"
 #: popup.php:9
 #@ custom-post-widget
 msgid "Please select a Content Block"
-msgstr "Bitte wähle einen Inhaltsblock aus."
+msgstr "Bitte Inhaltsblock auswählen"
 
 #: popup.php:22
+#: popup.php:48
 #@ custom-post-widget
 msgid "Insert Content Block"
 msgstr "Inhaltsblock einfügen"
 
-#: popup.php:23
+#: popup.php:25
 #@ custom-post-widget
 msgid "Select a Content Block below to add it to your post or page."
-msgstr "Wähle einen dieser Inhaltsblöcke aus, um ihn in deinen Beitrag oder deine Seite einzufügen."
+msgstr "Inhaltsblock auswählen und diesen zum Beitrag hinzufügen"
 
-#: popup.php:27
+#: popup.php:31
 #@ custom-post-widget
 msgid "Select a Content Block"
 msgstr "Inhaltsblock auswählen"
 
-#: popup.php:45
+#: popup.php:50
 #@ custom-post-widget
 msgid "Cancel"
 msgstr "Abbrechen"
 
-#: post-widget.php:186
-#: post-widget.php:187
+#: post-widget.php:131
+#, php-format
+#@ custom-post-widget
+msgid "Content Block updated. <a href=\"%s\">Manage Widgets</a>"
+msgstr "Inhaltsblock aktualisiert. <a href=\"%s\">Widgets bearbeiten</a>"
+
+#: post-widget.php:136
+#, php-format
+#@ custom-post-widget
+msgid "Content Block published. <a href=\"%s\">Manage Widgets</a>"
+msgstr "Inhaltsblock publiziert. <a href=\"%s\">Widgets bearbeiten</a>"
+
+#: post-widget.php:136
+#@ custom-post-widget
+msgid "Content Block published."
+msgstr "Inhaltsblock publiziert."
+
+#: post-widget.php:138
+#, php-format
+#@ custom-post-widget
+msgid "Content Block submitted. <a href=\"%s\">Manage Widgets</a>"
+msgstr "Inhaltsblock gespeichert. <a href=\"%s\">Widgets bearbeiten</a>"
+
+#: post-widget.php:138
+#@ custom-post-widget
+msgid "Content Block submitted."
+msgstr "Inhaltsblock gespeichert."
+
+#: post-widget.php:139
+#, php-format
+#@ custom-post-widget
+msgid "Content Block scheduled for: <strong>%1$s</strong>."
+msgstr "Inhaltsblock terminiert für: <strong>%1$s</strong>."
+
+#: post-widget.php:140
+#, php-format
+#@ custom-post-widget
+msgid "Content Block draft updated. <a href=\"%s\">Manage Widgets</a>"
+msgstr "Inhaltsblock-Entwurf aktualisiert. <a href=\"%s\">Widgets bearbeiten</a>"
+
+#: post-widget.php:140
+#@ custom-post-widget
+msgid "Content Block draft updated."
+msgstr "Inhaltsblock-Entwurf aktualisiert."
+
+#: post-widget.php:175
+#: post-widget.php:176
 #@ custom-post-widget
 msgid "Add Content Block"
 msgstr "Inhaltsblock hinzufügen"
