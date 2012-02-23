@@ -56,6 +56,10 @@ class custom_post_widget extends WP_Widget {
 	function widget($args, $instance) {
 		extract($args);
 		$custom_post_id  = ( $instance['custom_post_id'] != '' ) ? esc_attr($instance['custom_post_id']) : __('Find', 'custom-post-widget');
+		// Add support for WPML Plugin.
+		if ( function_exists( 'icl_object_id' ) ){ 
+			$custom_post_id = icl_object_id( $custom_post_id, 'content_block', true );
+		}
 		// Variables from the widget settings.
 		$show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
 		$content_post = get_post($custom_post_id);
@@ -63,7 +67,7 @@ class custom_post_widget extends WP_Widget {
 		$content = apply_filters('the_content', $content);
 		echo $before_widget;
 		if ( $show_custom_post_title ) {
-			echo $before_title . $content_post->post_title . $after_title; // This is the line that displays the title (only if show title is set)
+			echo $before_title . apply_filters('widget_title',$content_post->post_title) . $after_title; // This is the line that displays the title (only if show title is set) 
 		} 
 		echo do_shortcode($content); // This is where the actual content of the custom post is being displayed
 		echo $after_widget;
@@ -187,5 +191,4 @@ if(!defined( 'CUSTOM_POST_WIDGET_CURRENT_PAGE' ))
 if(in_array(CUSTOM_POST_WIDGET_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'))) {
 	add_action('admin_footer', 'add_content_block_popup');
 }
-
 ?>

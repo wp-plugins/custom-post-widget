@@ -2,10 +2,10 @@
 Contributors: vanderwijk
 Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
-Tags: custom-post, widget, sidebar
+Tags: custom-post, widget, sidebar, content block, content, custom, post, shortcode
 Requires at least: 2.9.2
-Tested up to: 3.3
-Stable tag: 1.8.6
+Tested up to: 3.3.1
+Stable tag: 1.9
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
@@ -91,8 +91,7 @@ Now the title of the content block is displayed in the admin interface to make i
 The plugin has been translated into Dutch and German. Hat tip: Caspar H&uuml;binger - glueckpress.com
 
 = 1.5 =
-Thanks to Caspar Huebinger the plugin 
-now has its own icon and as requested by Stephen James the author field has been added to the Content Block edit screen.
+Thanks to Caspar Huebinger the plugin now has its own icon and as requested by Stephen James the author field has been added to the Content Block edit screen.
 
 = 1.6 =
 The Custom Post Widget plugin is now using the more efficient get_post instead of query_posts to display the content block on the page. A code example for this change has been graciously provided by Paul de Wouters.
@@ -118,6 +117,10 @@ This release is to fix an issue with the WordPress plugin repository.
 
 = 1.8.6 =
 Minor bugfix for edit link in widget.
+
+= 1.9 =
+The content blocks can now be translated using the WPML plugin, thanks to Jonathan Liuti (http://unboxed-logic.com/).
+Thanks to Vitaliy Kaplya (http://www.dasayt.com/) a Russian translation has been added to the plugin.
 
 == Upgrade Notice ==
 
