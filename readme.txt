@@ -5,7 +5,7 @@ Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar, content block, content, custom, post, shortcode
 Requires at least: 2.9.2
 Tested up to: 3.3.1
-Stable tag: 1.9
+Stable tag: 1.9.1
 
 This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
 
