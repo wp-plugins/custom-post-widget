@@ -2,7 +2,7 @@
 Contributors: vanderwijk
 Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
-Tags: custom-post, widget, sidebar, content block, content, custom, post, shortcode
+Tags: custom-post, widget, sidebar, content block, content, block, custom, post, shortcode
 Requires at least: 2.9.2
 Tested up to: 3.3.1
 Stable tag: 1.9.1
