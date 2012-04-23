@@ -22,6 +22,8 @@ This plugin creates a 'content_block' custom post type. You can choose to either
 
 To add content to a widget, drag it to the required position in the sidebar and select the title of the custom post in the widget configuration.
 
+This plugin is ready for localization and Dutch, German and Russian language files are included.
+
 You can find more information about this plugin and a screencast video which shows the plugin in action on the [plugin homepage](http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/).
 
 == Screenshots ==
@@ -121,6 +123,10 @@ Minor bugfix for edit link in widget.
 = 1.9 =
 The content blocks can now be translated using the WPML plugin, thanks to Jonathan Liuti (http://unboxed-logic.com/).
 Thanks to Vitaliy Kaplya (http://www.dasayt.com/) a Russian translation has been added to the plugin.
+
+= 1.9.2 =
+Now includes Polish language files as created by Kuba Skublicki.
+
 
 == Upgrade Notice ==
 
