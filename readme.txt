@@ -129,6 +129,9 @@ Thanks to Vitaliy Kaplya (http://www.dasayt.com/) a Russian translation has been
 = 1.9.2 =
 Now includes Polish language files as created by Kuba Skublicki.
 
+= 1.9.3 =
+Minor bugfix and added the French translation which was created by Alexandre Simard (http://brocheafoin.biz/).
+
 
 == Upgrade Notice ==
 

@@ -34,7 +34,7 @@ class custom_post_widget extends WP_Widget {
 
 		<p>
 			<?php
-				echo '<a href="post.php?post=' . $custom_post_id . '&action=edit">Edit Content Block</a>' ;
+				echo '<a href="post.php?post=' . $custom_post_id . '&action=edit">' . __('Edit Content Block', 'custom-post-widget') . '</a>' ;
 			?>
 		</p>
 
@@ -80,10 +80,10 @@ add_action('init', 'my_content_block_post_type_init');
 
 function my_content_block_post_type_init() {
 	$labels = array(
-		'name' => _x('Content Blocks', 'post type general name', 'custom-post-widget'),
-		'singular_name' => _x('Content Block', 'post type singular name', 'custom-post-widget'),
-		'plural_name' => _x('Content Blocks', 'post type plural name', 'custom-post-widget'),
-		'add_new' => _x('Add Content Block', 'block', 'custom-post-widget'),
+		'name' => __('Content Blocks', 'post type general name', 'custom-post-widget'),
+		'singular_name' => __('Content Block', 'post type singular name', 'custom-post-widget'),
+		'plural_name' => __('Content Blocks', 'post type plural name', 'custom-post-widget'),
+		'add_new' => __('Add Content Block', 'block', 'custom-post-widget'),
 		'add_new_item' => __('Add New Content Block', 'custom-post-widget'),
 		'edit_item' => __('Edit Content Block', 'custom-post-widget'),
 		'new_item' => __('New Content Block', 'custom-post-widget'),
