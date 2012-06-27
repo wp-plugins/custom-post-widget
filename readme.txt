@@ -73,64 +73,64 @@ add_filter('the_content', 'InsertFeaturedImage');`
 
 == Changelog ==
 
-= 1.0 =
-First release
+= 1.9.3 =
+Minor bugfix and added the French translation which was created by Alexandre Simard (http://brocheafoin.biz/).
 
-= 1.1 =
-Fixed screenshots for plugin directory
-
-= 1.1.1 =
-Added showposts=-1 to the post query to display more than 10 custom posts in the widget configuration select box.
-
-= 1.2 =
-Added a checkbox in the widget to make it possible to show the custom post title in the widget area
-
-= 1.2.1 =
-The widget title now uses $before_title and $after_title to generate the appropriate tags to display it on the page. Hat tip: Etienne Proust.
-
-= 1.3 =
-Now the title of the content block is displayed in the admin interface to make it easy to manage the widgets.
-
-= 1.4 =
-The plugin has been translated into Dutch and German. Hat tip: Caspar H&uuml;binger - glueckpress.com
-
-= 1.5 =
-Thanks to Caspar Huebinger the plugin now has its own icon and as requested by Stephen James the author field has been added to the Content Block edit screen.
-
-= 1.6 =
-The Custom Post Widget plugin is now using the more efficient get_post instead of query_posts to display the content block on the page. A code example for this change has been graciously provided by Paul de Wouters.
-
-= 1.7 =
-This release fixes all the debug error messages Yoast discovered when [reviewing this plugin](http://yoast.com/wp-plugin-review/custom-post-widget/). As requested by Tony Allsopp the option of using the shortcode [content_block id= ] to pull in the content of a content block in a page or post has been added.
-
-= 1.8 =
-Added a button above to content editor to make it easier to add the shortcode (no need for looking up the id).
-
-= 1.8.2 =
-Updated German translation and various bugfixes.
-
-= 1.8.3 -> rolled-back because of some reported issues with social media icons being added to the widget areas =
-The widget now emulates the $post loop. This means you can now make use of WordPress functionality such as inserting a [gallery]. Thanks to Jari Pennanen for providing the code.
-
-= 1.8.4 =
-Added edit content block link to the widget editor and changed the 'view content block' message to include a 'manage widgets' link. The 'Draft' and 'Preview' buttons are now hidden via CSS, hopefully this will soon be default WordPress behaviour (see related ticket: http://core.trac.wordpress.org/ticket/18956).
-Thanks to Julian Gardner-Hobbs (http://www.hobwebs.com/) for requesting this functionality.
-
-= 1.8.5 =
-This release is to fix an issue with the WordPress plugin repository.
-
-= 1.8.6 =
-Minor bugfix for edit link in widget.
+= 1.9.2 =
+Now includes Polish language files as created by Kuba Skublicki.
 
 = 1.9 =
 The content blocks can now be translated using the WPML plugin, thanks to Jonathan Liuti (http://unboxed-logic.com/).
 Thanks to Vitaliy Kaplya (http://www.dasayt.com/) a Russian translation has been added to the plugin.
 
-= 1.9.2 =
-Now includes Polish language files as created by Kuba Skublicki.
+= 1.8.6 =
+Minor bugfix for edit link in widget.
 
-= 1.9.3 =
-Minor bugfix and added the French translation which was created by Alexandre Simard (http://brocheafoin.biz/).
+= 1.8.5 =
+This release is to fix an issue with the WordPress plugin repository.
+
+= 1.8.4 =
+Added edit content block link to the widget editor and changed the 'view content block' message to include a 'manage widgets' link. The 'Draft' and 'Preview' buttons are now hidden via CSS, hopefully this will soon be default WordPress behaviour (see related ticket: http://core.trac.wordpress.org/ticket/18956).
+Thanks to Julian Gardner-Hobbs (http://www.hobwebs.com/) for requesting this functionality.
+
+= 1.8.3 -> rolled-back because of some reported issues with social media icons being added to the widget areas =
+The widget now emulates the $post loop. This means you can now make use of WordPress functionality such as inserting a [gallery]. Thanks to Jari Pennanen for providing the code.
+
+= 1.8.2 =
+Updated German translation and various bugfixes.
+
+= 1.8 =
+Added a button above to content editor to make it easier to add the shortcode (no need for looking up the id).
+
+= 1.7 =
+This release fixes all the debug error messages Yoast discovered when [reviewing this plugin](http://yoast.com/wp-plugin-review/custom-post-widget/). As requested by Tony Allsopp the option of using the shortcode [content_block id= ] to pull in the content of a content block in a page or post has been added.
+
+= 1.6 =
+The Custom Post Widget plugin is now using the more efficient get_post instead of query_posts to display the content block on the page. A code example for this change has been graciously provided by Paul de Wouters.
+
+= 1.5 =
+Thanks to Caspar Huebinger the plugin now has its own icon and as requested by Stephen James the author field has been added to the Content Block edit screen.
+
+= 1.4 =
+The plugin has been translated into Dutch and German. Hat tip: Caspar H&uuml;binger - glueckpress.com
+
+= 1.3 =
+Now the title of the content block is displayed in the admin interface to make it easy to manage the widgets.
+
+= 1.2.1 =
+The widget title now uses $before_title and $after_title to generate the appropriate tags to display it on the page. Hat tip: Etienne Proust.
+
+= 1.2 =
+Added a checkbox in the widget to make it possible to show the custom post title in the widget area
+
+= 1.1.1 =
+Added showposts=-1 to the post query to display more than 10 custom posts in the widget configuration select box.
+
+= 1.1 =
+Fixed screenshots for plugin directory
+
+= 1.0 =
+First release
 
 
 == Upgrade Notice ==
