@@ -4,7 +4,7 @@ Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar, content block, content, block, custom, post, shortcode
 Requires at least: 2.9.2
-Tested up to: 3.4
+Tested up to: 3.4.1
 Stable tag: 1.9.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -72,6 +72,9 @@ add_filter('the_content', 'InsertFeaturedImage');`
 
 
 == Changelog ==
+
+= 1.9.4 =
+Added the option to disable apply_filters on the content to prevent issues with misbehaving plugins. I would have rather not added this, but it appears many plugin developers do not know how to properly use filters (see http://pippinsplugins.com/playing-nice-with-the-content-filter/).
 
 = 1.9.3 =
 Minor bugfix and added the French translation which was created by Alexandre Simard (http://brocheafoin.biz/).

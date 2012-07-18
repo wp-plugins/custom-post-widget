@@ -3,28 +3,30 @@
 // First create the widget for the admin panel
 class custom_post_widget extends WP_Widget {
 	function custom_post_widget() {
-		$widget_ops = array('description' => __('Displays custom post content in a widget', 'custom-post-widget'));
-		$this->WP_Widget('custom_post_widget', __('Content Block', 'custom-post-widget'), $widget_ops);
+		$widget_ops = array( 'description' => __( 'Displays custom post content in a widget', 'custom-post-widget' ) );
+		$this->WP_Widget( 'custom_post_widget', __( 'Content Block', 'custom-post-widget' ), $widget_ops );
 	}
 
-	function form($instance) {
-		$custom_post_id = esc_attr($instance['custom_post_id']);
-		$show_custom_post_title  = isset($instance['show_custom_post_title ']) ? $instance['show_custom_post_title '] : true; ?>
+	function form( $instance ) {
+		$custom_post_id = esc_attr( $instance['custom_post_id'] );
+		$show_custom_post_title  = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : true;
+		$apply_content_filters  = isset( $instance['apply_content_filters'] ) ? $instance['apply_content_filters'] : true;
+		?>
 
 		<p>
-			<label for="<?php echo $this->get_field_id('custom_post_id'); ?>"> <?php echo __('Content Block to Display:', 'custom-post-widget') ?>
-				<select class="widefat" id="<?php echo $this->get_field_id('custom_post_id'); ?>" name="<?php echo $this->get_field_name('custom_post_id'); ?>">
+			<label for="<?php echo $this->get_field_id( 'custom_post_id' ); ?>"> <?php echo __( 'Content Block to Display:', 'custom-post-widget' ) ?>
+				<select class="widefat" id="<?php echo $this->get_field_id( 'custom_post_id' ); ?>" name="<?php echo $this->get_field_name( 'custom_post_id' ); ?>">
 				<?php query_posts('post_type=content_block&orderby=ID&order=ASC&showposts=-1');
 				if ( have_posts() ) : while ( have_posts() ) : the_post();
 					$currentID = get_the_ID();
-					if($currentID == $custom_post_id)
+					if( $currentID == $custom_post_id )
 						$extra = 'selected' and
 						$widgetExtraTitle = get_the_title();
 					else
 						$extra = '';
 						echo '<option value="'.$currentID.'" '.$extra.'>'.get_the_title().'</option>';
 					endwhile; else:
-					echo '<option value="empty">' . __('No content blocks available', 'custom-post-widget') . '</option>';
+					echo '<option value="empty">' . __( 'No content blocks available', 'custom-post-widget' ) . '</option>';
 				endif; ?>
 				</select>
 			</label>
@@ -34,7 +36,7 @@ class custom_post_widget extends WP_Widget {
 
 		<p>
 			<?php
-				echo '<a href="post.php?post=' . $custom_post_id . '&action=edit">' . __('Edit Content Block', 'custom-post-widget') . '</a>' ;
+				echo '<a href="post.php?post=' . $custom_post_id . '&action=edit">' . __( 'Edit Content Block', 'custom-post-widget' ) . '</a>' ;
 			?>
 		</p>
 
@@ -42,14 +44,20 @@ class custom_post_widget extends WP_Widget {
 
 		<p>
 			<input class="checkbox" type="checkbox" <?php checked( (bool) $instance['show_custom_post_title'], true ); ?> id="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>" name="<?php echo $this->get_field_name( 'show_custom_post_title' ); ?>" />
-			<label for="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>"><?php echo __('Show Post Title', 'custom-post-widget') ?></label>
+			<label for="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>"><?php echo __( 'Show Post Title', 'custom-post-widget' ) ?></label>
+		</p>
+		
+		<p>
+			<input class="checkbox" type="checkbox" <?php checked( (bool) $instance['apply_content_filters'], true ); ?> id="<?php echo $this->get_field_id( 'apply_content_filters' ); ?>" name="<?php echo $this->get_field_name( 'apply_content_filters' ); ?>" />
+			<label for="<?php echo $this->get_field_id( 'apply_content_filters' ); ?>"><?php echo __( 'Do not apply content filters', 'custom-post-widget' ) ?></label>
 		</p> <?php 
 	}
 
-	function update($new_instance, $old_instance) {
+	function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$instance['custom_post_id'] = strip_tags($new_instance['custom_post_id']);
+		$instance['custom_post_id'] = strip_tags( $new_instance['custom_post_id'] );
 		$instance['show_custom_post_title'] = $new_instance['show_custom_post_title'];
+		$instance['apply_content_filters'] = $new_instance['apply_content_filters'];
 		return $instance;
 	}
 
@@ -62,9 +70,12 @@ class custom_post_widget extends WP_Widget {
 		}
 		// Variables from the widget settings.
 		$show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
+		$apply_content_filters  = isset($instance['apply_content_filters']) ? $instance['apply_content_filters'] : false;
 		$content_post = get_post($custom_post_id);
 		$content = $content_post->post_content;
-		$content = apply_filters('the_content', $content);
+		if ( !$apply_content_filters ) { // Don't apply the content filter if checkbox selected
+			$content = apply_filters('the_content', $content);
+		}
 		echo $before_widget;
 		if ( $show_custom_post_title ) {
 			echo $before_title . apply_filters('widget_title',$content_post->post_title) . $after_title; // This is the line that displays the title (only if show title is set) 
