@@ -41,7 +41,9 @@ You will see that a new custom post type has been added called Content Block.
 3. Type some content for the widget. You can choose to either use the title to describe the of the content on the page, or to display it. Check 'Show Post Title' to display the title on the page.
 4. Go to 'Appearance' > 'Widgets' and drag the Content Block widget to the required position in the sidebar.
 5. Select a Content Block from the drop-down list.
-6. Click save.
+6. Check the 'Show Post Title' checkbox if you would like to display the title of your Content Block
+7. If you are experiencing issues with content being added automatically to your posts (Social media sharing buttons for instance), check the 'Do not apply content filters' checkbox. Use this with caution!
+8. Click save.
 
 == Frequently Asked Questions ==
 
@@ -70,11 +72,18 @@ This plugin has built-in support for the featured image functionality on the edi
 }
 add_filter('the_content', 'InsertFeaturedImage');`
 
+= My social sharing plugin adds buttons to all the Custom Post Widget areas =
+
+If your social media sharing plugin adds buttons to the widget areas you could check the 'Do not apply content filters' checkbox. Note that when this is done, WordPress will also stop adding paragraph tags to your text, so use this setting with caution. It is much better to ask the developer of the social media sharing buttons plugin to correctly use the content filters (see http://pippinsplugins.com/playing-nice-with-the-content-filter/).
+
 
 == Changelog ==
 
 = 1.9.5 =
 Added the option to disable apply_filters on the content to prevent issues with misbehaving plugins. I would have rather not added this, but it appears many plugin developers do not know how to properly use filters (see http://pippinsplugins.com/playing-nice-with-the-content-filter/).
+
+= 1.9.4 =
+Corrected a minor bug regarding translation strings.
 
 = 1.9.3 =
 Minor bugfix and added the French translation which was created by Alexandre Simard (http://brocheafoin.biz/).
@@ -140,5 +149,3 @@ First release
 
 = 1.8 =
 I would appreciate some feedback on the newly introduced shortcode functionality. Is this useful or not? Any issues found? Thanks!
-
-
