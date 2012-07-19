@@ -82,6 +82,9 @@ If your social media sharing plugin adds buttons to the widget areas you could c
 = 1.9.5 =
 Added the option to disable apply_filters on the content to prevent issues with misbehaving plugins. I would have rather not added this, but it appears many plugin developers do not know how to properly use filters (see http://pippinsplugins.com/playing-nice-with-the-content-filter/).
 
+= 1.9.4 =
+Corrected a minor bug regarding translation strings.
+
 = 1.9.3 =
 Minor bugfix and added the French translation which was created by Alexandre Simard (http://brocheafoin.biz/).
 
