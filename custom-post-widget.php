@@ -3,12 +3,12 @@
  Plugin Name: Custom Post Widget
  Plugin URI: http://www.vanderwijk.com/services/web-design/wordpress-custom-post-widget/
  Description: Show the content of a custom post of the type 'content_block' in a widget.
- Version: 1.9.4
+ Version: 1.9.5
  Author: Johan van der Wijk
  Author URI: http://www.vanderwijk.com
  License: GPL2
 
- Release notes: Version 1.9.4 Added option to disable content filter
+ Release notes: Version 1.9.5 Added option to disable content filter
  
  Copyright 2012 Johan van der Wijk (email: info@vanderwijk.com)
  

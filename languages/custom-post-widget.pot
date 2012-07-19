@@ -32,6 +32,10 @@ msgstr ""
 msgid "Show Post Title"
 msgstr ""
 
+#: post-widget.php:52
+msgid "Do not apply content filters"
+msgstr ""
+
 #: post-widget.php:61
 msgid "Find"
 msgstr ""

@@ -43,6 +43,10 @@ msgstr "Geen inhoudsblokken beschikbaar"
 msgid "Show Post Title"
 msgstr "Toon de titel"
 
+#: post-widget.php:52
+msgid "Do not apply content filters"
+msgstr "Apply_filters niet toepassen"
+
 #@ custom-post-widget
 #: post-widget.php:62
 msgid "Find"
