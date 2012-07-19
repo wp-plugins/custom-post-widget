@@ -5,7 +5,7 @@ Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar, content block, content, block, custom, post, shortcode
 Requires at least: 2.9.2
 Tested up to: 3.4.1
-Stable tag: 1.9.3
+Stable tag: 1.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
