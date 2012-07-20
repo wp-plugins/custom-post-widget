@@ -8,7 +8,7 @@
  Author URI: http://www.vanderwijk.com
  License: GPL2
 
- Release notes: Version 1.9.5 Added option to disable content filter
+ Release notes: Version 1.9.6 Fixed all WP debug errors and removed insert content block icon from content block edit screen.
  
  Copyright 2012 Johan van der Wijk (email: info@vanderwijk.com)
  

@@ -8,7 +8,10 @@ class custom_post_widget extends WP_Widget {
 	}
 
 	function form( $instance ) {
-		$custom_post_id = esc_attr( $instance['custom_post_id'] );
+		$custom_post_id = ''; // initialize the variable
+		if (isset($instance['custom_post_id'])) {
+			$custom_post_id = esc_attr($instance['custom_post_id']);
+		};
 		$show_custom_post_title  = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : true;
 		$apply_content_filters  = isset( $instance['apply_content_filters'] ) ? $instance['apply_content_filters'] : true;
 		?>
@@ -43,12 +46,12 @@ class custom_post_widget extends WP_Widget {
 				<?php wp_reset_query(); ?>
 
 		<p>
-			<input class="checkbox" type="checkbox" <?php checked( (bool) $instance['show_custom_post_title'], true ); ?> id="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>" name="<?php echo $this->get_field_name( 'show_custom_post_title' ); ?>" />
+			<input class="checkbox" type="checkbox" <?php checked( (bool) isset( $instance['show_custom_post_title'] ), true ); ?> id="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>" name="<?php echo $this->get_field_name( 'show_custom_post_title' ); ?>" />
 			<label for="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>"><?php echo __( 'Show Post Title', 'custom-post-widget' ) ?></label>
 		</p>
 		
 		<p>
-			<input class="checkbox" type="checkbox" <?php checked( (bool) $instance['apply_content_filters'], true ); ?> id="<?php echo $this->get_field_id( 'apply_content_filters' ); ?>" name="<?php echo $this->get_field_name( 'apply_content_filters' ); ?>" />
+			<input class="checkbox" type="checkbox" <?php checked( (bool) isset( $instance['apply_content_filters'] ), true ); ?> id="<?php echo $this->get_field_id( 'apply_content_filters' ); ?>" name="<?php echo $this->get_field_name( 'apply_content_filters' ); ?>" />
 			<label for="<?php echo $this->get_field_id( 'apply_content_filters' ); ?>"><?php echo __( 'Do not apply content filters', 'custom-post-widget' ) ?></label>
 		</p> <?php 
 	}
@@ -185,15 +188,19 @@ function custom_post_widget_shortcode($atts) {
 }
 add_shortcode('content_block', 'custom_post_widget_shortcode');
 
-// Add button above editor
+// Add button above editor if not editing content_block
 function add_content_block_icon($initcontext) {
 	return $initcontext.
 	'<a id="add_content_block" style="text-decoration:none;" class="thickbox" title="' . __("Add Content Block", 'custom-post-widget') . '" href="' . CUSTOM_POST_WIDGET_URL . 'popup.php?type=add_content_block_popup&amp;TB_inline=true&amp;inlineId=content_block_form">
 		<img onclick="return false;" alt="' . __("Add Content Block", 'custom-post-widget') . '" src="' . CUSTOM_POST_WIDGET_URL . 'images/contentblock-13.png">
 	</a>';
 }
-
-add_filter('media_buttons_context', 'add_content_block_icon');
+// Only add content_block icon above posts and pages
+function check_post_type_and_remove_media_buttons() {
+	global $current_screen;
+	if( 'content_block' != $current_screen->post_type ) add_filter('media_buttons_context', 'add_content_block_icon' );
+}
+add_action('admin_head','check_post_type_and_remove_media_buttons');
 
 require_once( CUSTOM_POST_WIDGET_DIR . '/popup.php' );
 
