@@ -102,9 +102,9 @@ class custom_post_widget extends WP_Widget {
 			} 
 			if ( $apply_content_filters ) { // Don't apply the content filter if checkbox selected
 				remove_filter('the_content', 'wpautop');
-				echo do_shortcode(the_content()); // This is where the actual content of the custom post is being displayed
+				the_content(); // This is where the actual content of the custom post is being displayed
 			} else {
-				echo do_shortcode(the_content()); // This is where the actual content of the custom post is being displayed
+				the_content(); // This is where the actual content of the custom post is being displayed
 			}
 			echo $after_widget;
 		endwhile;
