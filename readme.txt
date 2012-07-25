@@ -79,6 +79,9 @@ If your social media sharing plugin adds buttons to the widget areas you could c
 
 == Changelog ==
 
+= 1.9.7 =
+Added featured image support and now using query_posts instead of get_post
+
 = 1.9.6 =
 Fixed debug notices when dragging a new content block to the widget areas and removed the add content block shortcode from the content block editing screen.
 

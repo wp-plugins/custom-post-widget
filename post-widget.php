@@ -1,5 +1,10 @@
 <?php
 
+// Add featured image support
+if ( function_exists( 'add_theme_support' ) ) { 
+	add_theme_support( 'post-thumbnails' );
+}
+
 // First create the widget for the admin panel
 class custom_post_widget extends WP_Widget {
 	function custom_post_widget() {
@@ -13,6 +18,7 @@ class custom_post_widget extends WP_Widget {
 			$custom_post_id = esc_attr($instance['custom_post_id']);
 		};
 		$show_custom_post_title  = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : true;
+		$show_featured_image  = isset( $instance['show_featured_image'] ) ? $instance['show_featured_image'] : true;
 		$apply_content_filters  = isset( $instance['apply_content_filters'] ) ? $instance['apply_content_filters'] : true;
 		?>
 
@@ -49,7 +55,12 @@ class custom_post_widget extends WP_Widget {
 			<input class="checkbox" type="checkbox" <?php checked( (bool) isset( $instance['show_custom_post_title'] ), true ); ?> id="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>" name="<?php echo $this->get_field_name( 'show_custom_post_title' ); ?>" />
 			<label for="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>"><?php echo __( 'Show Post Title', 'custom-post-widget' ) ?></label>
 		</p>
-		
+
+		<p>
+			<input class="checkbox" type="checkbox" <?php checked( (bool) isset( $instance['show_featured_image'] ), true ); ?> id="<?php echo $this->get_field_id( 'show_featured_image' ); ?>" name="<?php echo $this->get_field_name( 'show_featured_image' ); ?>" />
+			<label for="<?php echo $this->get_field_id( 'show_featured_image' ); ?>"><?php echo __( 'Show Featured Image', 'custom-post-widget' ) ?></label>
+		</p>
+
 		<p>
 			<input class="checkbox" type="checkbox" <?php checked( (bool) isset( $instance['apply_content_filters'] ), true ); ?> id="<?php echo $this->get_field_id( 'apply_content_filters' ); ?>" name="<?php echo $this->get_field_name( 'apply_content_filters' ); ?>" />
 			<label for="<?php echo $this->get_field_id( 'apply_content_filters' ); ?>"><?php echo __( 'Do not apply content filters', 'custom-post-widget' ) ?></label>
@@ -60,6 +71,7 @@ class custom_post_widget extends WP_Widget {
 		$instance = $old_instance;
 		$instance['custom_post_id'] = strip_tags( $new_instance['custom_post_id'] );
 		$instance['show_custom_post_title'] = $new_instance['show_custom_post_title'];
+		$instance['show_featured_image'] = $new_instance['show_featured_image'];
 		$instance['apply_content_filters'] = $new_instance['apply_content_filters'];
 		return $instance;
 	}
@@ -73,18 +85,30 @@ class custom_post_widget extends WP_Widget {
 		}
 		// Variables from the widget settings.
 		$show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
+		$show_featured_image  = isset($instance['show_featured_image']) ? $instance['show_featured_image'] : false;
 		$apply_content_filters  = isset($instance['apply_content_filters']) ? $instance['apply_content_filters'] : false;
-		$content_post = get_post($custom_post_id);
-		$content = $content_post->post_content;
-		if ( !$apply_content_filters ) { // Don't apply the content filter if checkbox selected
-			$content = apply_filters('the_content', $content);
-		}
-		echo $before_widget;
-		if ( $show_custom_post_title ) {
-			echo $before_title . apply_filters('widget_title',$content_post->post_title) . $after_title; // This is the line that displays the title (only if show title is set) 
-		} 
-		echo do_shortcode($content); // This is where the actual content of the custom post is being displayed
-		echo $after_widget;
+		
+		// Output the query to find the custom post
+		query_posts( 'post_type=content_block&p=' . $custom_post_id );
+		while (have_posts()) : the_post();
+			echo $before_widget;
+			if ( $show_custom_post_title ) {
+				echo $before_title;
+				the_title();
+				echo $after_title; // This is the line that displays the title (only if show title is set) 
+			}
+			if ( $show_featured_image ) {
+				the_post_thumbnail();
+			} 
+			if ( $apply_content_filters ) { // Don't apply the content filter if checkbox selected
+				remove_filter('the_content', 'wpautop');
+				echo do_shortcode(the_content()); // This is where the actual content of the custom post is being displayed
+			} else {
+				echo do_shortcode(the_content()); // This is where the actual content of the custom post is being displayed
+			}
+			echo $after_widget;
+		endwhile;
+		wp_reset_query();
 	}
 	
 }
