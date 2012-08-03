@@ -33,6 +33,10 @@ function add_content_block_popup(){ ?>
 						<?php query_posts('post_type=content_block&orderby=ID&order=ASC&showposts=-1');
 							if ( have_posts() ) : while ( have_posts() ) : the_post();
 								$currentID = get_the_ID();
+								// Add support for WPML Plugin.
+								if ( function_exists( 'icl_object_id' ) ){ 
+									$custom_post_id = icl_object_id( $custom_post_id, 'content_block', true );
+								}
 								if($currentID == $custom_post_id)
 									$extra = 'selected' and
 									$widgetExtraTitle = get_the_title();

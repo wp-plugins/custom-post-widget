@@ -58,7 +58,7 @@ class custom_post_widget extends WP_Widget {
 
 		<p>
 			<input class="checkbox" type="checkbox" <?php checked( (bool) isset( $instance['show_featured_image'] ), true ); ?> id="<?php echo $this->get_field_id( 'show_featured_image' ); ?>" name="<?php echo $this->get_field_name( 'show_featured_image' ); ?>" />
-			<label for="<?php echo $this->get_field_id( 'show_featured_image' ); ?>"><?php echo __( 'Show Featured Image', 'custom-post-widget' ) ?></label>
+			<label for="<?php echo $this->get_field_id( 'show_featured_image' ); ?>"><?php echo __( 'Show featured image', 'custom-post-widget' ) ?></label>
 		</p>
 
 		<p>
@@ -103,6 +103,10 @@ class custom_post_widget extends WP_Widget {
 			if ( $apply_content_filters ) { // Don't apply the content filter if checkbox selected
 				remove_filter('the_content', 'wpautop');
 				the_content(); // This is where the actual content of the custom post is being displayed
+
+				//remove_all_filters('the_content', 'plugin_filters');
+				//add_filter('the_content', 'do_shortcode');
+
 			} else {
 				the_content(); // This is where the actual content of the custom post is being displayed
 			}
