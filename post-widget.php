@@ -13,7 +13,7 @@ class custom_post_widget extends WP_Widget {
 	}
 
 	function form( $instance ) {
-		$custom_post_id = ''; // initialize the variable
+		$custom_post_id = ''; // Initialize the variable
 		if (isset($instance['custom_post_id'])) {
 			$custom_post_id = esc_attr($instance['custom_post_id']);
 		};
@@ -25,31 +25,33 @@ class custom_post_widget extends WP_Widget {
 		<p>
 			<label for="<?php echo $this->get_field_id( 'custom_post_id' ); ?>"> <?php echo __( 'Content Block to Display:', 'custom-post-widget' ) ?>
 				<select class="widefat" id="<?php echo $this->get_field_id( 'custom_post_id' ); ?>" name="<?php echo $this->get_field_name( 'custom_post_id' ); ?>">
-				<?php query_posts('post_type=content_block&orderby=ID&order=ASC&showposts=-1');
-				if ( have_posts() ) : while ( have_posts() ) : the_post();
-					$currentID = get_the_ID();
-					if( $currentID == $custom_post_id )
-						$extra = 'selected' and
-						$widgetExtraTitle = get_the_title();
-					else
-						$extra = '';
-						echo '<option value="'.$currentID.'" '.$extra.'>'.get_the_title().'</option>';
-					endwhile; else:
-					echo '<option value="empty">' . __( 'No content blocks available', 'custom-post-widget' ) . '</option>';
-				endif; ?>
+				<?php
+					$args = array('post_type' => 'content_block', 'suppress_filters' => 0, 'numberposts' => -1, 'order' => 'ASC');
+					$content_block = get_posts( $args );
+					if ($content_block) {
+						foreach( $content_block as $content_block ) : setup_postdata( $content_block );
+							echo '<option value="' . $content_block->ID . '"';
+							if( $custom_post_id == $content_block->ID ) {
+								echo ' selected';
+								$widgetExtraTitle = $content_block->post_title;
+							};
+							echo '>' . $content_block->post_title . '</option>';
+						endforeach;
+					} else {
+						echo '<option value="">' . __( 'No content blocks available', 'custom-post-widget' ) . '</option>';
+					};
+				?>
 				</select>
 			</label>
 		</p>
 		
-		<input type="hidden" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $widgetExtraTitle; ?>" />
+		<input type="hidden" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $widgetExtraTitle ?>" />
 
 		<p>
 			<?php
 				echo '<a href="post.php?post=' . $custom_post_id . '&action=edit">' . __( 'Edit Content Block', 'custom-post-widget' ) . '</a>' ;
 			?>
 		</p>
-
-				<?php wp_reset_query(); ?>
 
 		<p>
 			<input class="checkbox" type="checkbox" <?php checked( (bool) isset( $instance['show_custom_post_title'] ), true ); ?> id="<?php echo $this->get_field_id( 'show_custom_post_title' ); ?>" name="<?php echo $this->get_field_name( 'show_custom_post_title' ); ?>" />
@@ -87,34 +89,21 @@ class custom_post_widget extends WP_Widget {
 		$show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
 		$show_featured_image  = isset($instance['show_featured_image']) ? $instance['show_featured_image'] : false;
 		$apply_content_filters  = isset($instance['apply_content_filters']) ? $instance['apply_content_filters'] : false;
-		
-		// Output the query to find the custom post
-		query_posts( 'post_type=content_block&p=' . $custom_post_id );
-		while (have_posts()) : the_post();
-			echo $before_widget;
-			if ( $show_custom_post_title ) {
-				echo $before_title;
-				the_title();
-				echo $after_title; // This is the line that displays the title (only if show title is set) 
-			}
-			if ( $show_featured_image ) {
-				the_post_thumbnail();
-			} 
-			if ( $apply_content_filters ) { // Don't apply the content filter if checkbox selected
-				remove_filter('the_content', 'wpautop');
-				the_content(); // This is where the actual content of the custom post is being displayed
-
-				//remove_all_filters('the_content', 'plugin_filters');
-				//add_filter('the_content', 'do_shortcode');
-
-			} else {
-				the_content(); // This is where the actual content of the custom post is being displayed
-			}
-			echo $after_widget;
-		endwhile;
-		wp_reset_query();
+		$content_post = get_post($custom_post_id);
+		$content = $content_post->post_content;
+		if ( !$apply_content_filters ) { // Don't apply the content filter if checkbox selected
+			$content = apply_filters('the_content', $content);
+		}
+		echo $before_widget;
+		if ( $show_custom_post_title ) {
+			echo $before_title . apply_filters('widget_title',$content_post->post_title) . $after_title; // This is the line that displays the title (only if show title is set) 
+		}
+		if ( $show_featured_image ) {
+			echo get_the_post_thumbnail($content_post->ID);
+		} 
+		echo do_shortcode($content); // This is where the actual content of the custom post is being displayed
+		echo $after_widget;
 	}
-	
 }
 
 // Create the Content Block custom post type
@@ -217,12 +206,23 @@ function custom_post_widget_shortcode($atts) {
 add_shortcode('content_block', 'custom_post_widget_shortcode');
 
 // Add button above editor if not editing content_block
-function add_content_block_icon($initcontext) {
-	return $initcontext.
-	'<a id="add_content_block" style="text-decoration:none;" class="thickbox" title="' . __("Add Content Block", 'custom-post-widget') . '" href="' . CUSTOM_POST_WIDGET_URL . 'popup.php?type=add_content_block_popup&amp;TB_inline=true&amp;inlineId=content_block_form">
-		<img onclick="return false;" alt="' . __("Add Content Block", 'custom-post-widget') . '" src="' . CUSTOM_POST_WIDGET_URL . 'images/contentblock-13.png">
-	</a>';
+function add_content_block_icon() {
+	echo '<style>
+	#add-content-block .wp-media-buttons-icon {
+		background: url(../../wp-content/plugins/custom-post-widget/images/contentblock.png) no-repeat -7px -40px;
+		margin-right: 3px;
+	}
+	#add-content-block:hover .wp-media-buttons-icon {
+		background: url(../../wp-content/plugins/custom-post-widget/images/contentblock.png) no-repeat -7px -8px;
+	}
+	#add-content-block {
+		padding-left: 0.4em;
+	}
+	</style>
+	<a id="add-content-block" class="button thickbox" title="' . __("Add Content Block", 'custom-post-widget') . '" href="' . CUSTOM_POST_WIDGET_URL . 'popup.php?type=add_content_block_popup&amp;TB_inline=true&amp;inlineId=content-block-form">
+		<span class="wp-media-buttons-icon"></span>' . __("Add Content Block", "custom-post-widget") . '</a>';
 }
+
 // Only add content_block icon above posts and pages
 function check_post_type_and_remove_media_buttons() {
 	global $current_screen;
@@ -232,9 +232,9 @@ add_action('admin_head','check_post_type_and_remove_media_buttons');
 
 require_once( CUSTOM_POST_WIDGET_DIR . '/popup.php' );
 
+// Only add content block popup action on page and post edit
 if(!defined( 'CUSTOM_POST_WIDGET_CURRENT_PAGE' ))
 	define( 'CUSTOM_POST_WIDGET_CURRENT_PAGE', basename($_SERVER['PHP_SELF']) );
 if(in_array(CUSTOM_POST_WIDGET_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'))) {
 	add_action('admin_footer', 'add_content_block_popup');
 }
-?>

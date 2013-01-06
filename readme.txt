@@ -4,7 +4,7 @@ Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar, content block, content, block, custom, post, shortcode
 Requires at least: 2.9.2
-Tested up to: 3.4.1
+Tested up to: 3.5
 Stable tag: 1.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -78,6 +78,11 @@ If your social media sharing plugin adds buttons to the widget areas you could c
 
 
 == Changelog ==
+
+= 2.0 =
+Fix for bug caused by the 'Advanced Custom Fields' plugin. Thanks to creativexperience for troubleshooting this issue.
+Cleanup of lightbox popup, changed all instances of query_posts to get_post and get_posts.
+Support for featured image in custom post widget area.
 
 = 1.9.8 =
 Fix for error when using shortcode with the WPML plugin
