@@ -83,6 +83,7 @@ If your social media sharing plugin adds buttons to the widget areas you could c
 Fix for bug caused by the 'Advanced Custom Fields' plugin. Thanks to creativexperience for troubleshooting this issue.
 Cleanup of lightbox popup, changed all instances of query_posts to get_post and get_posts.
 Support for featured image in custom post widget area.
+Changed shortcode button to the new style from WP 3.5
 
 = 1.9.8 =
 Fix for error when using shortcode with the WPML plugin
