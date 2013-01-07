@@ -2,7 +2,7 @@
 Contributors: vanderwijk
 Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
-Tags: custom-post, widget, sidebar, content block, content, block, custom, post, shortcode
+Tags: custom-post, widget, sidebar, content block, content, block, custom, post, shortcode, wysiwyg, localized, translation, wpml, featured image
 Requires at least: 2.9.2
 Tested up to: 3.5
 Stable tag: 1.9.5
@@ -19,6 +19,9 @@ Even though you could use the text widget that comes with the default WordPress 
 
 * If you are using the standard WordPress text widgets to display content on various areas of your template, this content can only be edited by users with administrator access. If you would like editors to modify the widget content, you can use this plugin to provide them access to the custom posts that provide the content for the widget areas.
 * The Custom Post Widget plugin enables users to use the WYSIWYG editor for editing the content and adding images.
+* You can even use the featured image functionality to display them in a widget.
+* The Custom Post Widget is compatible with the WPML Multi-Language plugin and automatically shows the correct language in the widget area.
+* The Content Blocks can be included in posts and pages using the built-in shortcode functionality.
 
 This plugin creates a 'content_block' custom post type. You can choose to either display the title on the page or use it to describe the contents and widget position of the content block. Note that these content blocks can only be displayed in the context of the page. I have added 'public' => false to the custom post type which means that it is not accessible outside the page context.
 
@@ -30,7 +33,7 @@ You can find more information about this plugin and a screencast video which sho
 
 == Screenshots ==
 
-1. After activating the plugin a new post type called 'Content Blocks' is added. You can also see the little icon above the WYSIWYG editor that allows you to insert the content block using the shortcode.
+1. After activating the plugin a new post type called 'Content Blocks' is added. You will also see a button above the WYSIWYG editor that allows you to insert the content block using the shortcode.
 2. The widget has a select box to choose the content block. Click on the 'Edit Content Block' link to edit the selected Content Block custom post.
 
 == Installation ==
@@ -58,24 +61,24 @@ It is recommended to install the Widget Logic plugin, this will give you complet
 = How can I display the featured image in the widget? =
 
 This plugin has built-in support for the featured image functionality on the edit screen. But to display the image you will have to add the following code to your functions.php:
-
-`function InsertFeaturedImage($content) {
-    global $post;
-    $original_content = $content;
-    if (current_theme_supports('post-thumbnails')) {
-        if ('content_block' == get_post_type()) {
-            $content = the_post_thumbnail('medium');
-            $content .= $original_content;
-        }
-    }
-    return $content;
-}
-add_filter('the_content', 'InsertFeaturedImage');`
+Note that featured image will not be resized, so you will have to make sure it is the right size when uploading or restrict the image size via the stylesheet.
 
 = My social sharing plugin adds buttons to all the Custom Post Widget areas =
 
 If your social media sharing plugin adds buttons to the widget areas you could check the 'Do not apply content filters' checkbox. Note that when this is done, WordPress will also stop adding paragraph tags to your text, so use this setting with caution. It is much better to ask the developer of the social media sharing buttons plugin to correctly use the content filters (see http://pippinsplugins.com/playing-nice-with-the-content-filter/).
 
+= The title and featured image are not displayed when using the shortcode =
+
+Currently the shortcode function only outputs the post content of the content block, future support for displaying the title and/or the attached featured image is being considered.
+
+= The plugin is not working for me =
+
+Please create a support topic in the forum: http://wordpress.org/support/plugin/custom-post-widget
+DO NOT click the 'Broken' button in the compatibility area of the plugin directory before creating a support ticket. It is highly demotivating for me to see the plugin downloads drop dramatically without being given the chance to help you!
+
+= I love your plugin! What can I do to help? =
+
+Creating and supporting this plugin takes up a lot of my free time, therefore I would highly appreciate it if you could take a couple of minutes to [write a review](http://wordpress.org/support/view/plugin-reviews/custom-post-widget). This will help other WordPress users to start using this plugin and keep me motivated to maintain and support it.
 
 == Changelog ==
 
@@ -83,7 +86,7 @@ If your social media sharing plugin adds buttons to the widget areas you could c
 Fix for bug caused by the 'Advanced Custom Fields' plugin. Thanks to creativexperience for troubleshooting this issue.
 Cleanup of lightbox popup, changed all instances of query_posts to get_post and get_posts.
 Support for featured image in custom post widget area.
-Changed shortcode button to the new style from WP 3.5
+Changed shortcode button to reflect the new admin style of WordPress version 3.5.
 
 = 1.9.8 =
 Fix for error when using shortcode with the WPML plugin
@@ -162,7 +165,8 @@ First release
 
 == Upgrade Notice ==
 
-= 1.8 =
-I would appreciate some feedback on the newly introduced shortcode functionality. Is this useful or not? Any issues found? Thanks!
+= 2.0 =
+You can now show the featured image for content block in the widget. Note that this new functionality might need some refinement.
+The language files for DE, FR, PL and RU are missing some translation strings because of new functionality that has been added tot the plugin. Any help in updating the translations is highly appreciated!
 
 
