@@ -8,7 +8,7 @@
  Author URI: http://www.vanderwijk.com
  License: GPL2
 
- Release notes: Version 2.0 Added support for featured images
+ Release notes: Version 2.0.1 Updated dutch translation file
  
  Copyright 2012 Johan van der Wijk (email: info@vanderwijk.com)
  
