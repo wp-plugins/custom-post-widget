@@ -15,7 +15,7 @@ This plugin enables you to display the content of a custom post type called Cont
 
 The Custom Post Widget allows you to display the contents of a specific custom post in a widget.
 
-Even though you could use the text widget that comes with the default WordPress install, this plugin has some clear benefits:
+Even though you could use the text widget that comes with the default WordPress install, this plugin has some major benefits:
 
 * If you are using the standard WordPress text widgets to display content on various areas of your template, this content can only be edited by users with administrator access. If you would like editors to modify the widget content, you can use this plugin to provide them access to the custom posts that provide the content for the widget areas.
 * The Custom Post Widget plugin enables users to use the WYSIWYG editor for editing the content and adding images.
