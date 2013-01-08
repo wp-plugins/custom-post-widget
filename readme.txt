@@ -82,6 +82,9 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 
 == Changelog ==
 
+= 2.0.1 =
+Updated Dutch translation file.
+
 = 2.0 =
 Fix for bug caused by the 'Advanced Custom Fields' plugin. Thanks to creativexperience for troubleshooting this issue.
 Cleanup of lightbox popup, changed all instances of query_posts to get_post and get_posts.
