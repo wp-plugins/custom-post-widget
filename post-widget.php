@@ -78,6 +78,7 @@ class custom_post_widget extends WP_Widget {
 		return $instance;
 	}
 
+	// Display the content block content in the widget area
 	function widget($args, $instance) {
 		extract($args);
 		$custom_post_id  = ( $instance['custom_post_id'] != '' ) ? esc_attr($instance['custom_post_id']) : __('Find', 'custom-post-widget');
