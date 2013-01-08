@@ -5,7 +5,7 @@ Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar, content block, content, block, custom, post, shortcode, wysiwyg, localized, translation, wpml, featured image
 Requires at least: 2.9.2
 Tested up to: 3.5
-Stable tag: 1.9.5
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
