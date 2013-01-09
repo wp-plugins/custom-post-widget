@@ -56,12 +56,11 @@ Of course you can always use the default text widget, but if you prefer to use t
 
 = How can I show the content bock on a specific page? =
 
-It is recommended to install the Widget Logic plugin, this will give you complete flexibility on widget placement.
+It is recommended to install the [Widget Logic](http://wordpress.org/extend/plugins/widget-logic/) plugin, this will give you complete flexibility on widget placement.
 
 = How can I display the featured image in the widget? =
 
-This plugin has built-in support for the featured image functionality on the edit screen. But to display the image you will have to add the following code to your functions.php:
-Note that featured image will not be resized, so you will have to make sure it is the right size when uploading or restrict the image size via the stylesheet.
+This plugin has built-in support for the featured image functionality on the edit screen. Note that featured image will not be resized, so you will have to make sure it is the right size when uploading or restrict the image size via the stylesheet.
 
 = My social sharing plugin adds buttons to all the Custom Post Widget areas =
 
