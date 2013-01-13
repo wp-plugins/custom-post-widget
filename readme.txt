@@ -5,7 +5,7 @@ Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: custom-post, widget, sidebar, content block, content, block, custom, post, shortcode, wysiwyg, localized, translation, wpml, featured image
 Requires at least: 2.9.2
 Tested up to: 3.5
-Stable tag: 2.0.1
+Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -80,6 +80,9 @@ DO NOT click the 'Broken' button in the compatibility area of the plugin directo
 Creating and supporting this plugin takes up a lot of my free time, therefore I would highly appreciate it if you could take a couple of minutes to [write a review](http://wordpress.org/support/view/plugin-reviews/custom-post-widget). This will help other WordPress users to start using this plugin and keep me motivated to maintain and support it.
 
 == Changelog ==
+
+= 2.0.2 =
+Small fix for issue with the css filepath of the editor icon. Thanks to user zudobug for reporting this issue.
 
 = 2.0.1 =
 Updated Dutch translation file.
