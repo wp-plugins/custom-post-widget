@@ -2,7 +2,7 @@
 Contributors: vanderwijk
 Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
-Tags: custom-post, widget, sidebar, content block, content, block, custom, post, shortcode, wysiwyg, localized, translation, wpml, featured image
+Tags: widget, sidebar, content block, block, custom, post, shortcode, wysiwyg, wpml, featured image
 Requires at least: 2.9.2
 Tested up to: 3.5
 Stable tag: 2.0.2
