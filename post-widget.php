@@ -100,15 +100,15 @@ class custom_post_widget extends WP_Widget {
 			echo $before_title . apply_filters('widget_title',$content_post->post_title) . $after_title; // This is the line that displays the title (only if show title is set) 
 		}
 		if ( $show_featured_image ) {
-			echo get_the_post_thumbnail($content_post->ID);
-		} 
-		echo do_shortcode($content); // This is where the actual content of the custom post is being displayed
+			echo get_the_post_thumbnail( $content_post -> ID );
+		}
+		echo do_shortcode( $content ); // This is where the actual content of the custom post is being displayed
 		echo $after_widget;
 	}
 }
 
 // Create the Content Block custom post type
-add_action('init', 'my_content_block_post_type_init');
+add_action( 'init', 'my_content_block_post_type_init' );
 
 function my_content_block_post_type_init() {
 	$labels = array(
@@ -138,11 +138,11 @@ function my_content_block_post_type_init() {
 		'menu_position' => null,
 		'supports' => array('title','editor','revisions','thumbnail','author')
 	);
-	register_post_type('content_block',$options);
+	register_post_type( 'content_block',$options );
 }
 
 // Add custom styles to admin screen and menu
-add_action('admin_head', 'content_block_header');
+add_action( 'admin_head', 'content_block_header' );
 
 function content_block_header() {
 	global $post_type; ?>
@@ -159,7 +159,7 @@ function content_block_header() {
 <?php
 }
 
-add_filter('post_updated_messages', 'content_block_messages');
+add_filter( 'post_updated_messages', 'content_block_messages' );
 
 function content_block_messages( $messages ) {
 	$messages['content_block'] = array(
@@ -179,21 +179,21 @@ function content_block_messages( $messages ) {
 }
 
 // Add the ability to display the content block in a reqular post using a shortcode
-function custom_post_widget_shortcode($atts) {
-	extract(shortcode_atts(array(
+function custom_post_widget_shortcode( $atts ) {
+	extract( shortcode_atts( array(
 		'id' => '',
 		'class' => 'content_block'
-	), $atts));
+	), $atts ) );
 	
 	$content = "";
 	
-	if($id != "") {
+	if( $id != "" ) {
 		$args = array(
-			'post__in' => array($id),
+			'post__in' => array( $id ),
 			'post_type' => 'content_block',
 		);
 		
-		$content_post = get_posts($args);
+		$content_post = get_posts( $args );
 		
 		foreach( $content_post as $post ) :
 			$content .= '<div class="'. esc_attr($class) .'">';
@@ -204,7 +204,7 @@ function custom_post_widget_shortcode($atts) {
 	
 	return $content;
 }
-add_shortcode('content_block', 'custom_post_widget_shortcode');
+add_shortcode( 'content_block', 'custom_post_widget_shortcode' );
 
 // Add button above editor if not editing content_block
 function add_content_block_icon() {
@@ -234,8 +234,8 @@ add_action('admin_head','check_post_type_and_remove_media_buttons');
 require_once( CUSTOM_POST_WIDGET_DIR . '/popup.php' );
 
 // Only add content block popup action on page and post edit
-if(!defined( 'CUSTOM_POST_WIDGET_CURRENT_PAGE' ))
-	define( 'CUSTOM_POST_WIDGET_CURRENT_PAGE', basename($_SERVER['PHP_SELF']) );
-if(in_array(CUSTOM_POST_WIDGET_CURRENT_PAGE, array('post.php', 'page.php', 'page-new.php', 'post-new.php'))) {
-	add_action('admin_footer', 'add_content_block_popup');
+if( !defined( 'CUSTOM_POST_WIDGET_CURRENT_PAGE' ) )
+	define( 'CUSTOM_POST_WIDGET_CURRENT_PAGE', basename( $_SERVER['PHP_SELF'] ) );
+if( in_array( CUSTOM_POST_WIDGET_CURRENT_PAGE, array( 'post.php', 'page.php', 'page-new.php', 'post-new.php' ) ) ) {
+	add_action( 'admin_footer', 'add_content_block_popup' );
 }

@@ -4,7 +4,7 @@ Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: widget, sidebar, content block, block, custom, post, shortcode, wysiwyg, wpml, featured image
 Requires at least: 2.9.2
-Tested up to: 3.5
+Tested up to: 3.5.1
 Stable tag: 2.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -70,6 +70,12 @@ If your social media sharing plugin adds buttons to the widget areas you could c
 
 Currently the shortcode function only outputs the post content of the content block, future support for displaying the title and/or the attached featured image is being considered.
 
+= How can I embed a content block in my template file using php code? =
+
+You can use the do_shortcode function for this: `echo do_shortcode('[content_block id= ]');`
+
+See http://codex.wordpress.org/Function_Reference/do_shortcode for more information on this function.
+
 = The plugin is not working for me =
 
 Please create a support topic in the forum: http://wordpress.org/support/plugin/custom-post-widget
@@ -77,7 +83,7 @@ DO NOT click the 'Broken' button in the compatibility area of the plugin directo
 
 = I love your plugin! What can I do to help? =
 
-Creating and supporting this plugin takes up a lot of my free time, therefore I would highly appreciate it if you could take a couple of minutes to [write a review](http://wordpress.org/support/view/plugin-reviews/custom-post-widget). This will help other WordPress users to start using this plugin and keep me motivated to maintain and support it.
+Creating and supporting this plugin takes up a lot of my free time, therefore I would highly appreciate it if you could take a couple of minutes to [write a review](http://wordpress.org/support/view/plugin-reviews/custom-post-widget). This will help other WordPress users to start using this plugin and keep me motivated to maintain and support it. Also, if you have a twitter, Facebook or Google+ account, it would be fantastic if you share the link to this plugin!
 
 == Changelog ==
 
