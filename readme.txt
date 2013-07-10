@@ -79,13 +79,19 @@ See http://codex.wordpress.org/Function_Reference/do_shortcode for more informat
 = The plugin is not working for me =
 
 Please create a support topic in the forum: http://wordpress.org/support/plugin/custom-post-widget
-DO NOT click the 'Broken' button in the compatibility area of the plugin directory before creating a support ticket. It is highly demotivating for me to see the plugin downloads drop dramatically without being given the chance to help you!
+DO NOT click the 'Broken' button in the compatibility area of the plugin directory before creating a support ticket. It is very demotivating for me to see the plugin downloads drop dramatically without being given the chance to help you!
 
 = I love your plugin! What can I do to help? =
 
 Creating and supporting this plugin takes up a lot of my free time, therefore I would highly appreciate it if you could take a couple of minutes to [write a review](http://wordpress.org/support/view/plugin-reviews/custom-post-widget). This will help other WordPress users to start using this plugin and keep me motivated to maintain and support it. Also, if you have a twitter, Facebook or Google+ account, it would be fantastic if you share the link to this plugin!
 
 == Changelog ==
+
+= 2.3 =
+Various bugfixes and improvements.
+
+= 2.0.3 =
+Replaced the deprecated `media_buttons_context` filter with `media_buttons`. Thanks to Baptiste Gaillard for letting me know about this.
 
 = 2.0.2 =
 Small fix for issue with the css filepath of the editor icon. Thanks to user zudobug for reporting this issue.
