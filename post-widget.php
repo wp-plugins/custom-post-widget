@@ -231,7 +231,7 @@ function check_post_type_and_remove_media_buttons() {
 }
 add_action( 'admin_head', 'check_post_type_and_remove_media_buttons' );
 
-require_once( CUSTOM_POST_WIDGET_DIR . '/popup.php' );
+require( 'popup.php' );
 
 // Only add content block popup action on page and post edit
 if( !defined( 'CUSTOM_POST_WIDGET_CURRENT_PAGE' ) )
