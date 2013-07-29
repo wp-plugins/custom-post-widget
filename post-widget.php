@@ -210,11 +210,11 @@ add_shortcode( 'content_block', 'custom_post_widget_shortcode' );
 function add_content_block_icon() {
 	echo '<style>
 	#add-content-block .wp-media-buttons-icon {
-		background: url(../wp-content/plugins/custom-post-widget/images/contentblock.png) no-repeat -7px -40px;
+		background: url( ' . plugins_url( "images/contentblock.png", __FILE__ ). ' ) no-repeat -7px -40px;
 		margin-right: 3px;
 	}
 	#add-content-block:hover .wp-media-buttons-icon {
-		background: url(../wp-content/plugins/custom-post-widget/images/contentblock.png) no-repeat -7px -8px;
+		background: url( ' . plugins_url( "images/contentblock.png", __FILE__ ). ' ) no-repeat -7px -8px;
 	}
 	#add-content-block {
 		padding-left: 0.4em;

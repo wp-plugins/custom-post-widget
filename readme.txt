@@ -87,6 +87,9 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 
 == Changelog ==
 
+= 2.3.2 =
+Removed hardcoded plugins folder path
+
 = 2.3.1 =
 Removed call to CUSTOM_POST_WIDGET_DIR
 
