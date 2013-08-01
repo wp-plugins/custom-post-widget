@@ -30,12 +30,12 @@ class custom_post_widget extends WP_Widget {
 					$content_block = get_posts( $args );
 					if ($content_block) {
 						foreach( $content_block as $content_block ) : setup_postdata( $content_block );
-							echo '<option value="' . $content_block->ID . '"';
-							if( $custom_post_id == $content_block->ID ) {
+							echo '<option value="' . $content_block -> ID . '"';
+							if( $custom_post_id == $content_block -> ID ) {
 								echo ' selected';
-								$widgetExtraTitle = $content_block->post_title;
+								$widgetExtraTitle = $content_block -> post_title;
 							};
-							echo '>' . $content_block->post_title . '</option>';
+							echo '>' . $content_block -> post_title . '</option>';
 						endforeach;
 					} else {
 						echo '<option value="">' . __( 'No content blocks available', 'custom-post-widget' ) . '</option>';
@@ -45,7 +45,7 @@ class custom_post_widget extends WP_Widget {
 			</label>
 		</p>
 		
-		<input type="hidden" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo $widgetExtraTitle ?>" />
+		<input type="hidden" id="<?php echo $this -> get_field_id( 'title' ); ?>" name="<?php echo $this -> get_field_name( 'title' ); ?>" value="<?php echo $widgetExtraTitle ?>" />
 
 		<p>
 			<?php
