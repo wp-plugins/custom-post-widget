@@ -4,8 +4,8 @@ Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: widget, sidebar, content block, block, custom, post, shortcode, wysiwyg, wpml, featured image
 Requires at least: 2.9.2
-Tested up to: 3.6.1
-Stable tag: 2.3.4
+Tested up to: 3.7.1
+Stable tag: 2.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,9 @@ DO NOT click the 'Broken' button in the compatibility area of the plugin directo
 Creating and supporting this plugin takes up a lot of my free time, therefore I would highly appreciate it if you could take a couple of minutes to [write a review](http://wordpress.org/support/view/plugin-reviews/custom-post-widget). This will help other WordPress users to start using this plugin and keep me motivated to maintain and support it. Also, if you have a twitter, Facebook or Google+ account, it would be fantastic if you share the link to this plugin!
 
 == Changelog ==
+
+= 2.3.5 =
+Added the option to use your own widget template file as suggested by flynsarmy. See http://wordpress.org/support/topic/patch-custom-widget-frontends?replies=1 for more information.
 
 = 2.3.4 =
 Added pt_BR translation files as kindly provided by Ronaldo Chevalier.
@@ -187,12 +190,3 @@ Fixed screenshots for plugin directory
 
 = 1.0 =
 First release
-
-
-== Upgrade Notice ==
-
-= 2.0 =
-You can now show the featured image for content block in the widget. Note that this new functionality might need some refinement.
-The language files for DE, FR, PL and RU are missing some translation strings because of new functionality that has been added tot the plugin. Any help in updating the translations is highly appreciated!
-
-

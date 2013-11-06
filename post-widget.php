@@ -92,6 +92,11 @@ class custom_post_widget extends WP_Widget {
 		$apply_content_filters  = isset($instance['apply_content_filters']) ? $instance['apply_content_filters'] : false;
 		$content_post = get_post($custom_post_id);
 		$content = $content_post->post_content;
+		// Display custom widget frontend
+		if ( $located = locate_template( 'custom-post-widget.php' ) ) {
+			require $located;
+			return;
+		}
 		if ( !$apply_content_filters ) { // Don't apply the content filter if checkbox selected
 			$content = apply_filters( 'the_content', $content);
 		}
