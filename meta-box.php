@@ -14,7 +14,7 @@ add_action( 'add_meta_boxes', 'cpw_add_meta_box' );
 function cpw_meta_box( $post ) {
 	wp_nonce_field( 'cpw_meta_box', 'cpw_meta_box_nonce' );
 	$value = get_post_meta( $post->ID, '_content_block_information', true );
-	echo '<textarea id="cpw_content_block_information" cols="40" rows="4" name="cpw_content_block_information">' . esc_attr( $value ) . '</textarea>';
+	echo '<textarea id="cpw_content_block_information" cols="40" rows="4" name="cpw_content_block_information" style="height: 8em; width: 100%;">' . esc_attr( $value ) . '</textarea>';
 }
 
 function cpw_save_postdata( $post_id ) {
