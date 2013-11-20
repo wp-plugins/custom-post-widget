@@ -230,17 +230,13 @@ function add_content_block_icon() {
 }
 
 // Only add content_block icon above posts and pages
-function check_post_type_and_remove_media_buttons() {
+function cpw_add_content_block_button() {
 	global $current_screen;
-	if( 'content_block' != $current_screen -> post_type ) add_filter( 'media_buttons', 'add_content_block_icon' );
+	if( 'content_block' != $current_screen -> post_type ) {
+		add_filter( 'media_buttons', 'add_content_block_icon' );
+		add_action( 'admin_footer', 'add_content_block_popup' );
+	}
 }
-add_action( 'admin_head', 'check_post_type_and_remove_media_buttons' );
+add_action( 'admin_head', 'cpw_add_content_block_button' );
 
 require( 'popup.php' );
-
-// Only add content block popup action on page and post edit
-if( !defined( 'CUSTOM_POST_WIDGET_CURRENT_PAGE' ) )
-	define( 'CUSTOM_POST_WIDGET_CURRENT_PAGE', basename( $_SERVER['PHP_SELF'] ) );
-if( in_array( CUSTOM_POST_WIDGET_CURRENT_PAGE, array( 'post.php', 'page.php', 'page-new.php', 'post-new.php' ) ) ) {
-	add_action( 'admin_footer', 'add_content_block_popup' );
-}
