@@ -9,7 +9,7 @@ Stable tag: 2.3.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-This plugin enables you to display the content of a custom post type called Content Block in a sidebar widget.
+This plugin enables you to edit and display Content Blocks in a sidebar widget or using a shortcode.
 
 == Description ==
 
@@ -17,8 +17,8 @@ The Custom Post Widget allows you to display the contents of a specific custom p
 
 Even though you could use the text widget that comes with the default WordPress install, this plugin has some major benefits:
 
-* If you are using the standard WordPress text widgets to display content on various areas of your template, this content can only be edited by users with administrator access. If you would like editors to modify the widget content, you can use this plugin to provide them access to the custom posts that provide the content for the widget areas.
 * The Custom Post Widget plugin enables users to use the WYSIWYG editor for editing the content and adding images.
+* If you are using the standard WordPress text widgets to display content on various areas of your template, this content can only be edited by users with administrator access. If you would like editors to modify the widget content, you can use this plugin to provide them access to the custom posts that provide the content for the widget areas.
 * You can even use the featured image functionality to display them in a widget.
 * The Custom Post Widget is compatible with the WPML Multi-Language plugin and automatically shows the correct language in the widget area.
 * The Content Blocks can be included in posts and pages using the built-in shortcode functionality.
@@ -27,7 +27,17 @@ This plugin creates a 'content_block' custom post type. You can choose to either
 
 To add content to a widget, drag it to the required position in the sidebar and select the title of the custom post in the widget configuration.
 
-This plugin is ready for localization and Dutch, French, German, Polish and Russian language files are included.
+Includes the following translations:
+
+* German (de_DE) by [Caspar H&uuml;binger](http://glueckpress.com/)
+* French (fr_FR) by [Alexandre Simard](http://brocheafoin.biz/)
+* Dutch (nl_NL) by [Johan van der Wijk](http://vanderwijk.nl)
+* Polish (pl_PL) by [Kuba Skublicki](https://www.linkedin.com/in/kubecki)
+* Portuguese (pt_BR) by [Ronaldo Chevalier](http://www.hostmeta.com.br/)
+* Russian (ru_RU) by [Vitaliy Kaplya](http://www.dasayt.com/) 
+* Swedish (sv_SE) by [Andreas Larsson](http://krokedil.se)
+
+More translations are always welcome, please [contact me](http://www.vanderwijk.com/contact) to find out how you can help.
 
 You can find more information about this plugin and a screencast video which shows the plugin in action on the [plugin homepage](http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/).
 
@@ -41,7 +51,7 @@ You can find more information about this plugin and a screencast video which sho
 1. First you will have to upload the plugin to the `/wp-content/plugins/` folder.
 2. Then activate the plugin in the plugin panel.
 You will see that a new custom post type has been added called Content Block.
-3. Type some content for the widget. You can choose to either use the title to describe the of the content on the page, or to display it. Check 'Show Post Title' to display the title on the page.
+3. Type some content for the widget. You can choose to either use the title to describe the content on the page, or to display it. Check 'Show Post Title' to display the title on the page.
 4. Go to 'Appearance' > 'Widgets' and drag the Content Block widget to the required position in the sidebar.
 5. Select a Content Block from the drop-down list.
 6. Check the 'Show Post Title' checkbox if you would like to display the title of your Content Block
@@ -70,6 +80,10 @@ If your social media sharing plugin adds buttons to the widget areas you could c
 
 Currently the shortcode function only outputs the post content of the content block, future support for displaying the title and/or the attached featured image is being considered.
 
+= How can I make advanced changes to the widget layout? =
+
+You can create your own widget template and upload this to your theme folder. See [this support topic](http://wordpress.org/support/topic/patch-custom-widget-frontends?replies=1) for more information about this feature.
+
 = How can I embed a content block in my template file using php code? =
 
 You can use the do_shortcode function for this: `echo do_shortcode('[content_block id= ]');`
@@ -83,9 +97,12 @@ DO NOT click the 'Broken' button in the compatibility area of the plugin directo
 
 = I love your plugin! What can I do to help? =
 
-Creating and supporting this plugin takes up a lot of my free time, therefore I would highly appreciate it if you could take a couple of minutes to [write a review](http://wordpress.org/support/view/plugin-reviews/custom-post-widget). This will help other WordPress users to start using this plugin and keep me motivated to maintain and support it. Also, if you have a twitter, Facebook or Google+ account, it would be fantastic if you share the link to this plugin!
+Creating and supporting this plugin takes up a lot of my free time, therefore I would highly appreciate it if you could take a couple of minutes to [write a review](http://wordpress.org/support/view/plugin-reviews/custom-post-widget). This will help other WordPress users to start using this plugin and keep me motivated to maintain and support it. Also, if you have a twitter, Facebook or Google+ account, it would be fantastic if you could share the link to this plugin!
 
 == Changelog ==
+
+= 2.4 =
+You can now add a description to the content block to make it easier for content editors to find out where the block is displayed on the site. Thanks to Andreas Larsson the plugin now includes a Swedish translation.
 
 = 2.3.5 =
 Added the option to use your own widget template file as suggested by flynsarmy. See http://wordpress.org/support/topic/patch-custom-widget-frontends?replies=1 for more information.
