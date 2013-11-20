@@ -234,7 +234,7 @@ function cpw_add_content_block_button() {
 	global $current_screen;
 	if( 'content_block' != $current_screen -> post_type ) {
 		add_filter( 'media_buttons', 'add_content_block_icon' );
-		add_action( 'admin_footer', 'add_content_block_popup' );
+		add_action( 'media_buttons', 'add_content_block_popup' );
 	}
 }
 add_action( 'admin_head', 'cpw_add_content_block_button' );
