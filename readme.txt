@@ -5,7 +5,7 @@ Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: widget, sidebar, content block, block, custom, post, shortcode, wysiwyg, wpml, featured image
 Requires at least: 2.9.2
 Tested up to: 3.7.1
-Stable tag: 2.3.5
+Stable tag: 2.4.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,17 +17,17 @@ The Custom Post Widget allows you to display the contents of a specific custom p
 
 Even though you could use the text widget that comes with the default WordPress install, this plugin has some major benefits:
 
-* The Custom Post Widget plugin enables users to use the WYSIWYG editor for editing the content and adding images.
-* If you are using the standard WordPress text widgets to display content on various areas of your template, this content can only be edited by users with administrator access. If you would like editors to modify the widget content, you can use this plugin to provide them access to the custom posts that provide the content for the widget areas.
-* You can even use the featured image functionality to display them in a widget.
-* The Custom Post Widget is compatible with the WPML Multi-Language plugin and automatically shows the correct language in the widget area.
-* The Content Blocks can be included in posts and pages using the built-in shortcode functionality.
+* The Custom Post Widget plugin enables users to **use the WYSIWYG editor** for editing the content and adding images.
+* If you are using the standard WordPress text widgets to display content on various areas of your template, this content can only be edited by users with administrator access. If you would like **non-administrator accounts to modify the widget content**, you can use this plugin to provide them access to the custom posts that provide the content for the widget areas.
+* You can even use the **featured image functionality** to display them in a widget.
+* The Custom Post Widget is **compatible with the WPML** Multi-Language plugin and automatically shows the correct language in the widget area.
+* The Content Blocks can be included in posts and pages using the **built-in shortcode functionality**.
 
 This plugin creates a 'content_block' custom post type. You can choose to either display the title on the page or use it to describe the contents and widget position of the content block. Note that these content blocks can only be displayed in the context of the page. I have added 'public' => false to the custom post type which means that it is not accessible outside the page context.
 
 To add content to a widget, drag it to the required position in the sidebar and select the title of the custom post in the widget configuration.
 
-Includes the following translations:
+**Includes the following translations:**
 
 * German (de_DE) by [Caspar H&uuml;binger](http://glueckpress.com/)
 * French (fr_FR) by [Alexandre Simard](http://brocheafoin.biz/)
