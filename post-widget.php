@@ -201,7 +201,7 @@ function custom_post_widget_shortcode( $atts ) {
 		$content_post = get_posts( $args );
 		
 		foreach( $content_post as $post ) :
-			$content .= '<div class="'. esc_attr($class) .'">';
+			$content .= '<div class="'. esc_attr($class) .'" id="custom_post_widget-' . $id . '">';
 			$content .= apply_filters( 'the_content', $post->post_content);
 			$content .= '</div>';
 		endforeach;

@@ -101,6 +101,9 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 
 == Changelog ==
 
+= 2.4.4 =
+Added unique ID to each content block that is inserted using the shortcode functionality
+
 = 2.4.3 =
 Changed the way the shortcode button above the editor is called.
 
