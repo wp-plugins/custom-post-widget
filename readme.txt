@@ -4,8 +4,8 @@ Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: widget, sidebar, content block, block, custom, post, shortcode, wysiwyg, wpml, featured image
 Requires at least: 2.9.2
-Tested up to: 3.8
-Stable tag: 2.4.5
+Tested up to: 3.8.1
+Stable tag: 2.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -100,6 +100,9 @@ DO NOT click the 'Broken' button in the compatibility area of the plugin directo
 Creating and supporting this plugin takes up a lot of my free time, therefore I would highly appreciate it if you could take a couple of minutes to [write a review](http://wordpress.org/support/view/plugin-reviews/custom-post-widget). This will help other WordPress users to start using this plugin and keep me motivated to maintain and support it. Also, if you have a twitter, Facebook or Google+ account, it would be fantastic if you could share the link to this plugin!
 
 == Changelog ==
+
+= 2.5
+Added 'Content Block Information' to overview page, updated styling to reflect new 3.8 interface and rewrote javaScript code for inserting shortcode tag
 
 = 2.4.5 =
 2.4.5 javaScript fix for inserting shortcode tag

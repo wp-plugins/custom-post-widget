@@ -45,7 +45,7 @@ class custom_post_widget extends WP_Widget {
 			</label>
 		</p>
 		
-		<input type="hidden" id="<?php echo $this -> get_field_id( 'title' ); ?>" name="<?php echo $this -> get_field_name( 'title' ); ?>" value="<?php echo $widgetExtraTitle ?>" />
+		<input type="hidden" id="<?php echo $this -> get_field_id( 'title' ); ?>" name="<?php echo $this -> get_field_name( 'title' ); ?>" value="<?php if ( !empty( $widgetExtraTitle ) ) { echo $widgetExtraTitle; } ?>" />
 
 		<p>
 			<?php
@@ -113,9 +113,7 @@ class custom_post_widget extends WP_Widget {
 }
 
 // Create the Content Block custom post type
-add_action( 'init', 'my_content_block_post_type_init' );
-
-function my_content_block_post_type_init() {
+function cpw_post_type_init() {
 	$labels = array(
 		'name' => _x( 'Content Blocks', 'post type general name', 'custom-post-widget' ),
 		'singular_name' => _x( 'Content Block', 'post type singular name', 'custom-post-widget' ),
@@ -127,8 +125,7 @@ function my_content_block_post_type_init() {
 		'view_item' => __( 'View Content Block', 'custom-post-widget' ),
 		'search_items' => __( 'Search Content Blocks', 'custom-post-widget' ),
 		'not_found' =>  __( 'No Content Blocks Found', 'custom-post-widget' ),
-		'not_found_in_trash' => __( 'No Content Blocks found in Trash', 'custom-post-widget' ),
-		'parent_item_colon' => ''
+		'not_found_in_trash' => __( 'No Content Blocks found in Trash', 'custom-post-widget' )
 	);
 	$options = array(
 		'labels' => $labels,
@@ -140,31 +137,12 @@ function my_content_block_post_type_init() {
 		'rewrite' => true,
 		'capability_type' => 'post',
 		'hierarchical' => false,
-		'menu_position' => null,
+		'menu_icon' => 'dashicons-screenoptions',
 		'supports' => array( 'title','editor','revisions','thumbnail','author' )
 	);
 	register_post_type( 'content_block',$options );
 }
-
-// Add custom styles to admin screen and menu
-add_action( 'admin_head', 'content_block_header' );
-
-function content_block_header() {
-	global $post_type; ?>
-	<style type="text/css">
-	<!--
-	<?php if (($post_type == 'content_block' )) : ?>
-		#icon-edit { background:transparent url( '<?php echo plugins_url( 'images/contentblock-32.png', __FILE__ ); ?>' ) no-repeat 0 0 !important;}
-		#minor-publishing-actions { display:none; /* Hide the Save Draft and Preview buttons */}
-	<?php endif; ?>
-		#adminmenu #menu-posts-content_block div.wp-menu-image{background:transparent url( '<?php echo plugins_url( 'images/contentblock.png', __FILE__ ); ?>' ) no-repeat center -32px;}
-		#adminmenu #menu-posts-content_block:hover div.wp-menu-image,#adminmenu #menu-posts-content_block.wp-has-current-submenu div.wp-menu-image{background:transparent url( '<?php echo plugins_url( 'images/contentblock.png', __FILE__ ); ?>' ) no-repeat center 0px;}
-	-->
-	</style>
-<?php
-}
-
-add_filter( 'post_updated_messages', 'content_block_messages' );
+add_action( 'init', 'cpw_post_type_init' );
 
 function content_block_messages( $messages ) {
 	$messages['content_block'] = array(
@@ -182,6 +160,7 @@ function content_block_messages( $messages ) {
 	);
 	return $messages;
 }
+add_filter( 'post_updated_messages', 'content_block_messages' );
 
 // Add the ability to display the content block in a reqular post using a shortcode
 function custom_post_widget_shortcode( $atts ) {
@@ -211,32 +190,12 @@ function custom_post_widget_shortcode( $atts ) {
 }
 add_shortcode( 'content_block', 'custom_post_widget_shortcode' );
 
-// Add button above editor if not editing content_block
-function add_content_block_icon() {
-	echo '<style>
-	#add-content-block .wp-media-buttons-icon {
-		background: url( ' . plugins_url( "images/contentblock.png", __FILE__ ). ' ) no-repeat -7px -40px;
-		margin-right: 3px;
-	}
-	#add-content-block:hover .wp-media-buttons-icon {
-		background: url( ' . plugins_url( "images/contentblock.png", __FILE__ ). ' ) no-repeat -7px -8px;
-	}
-	#add-content-block {
-		padding-left: 0.4em;
-	}
-	</style>
-	<a id="add-content-block" class="button thickbox" title="' . __("Add Content Block", 'custom-post-widget' ) . '" href="' . plugins_url() . 'popup.php?type=add_content_block_popup&amp;TB_inline=true&amp;inlineId=content-block-form">
-		<span class="wp-media-buttons-icon"></span>' . __("Add Content Block", "custom-post-widget") . '</a>';
-}
-
 // Only add content_block icon above posts and pages
 function cpw_add_content_block_button() {
 	global $current_screen;
 	if( 'content_block' != $current_screen -> post_type ) {
-		add_filter( 'media_buttons', 'add_content_block_icon' );
-		add_action( 'media_buttons', 'add_content_block_popup' );
+		add_filter( 'media_buttons_context', 'add_content_block_icon' );
+		add_action( 'admin_footer', 'add_content_block_popup' );
 	}
 }
 add_action( 'admin_head', 'cpw_add_content_block_button' );
-
-require( 'popup.php' );

@@ -1,22 +1,39 @@
 <?php 
+
+// Add button above editor if not editing content_block
+function add_content_block_icon() {
+	echo '<style>
+	#add-content-block .dashicons-screenoptions {
+		color: #888;
+		height: 18px;
+		margin: 0 4px 0 0;
+		vertical-align: text-top;
+		width: 18px;
+	}
+	#add-content-block {
+		padding-left: 0.4em;
+	}
+	</style>
+	<a id="add-content-block" class="button thickbox" title="' . __("Add Content Block", 'custom-post-widget' ) . '" href="' . plugins_url() . 'popup.php?type=add_content_block_popup&amp;TB_inline=true&amp;inlineId=content-block-form">
+		<div class="dashicons dashicons-screenoptions"></div>' . __("Add Content Block", "custom-post-widget") . '
+	</a>';
+}
+
 // Displays the lightbox popup to insert a content block shortcode to a post/page
 function add_content_block_popup() { ?>
-
 	<script>
-		jQuery( '.add-content-block-id' ).change( function() {
-			content_id = jQuery( this ).val();
-			console.log( 'content_id: ' + content_id );
-		});
+		function selectContentBlockId(select) {
+			content_id = select.options[select.selectedIndex].value;
+		}
 		function insertContentBlockShortcode() {
-			if( content_id == "" ) {
+			if (typeof content_id === 'undefined') {
 				alert( "<?php _e( 'Please select a Content Block', 'custom-post-widget' ); ?>" );
-				return;
+				return false;
 			}
 			var win = window.dialogArguments || opener || parent || top;
 			win.send_to_editor( "[content_block id=" + content_id + "]" );
 		}
 	</script>
-
 	<div id="content-block-form" style="display: none;">
 		<h3>
 			<?php _e( 'Insert Content Block', 'custom-post-widget' ); ?>
@@ -25,7 +42,7 @@ function add_content_block_popup() { ?>
 			<?php _e( 'Select a Content Block below to add it to your post or page.', 'custom-post-widget' ); ?>
 		</p>
 		<p>
-			<select id="add-content-block-id" class="add-content-block-id">
+			<select class="add-content-block-id" id="add-content-block-id" onchange="selectContentBlockId(this)">
 				<option value="">
 					<?php _e( 'Select a Content Block', 'custom-post-widget' ); ?>
 				</option>
@@ -47,4 +64,4 @@ function add_content_block_popup() { ?>
 		</p>
 	</div>
 	
-<?php };
+<?php }

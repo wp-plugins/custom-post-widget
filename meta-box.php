@@ -41,3 +41,22 @@ function cpw_save_postdata( $post_id ) {
 	update_post_meta( $post_id, '_content_block_information', $content_block_information );
 }
 add_action( 'save_post', 'cpw_save_postdata' );
+
+// Add content block information column to overview
+function cpw_modify_material_table( $column ) {
+	$column['content_block_information'] = __( 'Content Block Information', 'custom-post-widget' );
+	return $column;
+}
+add_filter( 'manage_edit-content_block_columns', 'cpw_modify_material_table' );
+
+function cpw_modify_post_table_row( $column_name, $post_id ) {
+	$custom_fields = get_post_custom( $post_id );
+	switch ( $column_name ) {
+		case 'content_block_information' :
+			if ( !empty( $custom_fields['_content_block_information'][0] ) ) {
+				echo $custom_fields['_content_block_information'][0];
+			}
+		break;
+	}
+}
+add_action( 'manage_posts_custom_column', 'cpw_modify_post_table_row', 10, 2 );
