@@ -101,7 +101,7 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 
 == Changelog ==
 
-= 2.5
+= 2.5 =
 Added 'Content Block Information' to overview page, updated styling to reflect new 3.8 interface and rewrote javaScript code for inserting shortcode tag
 
 = 2.4.5 =
