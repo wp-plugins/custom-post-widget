@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Custom Post Widget v2.3.3\n"
+"Project-Id-Version: Custom Post Widget v2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2013-11-14 08:52:07+0000\n"
+"PO-Revision-Date: 2014-03-19 16:12:45+0000\n"
 "Last-Translator: aztek <info@aztek.se>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,28 +20,28 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Textdomain-Support: yes"
 
-#: popup.php:9
+#: popup.php:30
 #@ custom-post-widget
 msgid "Please select a Content Block"
 msgstr "Välj ett innehållsblock"
 
-#: popup.php:19
-#: popup.php:43
+#: popup.php:39
+#: popup.php:63
 #@ custom-post-widget
 msgid "Insert Content Block"
 msgstr "Lägg till innehållsblock"
 
-#: popup.php:22
+#: popup.php:42
 #@ custom-post-widget
 msgid "Select a Content Block below to add it to your post or page."
 msgstr "Välj ett innehållsblock nedan för att lägga till det på din sida eller inlägg."
 
-#: popup.php:27
+#: popup.php:47
 #@ custom-post-widget
 msgid "Select a Content Block"
 msgstr "Välj ett innehållsblock"
 
-#: popup.php:37
+#: popup.php:57
 #: post-widget.php:41
 #@ custom-post-widget
 msgid "No content blocks available"
@@ -63,7 +63,7 @@ msgid "Content Block to Display:"
 msgstr "Välj innehållsblock att visa:"
 
 #: post-widget.php:52
-#: post-widget.php:120
+#: post-widget.php:123
 #@ custom-post-widget
 msgid "Edit Content Block"
 msgstr "Redigera innehållsblock"
@@ -88,140 +88,146 @@ msgstr "Använd inte innehållsfilter"
 msgid "Find"
 msgstr "Hitta"
 
-#: post-widget.php:115
+#: post-widget.php:118
 #@ custom-post-widget
 msgctxt "post type general name"
 msgid "Content Blocks"
 msgstr "Innehållsblock"
 
-#: post-widget.php:116
+#: post-widget.php:119
 #@ custom-post-widget
 msgctxt "post type singular name"
 msgid "Content Block"
 msgstr "Innehållsblock"
 
-#: post-widget.php:117
+#: post-widget.php:120
 #@ custom-post-widget
 msgctxt "post type plural name"
 msgid "Content Blocks"
 msgstr "Innehållsblock"
 
-#: post-widget.php:118
+#: post-widget.php:121
 #@ custom-post-widget
 msgctxt "block"
 msgid "Add Content Block"
 msgstr "Lägg till innehållsblock"
 
-#: post-widget.php:119
+#: post-widget.php:122
 #@ custom-post-widget
 msgid "Add New Content Block"
 msgstr "Lägg till nytt innehållsblock"
 
-#: post-widget.php:121
+#: post-widget.php:124
 #@ custom-post-widget
 msgid "New Content Block"
 msgstr "Nytt innehållsblock"
 
-#: post-widget.php:122
+#: post-widget.php:125
 #@ custom-post-widget
 msgid "View Content Block"
 msgstr "Visa innehållsblock"
 
-#: post-widget.php:123
+#: post-widget.php:126
 #@ custom-post-widget
 msgid "Search Content Blocks"
 msgstr "Sök bland innehållsblocken"
 
-#: post-widget.php:124
+#: post-widget.php:127
 #@ custom-post-widget
 msgid "No Content Blocks Found"
 msgstr "Det finns inga innehållsblock"
 
-#: post-widget.php:125
+#: post-widget.php:128
 #@ custom-post-widget
 msgid "No Content Blocks found in Trash"
 msgstr "Det finns inga innehållsblock i papperskorgen"
 
-#: post-widget.php:167
+#: post-widget.php:150
 #, php-format
 #@ custom-post-widget
 msgid "Content Block updated. <a href=\"%s\">Manage Widgets</a>"
 msgstr "Innehållsblocket är uppdaterat. <a href=\"%s\">Hantera widgets</a>"
 
-#: post-widget.php:167
-#: post-widget.php:170
+#: post-widget.php:150
+#: post-widget.php:153
 #@ custom-post-widget
 msgid "Content Block updated."
 msgstr "Innehållsblocket är uppdaterat."
 
-#: post-widget.php:168
+#: post-widget.php:151
 #@ custom-post-widget
 msgid "Custom field updated."
 msgstr "Det anpassade fältet är uppdaterat."
 
-#: post-widget.php:169
+#: post-widget.php:152
 #@ custom-post-widget
 msgid "Custom field deleted."
 msgstr "Det anpassade fältet är borttaget."
 
-#: post-widget.php:171
+#: post-widget.php:154
 #, php-format
 #@ custom-post-widget
 msgid "Content Block restored to revision from %s"
 msgstr "Innehållsblocket är återställt från en tidigare sparad version från %s"
 
-#: post-widget.php:172
+#: post-widget.php:155
 #, php-format
 #@ custom-post-widget
 msgid "Content Block published. <a href=\"%s\">Manage Widgets</a>"
 msgstr "Innehållsblocket är publicerat. <a href=\"%s\">Hantera widgets</a>"
 
-#: post-widget.php:172
+#: post-widget.php:155
 #@ custom-post-widget
 msgid "Content Block published."
 msgstr "Innehållsblocket är publicerat."
 
-#: post-widget.php:173
+#: post-widget.php:156
 #@ custom-post-widget
 msgid "Block saved."
 msgstr "Blocket är sparat."
 
-#: post-widget.php:174
+#: post-widget.php:157
 #, php-format
 #@ custom-post-widget
 msgid "Content Block submitted. <a href=\"%s\">Manage Widgets</a>"
 msgstr "Innehållsblocket är skickat. <a href=\"%s\">Hantera widgets</a>"
 
-#: post-widget.php:174
+#: post-widget.php:157
 #@ custom-post-widget
 msgid "Content Block submitted."
 msgstr "Innehållsblocket är skickat."
 
-#: post-widget.php:175
+#: post-widget.php:158
 #, php-format
 #@ custom-post-widget
 msgid "Content Block scheduled for: <strong>%1$s</strong>."
 msgstr "Innehållsblocket är schemalagt för publicering: <strong>%1$s</strong>."
 
-#: post-widget.php:175
+#: post-widget.php:158
 #@ custom-post-widget
 msgid "M j, Y @ G:i"
 msgstr "Y-M-J @ H:i"
 
-#: post-widget.php:176
+#: post-widget.php:159
 #, php-format
 #@ custom-post-widget
 msgid "Content Block draft updated. <a href=\"%s\">Manage Widgets</a>"
 msgstr "Innehållsblockets utkast är uppdaterat. <a href=\"%s\">Hantera widgets</a>"
 
-#: post-widget.php:176
+#: post-widget.php:159
 #@ custom-post-widget
 msgid "Content Block draft updated."
 msgstr "Innehållsblockets utkast är uppdaterat."
 
-#: post-widget.php:223
-#: post-widget.php:224
+#: popup.php:17
+#: popup.php:18
 #@ custom-post-widget
 msgid "Add Content Block"
 msgstr "Lägg till innehållsblock"
+
+#: meta-box.php:6
+#: meta-box.php:47
+#@ custom-post-widget
+msgid "Content Block Information"
+msgstr "Information om innehållsblocket"
 
