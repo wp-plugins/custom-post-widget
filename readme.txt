@@ -103,6 +103,10 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 
 == Changelog ==
 
+= 2.5.2 =
+Changed require to require_once in custom-post-widget.php to solve a possible issue reported by John Sundberg.
+Updated SE translation files as provided by Andreas Larsson.
+
 = 2.5 =
 Added 'Content Block Information' to overview page, updated styling to reflect new 3.8 interface and rewrote javaScript code for inserting shortcode tag
 
