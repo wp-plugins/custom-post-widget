@@ -103,6 +103,9 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 
 == Changelog ==
 
+= 2.5.3 =
+Added filter to 'public' value of the content_block post type to make it possible to use the Visual Composer plugin. See support topic: http://wordpress.org/support/topic/make-post-type-public
+
 = 2.5.2 =
 Changed require to require_once in custom-post-widget.php to solve a possible issue reported by John Sundberg.
 Updated SE translation files as provided by Andreas Larsson.

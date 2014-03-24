@@ -127,9 +127,10 @@ function cpw_post_type_init() {
 		'not_found' =>  __( 'No Content Blocks Found', 'custom-post-widget' ),
 		'not_found_in_trash' => __( 'No Content Blocks found in Trash', 'custom-post-widget' )
 	);
+	$content_block_public = false; // added to make this a filterable option
 	$options = array(
 		'labels' => $labels,
-		'public' => false,
+		'public' => apply_filters( 'content_block_post_type', $content_block_public ),
 		'publicly_queryable' => false,
 		'exclude_from_search' => true,
 		'show_ui' => true,
