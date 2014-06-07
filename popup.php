@@ -2,7 +2,7 @@
 
 // Add button above editor if not editing content_block
 function add_content_block_icon() {
-	echo '<style>
+	return '<style>
 	#add-content-block .dashicons-screenoptions {
 		color: #888;
 		height: 18px;

@@ -103,6 +103,9 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 
 == Changelog ==
 
+= 2.5.5 =
+Changed the way the button above the content editor is inserted. For background see: http://wordpress.org/support/topic/soliloquy-conflict-1?replies=2
+
 = 2.5.3 =
 Added filter to 'public' value of the content_block post type to make it possible to use the Visual Composer plugin. See support topic: http://wordpress.org/support/topic/make-post-type-public
 
