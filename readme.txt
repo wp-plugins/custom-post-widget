@@ -103,7 +103,7 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 
 == Changelog ==
 
-= 2.5.5 =
+= 2.5.6 =
 Changed the way the button above the content editor is inserted. For background see: http://wordpress.org/support/topic/soliloquy-conflict-1?replies=2
 
 = 2.5.3 =
