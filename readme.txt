@@ -4,8 +4,8 @@ Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: widget, sidebar, content block, block, custom, post, shortcode, wysiwyg, wpml, featured image
 Requires at least: 2.9.2
-Tested up to: 3.8.1
-Stable tag: 2.5.4
+Tested up to: 3.9.1
+Stable tag: 2.5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -103,7 +103,7 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 
 == Changelog ==
 
-= 2.5.6 =
+= 2.5.7 =
 Changed the way the button above the content editor is inserted. For background see: http://wordpress.org/support/topic/soliloquy-conflict-1?replies=2
 
 = 2.5.3 =
