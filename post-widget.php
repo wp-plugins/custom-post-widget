@@ -167,9 +167,17 @@ add_filter( 'post_updated_messages', 'content_block_messages' );
 function custom_post_widget_shortcode( $atts ) {
 	extract( shortcode_atts( array(
 		'id' => '',
+		'slug' => '',
 		'class' => 'content_block'
 	), $atts ) );
-	
+
+	if ( $slug ) {
+		$block = get_page_by_path( $slug, OBJECT, 'content_block' );
+		if ( $block ) {
+			$id = $block->ID;
+		}
+	}
+
 	$content = "";
 	
 	if( $id != "" ) {
@@ -177,16 +185,16 @@ function custom_post_widget_shortcode( $atts ) {
 			'post__in' => array( $id ),
 			'post_type' => 'content_block',
 		);
-		
+
 		$content_post = get_posts( $args );
-		
+
 		foreach( $content_post as $post ) :
 			$content .= '<div class="'. esc_attr($class) .'" id="custom_post_widget-' . $id . '">';
 			$content .= apply_filters( 'the_content', $post->post_content);
 			$content .= '</div>';
 		endforeach;
 	}
-	
+
 	return $content;
 }
 add_shortcode( 'content_block', 'custom_post_widget_shortcode' );

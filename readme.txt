@@ -4,8 +4,8 @@ Author URI: http://www.vanderwijk.com/
 Donate link: http://www.vanderwijk.com/wordpress/support/
 Tags: widget, sidebar, content block, block, custom, post, shortcode, wysiwyg, wpml, featured image
 Requires at least: 2.9.2
-Tested up to: 3.9.1
-Stable tag: 2.5.7
+Tested up to: 4.0
+Stable tag: 2.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,11 @@ Currently the shortcode function only outputs the post content of the content bl
 
 You can create your own widget template and upload this to your theme folder. See [this support topic](http://wordpress.org/support/topic/patch-custom-widget-frontends?replies=1) for more information about this feature.
 
+= Post ID's confuse me, can I use the post slug for embedding a content block? =
+
+Yes, v2.6 now gives you the option to use the content block's url slug in the shortcode. Use the following syntax for doing this: `[content_block slug=my-content-block]`.
+Note that if you ever change the slug of a content block, the embedding no longer works. Therefore I recommend using the post ID instead (which never changes).
+
 = How can I embed a content block in my template file using php code? =
 
 You can use the do_shortcode function for this: `echo do_shortcode('[content_block id= ]');`
@@ -102,6 +107,9 @@ DO NOT click the 'Broken' button in the compatibility area of the plugin directo
 Creating and supporting this plugin takes up a lot of my free time, therefore I would highly appreciate it if you could take a couple of minutes to [write a review](http://wordpress.org/support/view/plugin-reviews/custom-post-widget). This will help other WordPress users to start using this plugin and keep me motivated to maintain and support it. Also, if you have a twitter, Facebook or Google+ account, it would be fantastic if you could share the link to this plugin!
 
 == Changelog ==
+
+= 2.6 =
+Added the possibility for using the content block slug in the shortcode.
 
 = 2.5.7 =
 Changed the way the button above the content editor is inserted. For background see: http://wordpress.org/support/topic/soliloquy-conflict-1?replies=2
