@@ -35,9 +35,7 @@ To add content to a widget, drag it to the required position in the sidebar and 
 * Russian (ru_RU) by [Vitaliy Kaplya](http://www.dasayt.com/) 
 * Swedish (sv_SE) by [Andreas Larsson](http://krokedil.se)
 
-More translations are always welcome!
-
-You can find more information about this plugin and a screencast video which shows the plugin in action on the [plugin homepage](https://www.savvii.eu/wordpress-custom-post-widget/).
+More translations are very welcome!
 
 == Screenshots ==
 
