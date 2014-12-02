@@ -11,7 +11,7 @@ This plugin enables you to edit and display Content Blocks in a sidebar widget o
 
 == Description ==
 
-The Custom Post Widget allows you to display the contents of a specific custom post in a widget.
+The [Savvii Custom Post Widget](https://www.savvii.eu/wordpress-custom-post-widget/) allows you to display the contents of a specific custom post in a widget on in the content area using a shortcode.
 
 Even though you could use the text widget that comes with the default WordPress install, this plugin has some major benefits:
 
