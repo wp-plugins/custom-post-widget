@@ -72,7 +72,7 @@ This plugin has built-in support for the featured image functionality on the edi
 
 = My social sharing plugin adds buttons to all the Custom Post Widget areas =
 
-If your social media sharing plugin adds buttons to the widget areas you could check the 'Do not apply content filters' checkbox. Note that when this is done, WordPress will also stop adding paragraph tags to your text, so use this setting with caution. It is much better to ask the developer of the social media sharing buttons plugin to correctly use the content filters (see http://pippinsplugins.com/playing-nice-with-the-content-filter/).
+If your social media sharing plugin adds buttons to the widget areas you could check the 'Do not apply content filters' checkbox. Note that when this is done, WordPress will also stop adding paragraph tags to your text, so use this setting with caution. It is much better to ask the developer of the social media sharing buttons plugin to correctly use the content filters (see http://pippinsplugins.com/playing-nice-with-the-content-filter/ for more information on this).
 
 = The title and featured image are not displayed when using the shortcode =
 
