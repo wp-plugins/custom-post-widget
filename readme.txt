@@ -1,11 +1,9 @@
-=== Custom Post Widget ===
-Contributors: vanderwijk
-Author URI: http://www.vanderwijk.com/
-Donate link: http://www.vanderwijk.com/wordpress/support/
+=== Savvii Custom Post Widget ===
+Contributors: savvii, vanderwijk
 Tags: widget, sidebar, content block, block, custom, post, shortcode, wysiwyg, wpml, featured image
 Requires at least: 2.9.2
 Tested up to: 4.0
-Stable tag: 2.6
+Stable tag: 2.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -37,9 +35,9 @@ To add content to a widget, drag it to the required position in the sidebar and 
 * Russian (ru_RU) by [Vitaliy Kaplya](http://www.dasayt.com/) 
 * Swedish (sv_SE) by [Andreas Larsson](http://krokedil.se)
 
-More translations are always welcome, please [contact me](http://www.vanderwijk.com/contact) to find out how you can help.
+More translations are always welcome!
 
-You can find more information about this plugin and a screencast video which shows the plugin in action on the [plugin homepage](http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/).
+You can find more information about this plugin and a screencast video which shows the plugin in action on the [plugin homepage](https://www.savvii.eu/wordpress-custom-post-widget/).
 
 == Screenshots ==
 
@@ -107,6 +105,9 @@ DO NOT click the 'Broken' button in the compatibility area of the plugin directo
 Creating and supporting this plugin takes up a lot of my free time, therefore I would highly appreciate it if you could take a couple of minutes to [write a review](http://wordpress.org/support/view/plugin-reviews/custom-post-widget). This will help other WordPress users to start using this plugin and keep me motivated to maintain and support it. Also, if you have a twitter, Facebook or Google+ account, it would be fantastic if you could share the link to this plugin!
 
 == Changelog ==
+
+= 2.7 =
+Added support notification.
 
 = 2.6 =
 Added the possibility for using the content block slug in the shortcode.
