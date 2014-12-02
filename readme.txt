@@ -105,7 +105,7 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 == Changelog ==
 
 = 2.7 =
-Added support notification.
+Added dismissable support notification.
 
 = 2.6 =
 Added the possibility for using the content block slug in the shortcode.
