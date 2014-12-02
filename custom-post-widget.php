@@ -4,8 +4,8 @@
  Plugin URI: https://www.savvii.eu/wordpress-custom-post-widget/
  Description: Show the content of a custom post of the type 'content_block' in a widget or with a shortcode.
  Version: 2.7
- Author: Johan van der Wijk
- Author URI: http://www.vanderwijk.com
+ Author: Savvii Managed WordPress Hosting
+ Author URI: https://www.savvii.eu/
  License: GPL2
 
  Release notes: Version 2.7 Added support notification.
