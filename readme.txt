@@ -82,6 +82,17 @@ Currently the shortcode function only outputs the post content of the content bl
 
 You can create your own widget template and upload this to your theme folder. See [this support topic](http://wordpress.org/support/topic/patch-custom-widget-frontends?replies=1) for more information about this feature.
 
+= Can I make the post type public?  = 
+
+You can make the post type public by adding the following code to your theme's functions.php file:
+`function filter_content_block_init() {
+	$content_block_public = true;
+	return $content_block_public;
+}
+add_filter('content_block_post_type','filter_content_block_init');`
+
+Alternatively you can use [this third-party plugin](http://demomentsomtres.com/english/wordpress-plugins/demomentsomtres-wpbakery-visual-composer-custom-post-widget/).
+
 = Post ID's confuse me, can I use the post slug for embedding a content block? =
 
 Yes, v2.6 now gives you the option to use the content block's url slug in the shortcode. Use the following syntax for doing this: `[content_block slug=my-content-block]`.
