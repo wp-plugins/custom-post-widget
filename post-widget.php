@@ -90,25 +90,28 @@ class custom_post_widget extends WP_Widget {
 		$show_custom_post_title = isset( $instance['show_custom_post_title'] ) ? $instance['show_custom_post_title'] : false;
 		$show_featured_image  = isset($instance['show_featured_image']) ? $instance['show_featured_image'] : false;
 		$apply_content_filters  = isset($instance['apply_content_filters']) ? $instance['apply_content_filters'] : false;
-		$content_post = get_post($custom_post_id);
+		$content_post = get_post( $custom_post_id );
+		$post_status = get_post_status( $custom_post_id );
 		$content = $content_post->post_content;
-		// Display custom widget frontend
-		if ( $located = locate_template( 'custom-post-widget.php' ) ) {
-			require $located;
-			return;
+		if ( $post_status == 'publish' ) {
+			// Display custom widget frontend
+			if ( $located = locate_template( 'custom-post-widget.php' ) ) {
+				require $located;
+				return;
+			}
+			if ( !$apply_content_filters ) { // Don't apply the content filter if checkbox selected
+				$content = apply_filters( 'the_content', $content);
+			}
+			echo $before_widget;
+			if ( $show_custom_post_title ) {
+				echo $before_title . apply_filters( 'widget_title',$content_post->post_title) . $after_title; // This is the line that displays the title (only if show title is set) 
+			}
+			if ( $show_featured_image ) {
+				echo get_the_post_thumbnail( $content_post -> ID );
+			}
+			echo do_shortcode( $content ); // This is where the actual content of the custom post is being displayed
+			echo $after_widget;
 		}
-		if ( !$apply_content_filters ) { // Don't apply the content filter if checkbox selected
-			$content = apply_filters( 'the_content', $content);
-		}
-		echo $before_widget;
-		if ( $show_custom_post_title ) {
-			echo $before_title . apply_filters( 'widget_title',$content_post->post_title) . $after_title; // This is the line that displays the title (only if show title is set) 
-		}
-		if ( $show_featured_image ) {
-			echo get_the_post_thumbnail( $content_post -> ID );
-		}
-		echo do_shortcode( $content ); // This is where the actual content of the custom post is being displayed
-		echo $after_widget;
 	}
 }
 

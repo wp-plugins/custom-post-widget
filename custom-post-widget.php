@@ -3,12 +3,12 @@
  Plugin Name: Savvii Custom Post Widget
  Plugin URI: https://www.savvii.eu/wordpress-custom-post-widget/
  Description: Show the content of a custom post of the type 'content_block' in a widget or with a shortcode.
- Version: 2.7.1
+ Version: 2.7.2
  Author: Savvii WordPress Hosting
  Author URI: https://www.savvii.eu/
  License: GPL2
 
- Release notes: Version 2.7 Added dismissable support notification.
+ Release notes: Version 2.7.2 The post status is now used for displaying the content blocks in widgets.
  
  Copyright 2014 Johan van der Wijk (email: info@vanderwijk.com)
  
