@@ -78,6 +78,13 @@ If your social media sharing plugin adds buttons to the widget areas you could c
 
 Currently the shortcode function only outputs the post content of the content block, future support for displaying the title and/or the attached featured image is being considered.
 
+= I have a feature request =
+
+Please post your feature request on [the support forum](https://wordpress.org/support/plugin/custom-post-widget)
+These new features are on the to-do list:
+* Display the content block title when using the shortcode
+* Display the content block featured image when using the shortcode
+
 = How can I make advanced changes to the widget layout? =
 
 You can create your own widget template and upload this to your theme folder. See [this support topic](http://wordpress.org/support/topic/patch-custom-widget-frontends?replies=1) for more information about this feature.
