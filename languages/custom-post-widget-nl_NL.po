@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Custom Post Widget\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-07 10:13+0100\n"
+"POT-Creation-Date: 2014-12-02 16:49+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Johan van der Wijk <johan@vanderwijk.nl>\n"
 "Language-Team: Johan van der Wijk <info@vanderwijk.com>\n"
@@ -16,31 +16,54 @@ msgstr ""
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 1.5.4\n"
+"X-Generator: Poedit 1.6.10\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
 # @ custom-post-widget
-#: ../popup.php:9
+#: ../meta-box.php:6 ../meta-box.php:47
+msgid "Content Block Information"
+msgstr "Inhoudsblok Informatie"
+
+#: ../notice.php:11
+#, php-format
+msgid ""
+"Thank you for using the Custom Post Widget plugin. Visit the <a href="
+"\"https://www.savvii.eu/wordpress-custom-post-widget/\" target=\"_blank"
+"\">Savvii website</a> to find out more about using this plugin. <a href="
+"\"%1$s\" style=\"float:right;\">Hide Notice</a>"
+msgstr ""
+"Bedankt voor het gebruiken van de Savvii Custom Post Widget plugin. Bezoek "
+"de <a href=\"https://www.savvii.eu/wordpress-custom-post-widget/\" target="
+"\"_blank\">Savvii website</a> voor meer informatie over deze plugin. <a href="
+"\"%1$s\" style=\"float:right;\">Verberg Bericht</a>"
+
+# @ custom-post-widget
+#: ../popup.php:17 ../popup.php:18
+msgid "Add Content Block"
+msgstr "Inhoudsblok toevoegen"
+
+# @ custom-post-widget
+#: ../popup.php:30
 msgid "Please select a Content Block"
 msgstr "Kies een inhoudsblok"
 
 # @ custom-post-widget
-#: ../popup.php:19 ../popup.php:43
+#: ../popup.php:39 ../popup.php:63
 msgid "Insert Content Block"
 msgstr "Voeg inhoudsblok toe"
 
-#: ../popup.php:22
+#: ../popup.php:42
 msgid "Select a Content Block below to add it to your post or page."
 msgstr "Kies een Inhoudsblok om toe te voegen."
 
 # @ custom-post-widget
-#: ../popup.php:27
+#: ../popup.php:47
 msgid "Select a Content Block"
 msgstr "Selecteer een inhoudsblok"
 
 # @ custom-post-widget
-#: ../popup.php:37 ../post-widget.php:41
+#: ../popup.php:57 ../post-widget.php:41
 msgid "No content blocks available"
 msgstr "Geen inhoudsblokken beschikbaar"
 
@@ -60,7 +83,7 @@ msgid "Content Block to Display:"
 msgstr "Weer te geven inhoudsblok:"
 
 # @ custom-post-widget
-#: ../post-widget.php:52 ../post-widget.php:119
+#: ../post-widget.php:52 ../post-widget.php:123
 msgid "Edit Content Block"
 msgstr "Inhoudsblok Bewerken"
 
@@ -78,141 +101,136 @@ msgid "Do not apply content filters"
 msgstr "Apply_filters niet toepassen"
 
 # @ custom-post-widget
-#: ../post-widget.php:83
+#: ../post-widget.php:84
 msgid "Find"
 msgstr "Zoeken"
 
 # @ custom-post-widget
-#: ../post-widget.php:114
+#: ../post-widget.php:118
 msgctxt "post type general name"
 msgid "Content Blocks"
 msgstr "Inhoudsblokken"
 
 # @ custom-post-widget
-#: ../post-widget.php:115
+#: ../post-widget.php:119
 msgctxt "post type singular name"
 msgid "Content Block"
 msgstr "Inhoudsblok"
 
 # @ custom-post-widget
-#: ../post-widget.php:116
+#: ../post-widget.php:120
 msgctxt "post type plural name"
 msgid "Content Blocks"
 msgstr "Inhoudsblokken"
 
 # @ custom-post-widget
-#: ../post-widget.php:117
+#: ../post-widget.php:121
 msgctxt "block"
 msgid "Add Content Block"
 msgstr "Nieuw Inhoudsblok"
 
 # @ custom-post-widget
-#: ../post-widget.php:118
+#: ../post-widget.php:122
 msgid "Add New Content Block"
 msgstr "Nieuw inhoudsblok toevoegen"
 
 # @ custom-post-widget
-#: ../post-widget.php:120
+#: ../post-widget.php:124
 msgid "New Content Block"
 msgstr "Nieuw Inhoudsblok"
 
 # @ custom-post-widget
-#: ../post-widget.php:121
+#: ../post-widget.php:125
 msgid "View Content Block"
 msgstr "Inhoudsblok Bekijken"
 
 # @ custom-post-widget
-#: ../post-widget.php:122
+#: ../post-widget.php:126
 msgid "Search Content Blocks"
 msgstr "Inhoudsblokken zoeken"
 
 # @ custom-post-widget
-#: ../post-widget.php:123
+#: ../post-widget.php:127
 msgid "No Content Blocks Found"
 msgstr "Geen Inhoudsblokken"
 
 # @ custom-post-widget
-#: ../post-widget.php:124
+#: ../post-widget.php:128
 msgid "No Content Blocks found in Trash"
 msgstr "Geen Inhoudsblokken in de Prullenbak"
 
 # @ custom-post-widget
-#: ../post-widget.php:166
+#: ../post-widget.php:151
 #, php-format
 msgid "Content Block updated. <a href=\"%s\">Manage Widgets</a>"
 msgstr "Inhoudsblok bijgewerkt. <a href=\"%s\">Beheer Widgets</a>"
 
 # @ custom-post-widget
-#: ../post-widget.php:166 ../post-widget.php:169
+#: ../post-widget.php:151 ../post-widget.php:154
 msgid "Content Block updated."
 msgstr "Inhoudsblok bijgewerkt."
 
 # @ custom-post-widget
-#: ../post-widget.php:167
+#: ../post-widget.php:152
 msgid "Custom field updated."
 msgstr "Custom field bijgewerkt."
 
 # @ custom-post-widget
-#: ../post-widget.php:168
+#: ../post-widget.php:153
 msgid "Custom field deleted."
 msgstr "Custom field verwijderd."
 
 # @ custom-post-widget
-#: ../post-widget.php:170
+#: ../post-widget.php:155
 #, php-format
 msgid "Content Block restored to revision from %s"
 msgstr "Inhoudsblok teruggezet naar revisie %s"
 
 # @ custom-post-widget
-#: ../post-widget.php:171
+#: ../post-widget.php:156
 #, php-format
 msgid "Content Block published. <a href=\"%s\">Manage Widgets</a>"
 msgstr "Inhoudsblok gepubliceerd. <a href=\"%s\">Beheer Widgets</a>"
 
 # @ custom-post-widget
-#: ../post-widget.php:171
+#: ../post-widget.php:156
 msgid "Content Block published."
 msgstr "Inhoudsblok gepubliceerd."
 
 # @ custom-post-widget
-#: ../post-widget.php:172
+#: ../post-widget.php:157
 msgid "Block saved."
 msgstr "Inhoudsblok Opgeslagen."
 
 # @ custom-post-widget
-#: ../post-widget.php:173
+#: ../post-widget.php:158
 #, php-format
 msgid "Content Block submitted. <a href=\"%s\">Manage Widgets</a>"
 msgstr "Inhoudsblok toegevoegd. <a href=\"%s\">Beheer Widgets</a>"
 
 # @ custom-post-widget
-#: ../post-widget.php:173
+#: ../post-widget.php:158
 msgid "Content Block submitted."
 msgstr "Inhoudsblok toegevoegd."
 
 # @ custom-post-widget
-#: ../post-widget.php:174
+#: ../post-widget.php:159
 #, php-format
 msgid "Content Block scheduled for: <strong>%1$s</strong>."
 msgstr "Inhoudsblok zal worden gepubliceerd op: <strong>%1$s</strong>."
 
 # @ custom-post-widget
-#: ../post-widget.php:174
+#: ../post-widget.php:159
 msgid "M j, Y @ G:i"
 msgstr "j. M Y @ H:M"
 
 # @ custom-post-widget
-#: ../post-widget.php:175
+#: ../post-widget.php:160
 #, php-format
 msgid "Content Block draft updated. <a href=\"%s\">Manage Widgets</a>"
 msgstr "Concept Inhoudsblok Bijgewerkt. <a href=\"%s\">Beheer Widgets</a>"
 
 # @ custom-post-widget
-#: ../post-widget.php:175
+#: ../post-widget.php:160
 msgid "Content Block draft updated."
 msgstr "Concept Inhoudsblok bijgewerkt."
-
-# @ custom-post-widget
-#: ../post-widget.php:222 ../post-widget.php:223
-msgid "Add Content Block"
-msgstr "Inhoudsblok toevoegen"

@@ -1,16 +1,16 @@
 <?php
 /*
- Plugin Name: Custom Post Widget
- Plugin URI: http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/
+ Plugin Name: Savvii Custom Post Widget
+ Plugin URI: https://www.savvii.eu/wordpress-custom-post-widget/
  Description: Show the content of a custom post of the type 'content_block' in a widget or with a shortcode.
- Version: 2.3.3
- Author: Johan van der Wijk
- Author URI: http://www.vanderwijk.com
+ Version: 2.7.3
+ Author: Savvii WordPress Hosting
+ Author URI: https://www.savvii.eu/
  License: GPL2
 
- Release notes: Version 2.3 Various bugfixes and improvements
+ Release notes: Version 2.7.2 The post status is now used for displaying the content blocks in widgets.
  
- Copyright 2013 Johan van der Wijk (email: info@vanderwijk.com)
+ Copyright 2014 Johan van der Wijk (email: info@vanderwijk.com)
  
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License, version 2, as 
@@ -38,6 +38,10 @@ function custom_post_widget_plugin_init() {
 
 // Loads the widgets packaged with the plugin.
 function custom_post_widget_load_widgets() {
-	require( 'post-widget.php' );
+	require_once( 'post-widget.php' );
 	register_widget( 'custom_post_widget' );
 }
+
+require_once( 'meta-box.php' );
+require_once( 'popup.php' );
+require_once( 'notice.php' );
