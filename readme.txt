@@ -85,6 +85,7 @@ These new features are on the to-do list:
 
 * Display the content block featured image when using the shortcode
 * Optionally show the post title when using the shortcode
+* Front-end editing of the content blocks
 
 = How can I make advanced changes to the widget layout? =
 
