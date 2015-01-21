@@ -82,7 +82,9 @@ Currently the shortcode function only outputs the post content of the content bl
 
 Please post your feature request on [the support forum](https://wordpress.org/support/plugin/custom-post-widget)
 These new features are on the to-do list:
+
 * Display the content block featured image when using the shortcode
+* Optionally show the post title when using the shortcode
 
 = How can I make advanced changes to the widget layout? =
 
