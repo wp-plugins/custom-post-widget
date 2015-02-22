@@ -107,6 +107,10 @@ Alternatively you can use [this third-party plugin](http://demomentsomtres.com/e
 Yes, v2.6 now gives you the option to use the content block's url slug in the shortcode. Use the following syntax for doing this: `[content_block slug=my-content-block]`.
 Note that if you ever change the slug of a content block, the embedding no longer works. Therefore I recommend using the post ID instead (which never changes).
 
+= Can I specify a custom class for the embedded content blocks? =
+
+By default the shortcode adds a div around the content block with the class content_block. If you like, you can change this class by adding it to the shortcode: [content_block id=198 slug=our-wordpress-plugins class=my-class]
+
 = How can I embed a content block in my template file using php code? =
 
 You can use the do_shortcode function for this: `echo do_shortcode('[content_block id= ]');`
