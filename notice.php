@@ -8,7 +8,7 @@ function cpw_admin_notice() {
 	$screen = get_current_screen();
 	if ( ! get_user_meta($user_id, 'cpw_notice_hidden') && ( $screen->id == 'edit-content_block' || $screen->id == 'content_block' ) ) {
 		echo '<div class="updated" style="border-color: #00b1ff;"><p>'; 
-		printf(__('Thank you for using the Custom Post Widget plugin. Visit the <a href="https://www.savvii.eu/wordpress-custom-post-widget/" target="_blank">Savvii website</a> to find out more about using this plugin. <a href="%1$s" style="float:right;">Hide Notice</a>'), '?post_type=content_block&cpw_hide_notice=yes');
+		printf(__('Thank you for using the Custom Post Widget plugin. Visit the <a href="http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/" target="_blank">plugin website</a> to find out more about using this plugin. <a href="%1$s" style="float:right;">Hide Notice</a>'), '?post_type=content_block&cpw_hide_notice=yes');
 		echo "</p></div>";
 	}
 }
