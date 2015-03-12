@@ -5,7 +5,7 @@
  Description: Show the content of a custom post of the type 'content_block' in a widget or with a shortcode.
  Version: 2.7.5
  Author: Johan van der Wijk
- Author URI: https://vanderwijk.nl
+ Author URI: http://vanderwijk.nl
  License: GPL2
 
  Release notes: Version 2.7.5 Changed branding
