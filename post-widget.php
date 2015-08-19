@@ -7,9 +7,9 @@ if ( function_exists( 'add_theme_support' ) ) {
 
 // First create the widget for the admin panel
 class custom_post_widget extends WP_Widget {
-	function custom_post_widget() {
-		$widget_ops = array( 'description' => __( 'Displays custom post content in a widget', 'custom-post-widget' ) );
-		$this->WP_Widget( 'custom_post_widget', __( 'Content Block', 'custom-post-widget' ), $widget_ops );
+	function __construct() {
+		$widget_ops = array( 'classname' => 'widget_custom_post_widget', 'description' => __( 'Displays custom post content in a widget', 'custom-post-widget' ) );
+		parent::__construct( 'custom_post_widget', __( 'Content Block', 'custom-post-widget' ), $widget_ops );
 	}
 
 	function form( $instance ) {
