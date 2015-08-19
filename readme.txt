@@ -3,7 +3,7 @@ Contributors: vanderwijk
 Tags: widget, sidebar, content block, block, custom, post, shortcode, wysiwyg, wpml, featured image
 Requires at least: 2.9.2
 Tested up to: 4.3
-Stable tag: 2.7.8
+Stable tag: 2.7.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -131,7 +131,7 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 
 == Changelog ==
 
-= 2.7.8 =
+= 2.7.9 =
 Changed method for creating the widget in preparation of PHP7 support.
 
 = 2.7.7 =
