@@ -171,7 +171,8 @@ function custom_post_widget_shortcode( $atts ) {
 	extract( shortcode_atts( array(
 		'id' => '',
 		'slug' => '',
-		'class' => 'content_block'
+		'class' => 'content_block',
+		'suppress_content_filters' => 'no'
 	), $atts ) );
 
 	if ( $slug ) {
@@ -193,7 +194,11 @@ function custom_post_widget_shortcode( $atts ) {
 
 		foreach( $content_post as $post ) :
 			$content .= '<div class="'. esc_attr($class) .'" id="custom_post_widget-' . $id . '">';
-			$content .= apply_filters( 'the_content', $post->post_content);
+			if ( $suppress_content_filters === 'no' ) {
+				$content .= apply_filters( 'the_content', $post->post_content);
+			} else {
+				$content .= $post->post_content; 
+			}
 			$content .= '</div>';
 		endforeach;
 	}
