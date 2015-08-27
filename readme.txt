@@ -3,7 +3,7 @@ Contributors: vanderwijk
 Tags: widget, sidebar, content block, block, custom, post, shortcode, wysiwyg, wpml, featured image
 Requires at least: 2.9.2
 Tested up to: 4.3
-Stable tag: 2.7.9
+Stable tag: 2.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -132,7 +132,7 @@ Creating and supporting this plugin takes up a lot of my free time, therefore I 
 == Changelog ==
 
 = 2.8 =
-Added the option to suppress the content filters when using the shortcode, see https://wordpress.org/support/topic/add-option-to-not-apply-content-filters-in-shortcode?replies=4
+Added the option to suppress the content filters when using the shortcode. Thanks to adelval for providing the code, see https://wordpress.org/support/topic/add-option-to-not-apply-content-filters-in-shortcode?replies=4
 
 = 2.7.9 =
 Changed method for creating the widget in preparation of PHP7 support.

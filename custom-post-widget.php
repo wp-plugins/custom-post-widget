@@ -8,7 +8,7 @@
  Author URI: http://vanderwijk.nl
  License: GPL2
 
- Release notes: 2.8 adds the option to suppress the content filter when using the shortcode
+ Release notes: Thanks to forum user Álvaro, version 2.8 adds the option to suppress the content filter when using the shortcode
  
  Copyright 2015 Johan van der Wijk
  
