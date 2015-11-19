@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-12 17:19+0100\n"
+"POT-Creation-Date: 2015-09-26 14:27+0200\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -16,7 +16,7 @@ msgstr ""
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.5\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
@@ -28,10 +28,16 @@ msgstr "Inhaltsblock Informationen"
 #, php-format
 msgid ""
 "Thank you for using the Custom Post Widget plugin. Visit the <a href="
-"\"http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/\" target="
-"\"_blank\">plugin website</a> to find out more about using this plugin. <a "
-"href=\"%1$s\" style=\"float:right;\">Hide Notice</a>"
+"\"http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/?"
+"utm_source=wordpress&utm_medium=plugin&utm_campaign=custom_post_widget\" "
+"target=\"_blank\">plugin website</a> to find out more about using this "
+"plugin. <a href=\"%1$s\" style=\"float:right;\">Hide Notice</a>"
 msgstr ""
+"Wir danken für das Custom Post Widget Plugin. Besuchen Sie das <a href="
+"\"http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/?"
+"utm_source=wordpress&utm_medium=plugin&utm_campaign=custom_post_widget\" "
+"target=\"_blank\">Plugin-Website,</a> um mehr über die Verwendung dieser "
+"Plugins. <a href=\"%1$s\" style=\"float:right;\">Notiz ausblenden</a>"
 
 #: ../popup.php:17 ../popup.php:18
 msgid "Add Content Block"
@@ -48,6 +54,8 @@ msgstr "Inhaltsblock einfügen"
 #: ../popup.php:43
 msgid "Select a Content Block below to add it to your post or page."
 msgstr ""
+"Wählen Sie einen Inhaltsblock unten, um es zu einem Post oder Seite "
+"hinzufügen."
 
 #: ../popup.php:48
 msgid "Select a Content Block"
@@ -89,7 +97,7 @@ msgstr "Featured Bild anzeigen"
 
 #: ../post-widget.php:68
 msgid "Do not apply content filters"
-msgstr ""
+msgstr "Inhalt Filter nicht anwenden"
 
 # @ custom-post-widget
 #: ../post-widget.php:84
@@ -179,7 +187,7 @@ msgstr "Inhaltsblock wiederhergestellt als Revision vom %s"
 #: ../post-widget.php:159
 #, php-format
 msgid "Content Block published. <a href=\"%s\">Manage Widgets</a>"
-msgstr ""
+msgstr "Inhaltsblock veröffentlicht. <a href=\"%s\">Widgets verwalten</a>"
 
 #: ../post-widget.php:159
 msgid "Content Block published."
@@ -193,7 +201,7 @@ msgstr "Inhaltsblock gespeichert."
 #: ../post-widget.php:161
 #, php-format
 msgid "Content Block submitted. <a href=\"%s\">Manage Widgets</a>"
-msgstr ""
+msgstr "Inhaltsblock eingereicht. <a href=\"%s\">Widgets verwalten</a>"
 
 #: ../post-widget.php:161
 msgid "Content Block submitted."
@@ -202,7 +210,7 @@ msgstr "Inhaltsblock eingereicht."
 #: ../post-widget.php:162
 #, php-format
 msgid "Content Block scheduled for: <strong>%1$s</strong>."
-msgstr ""
+msgstr "Inhaltsblock geplant für: <strong>%1$s</strong>."
 
 # @ custom-post-widget
 #: ../post-widget.php:162

@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Custom Post Widget v2.5.1\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-03-12 17:27+0100\n"
-"PO-Revision-Date: 2015-03-12 17:27+0100\n"
+"POT-Creation-Date: 2015-09-26 14:35+0200\n"
+"PO-Revision-Date: 2015-09-26 14:35+0200\n"
 "Last-Translator: aztek <info@aztek.se>\n"
 "Language-Team: \n"
 "Language: sv_SE\n"
@@ -11,11 +11,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.5\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
 "X-Textdomain-Support: yes\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
@@ -551,7 +551,7 @@ msgstr "Det finns inga innehållsblock i papperskorgen"
 #: ../tags/1.8.4/tags/1.8/post-widget.php:141 ../tags/1.8/post-widget.php:141
 #, php-format
 msgid "Content Block updated. <a href=\"%s\">View Content Block</a>"
-msgstr ""
+msgstr "Innehållet Block uppdateras. <a href=\"%s\">Visa innehållsblock</a>"
 
 # @ custom-post-widget
 #: ../tags/1.0/custom-post-widget.php:119
@@ -742,7 +742,7 @@ msgstr "Innehållsblocket är återställt från en tidigare sparad version frå
 #: ../tags/1.8.4/tags/1.8/post-widget.php:146 ../tags/1.8/post-widget.php:146
 #, php-format
 msgid "Content Block published. <a href=\"%s\">View Content Block</a>"
-msgstr ""
+msgstr "Innehåll Block publiceras. <a href=\"%s\">Se innehåll Block</a>"
 
 # @ custom-post-widget
 #: ../tags/1.0/custom-post-widget.php:124
@@ -807,6 +807,8 @@ msgid ""
 "Content Block submitted. <a target=\"_blank\" href=\"%s\">Preview Content "
 "Block</a>"
 msgstr ""
+"Innehåll Block in. <a target=\"_blank\" href=\"%s\">Förhandsgranska innehåll "
+"Block</a>"
 
 #: ../tags/1.0/custom-post-widget.php:126
 #: ../tags/1.1.1/custom-post-widget.php:126
@@ -833,6 +835,8 @@ msgid ""
 "Content Block scheduled for: <strong>%1$s</strong>. <a target=\"_blank\" "
 "href=\"%2$s\">Preview block</a>"
 msgstr ""
+"Innehållsblock planeras <strong>för.%1$s</strong> <a target=\"_blank\" href="
+"\"%2$s\">Preview-block</a>"
 
 # @ custom-post-widget
 #: ../tags/1.0/custom-post-widget.php:127
@@ -897,6 +901,8 @@ msgid ""
 "Content Block draft updated. <a target=\"_blank\" href=\"%s\">Preview "
 "Content Block</a>"
 msgstr ""
+"Innehållsblock utkast uppdateras. <a target=\"_blank\" href=\"%s"
+"\">Förhandsvisningsinnehållsblock</a>"
 
 # @ custom-post-widget
 #: ../tags/1.2.1/custom-post-widget.php:49
@@ -1065,22 +1071,20 @@ msgstr "Välj ett innehållsblock"
 #: ../tags/1.9.6/popup.php:22 ../tags/1.9.6/popup.php:48
 #: ../tags/1.9.7/popup.php:22 ../tags/1.9.7/popup.php:48
 #: ../tags/1.9.8/popup.php:22 ../tags/1.9.8/popup.php:52
-#: ../tags/1.9/popup.php:22 ../tags/1.9/popup.php:48
-#: ../tags/2.0.1/popup.php:19 ../tags/2.0.1/popup.php:43
-#: ../tags/2.0.2/popup.php:19 ../tags/2.0.2/popup.php:43
-#: ../tags/2.0/popup.php:19 ../tags/2.0/popup.php:43
+#: ../tags/1.9/popup.php:22 ../tags/1.9/popup.php:48 ../tags/2.0.1/popup.php:19
+#: ../tags/2.0.1/popup.php:43 ../tags/2.0.2/popup.php:19
+#: ../tags/2.0.2/popup.php:43 ../tags/2.0/popup.php:19 ../tags/2.0/popup.php:43
 #: ../tags/2.3.1/popup.php:19 ../tags/2.3.1/popup.php:43
 #: ../tags/2.3.2/popup.php:19 ../tags/2.3.2/popup.php:43
 #: ../tags/2.3.3/popup.php:19 ../tags/2.3.3/popup.php:43
 #: ../tags/2.3.4/popup.php:19 ../tags/2.3.4/popup.php:43
 #: ../tags/2.3.5/popup.php:19 ../tags/2.3.5/popup.php:43
-#: ../tags/2.3/popup.php:19 ../tags/2.3/popup.php:43
-#: ../tags/2.4.1/popup.php:19 ../tags/2.4.1/popup.php:43
-#: ../tags/2.4.2/popup.php:19 ../tags/2.4.2/popup.php:43
-#: ../tags/2.4.3/popup.php:19 ../tags/2.4.3/popup.php:43
-#: ../tags/2.4.5/popup.php:22 ../tags/2.4.5/popup.php:46
-#: ../tags/2.5/popup.php:39 ../tags/2.5/popup.php:63 ../trunk/popup.php:40
-#: ../trunk/popup.php:64 popup.php:40 popup.php:64
+#: ../tags/2.3/popup.php:19 ../tags/2.3/popup.php:43 ../tags/2.4.1/popup.php:19
+#: ../tags/2.4.1/popup.php:43 ../tags/2.4.2/popup.php:19
+#: ../tags/2.4.2/popup.php:43 ../tags/2.4.3/popup.php:19
+#: ../tags/2.4.3/popup.php:43 ../tags/2.4.5/popup.php:22
+#: ../tags/2.4.5/popup.php:46 ../tags/2.5/popup.php:39 ../tags/2.5/popup.php:63
+#: ../trunk/popup.php:40 ../trunk/popup.php:64 popup.php:40 popup.php:64
 msgid "Insert Content Block"
 msgstr "Lägg till innehållsblock"
 
@@ -1136,7 +1140,7 @@ msgstr "Välj ett innehållsblock"
 #: ../tags/1.9.7/popup.php:50 ../tags/1.9.8/popup.php:54
 #: ../tags/1.9/popup.php:50
 msgid "Cancel"
-msgstr ""
+msgstr "Avbryt svar"
 
 # @ custom-post-widget
 #: ../tags/1.8.1/post-widget.php:186 ../tags/1.8.1/post-widget.php:187
@@ -1377,7 +1381,13 @@ msgstr "Information om innehållsblocket"
 #, php-format
 msgid ""
 "Thank you for using the Custom Post Widget plugin. Visit the <a href="
-"\"http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/\" target="
-"\"_blank\">plugin website</a> to find out more about using this plugin. <a "
-"href=\"%1$s\" style=\"float:right;\">Hide Notice</a>"
+"\"http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/?"
+"utm_source=wordpress&utm_medium=plugin&utm_campaign=custom_post_widget\" "
+"target=\"_blank\">plugin website</a> to find out more about using this "
+"plugin. <a href=\"%1$s\" style=\"float:right;\">Hide Notice</a>"
 msgstr ""
+"Tack för att du använder Custom Post Widget plugin. Besök <a href=\"http://"
+"www.vanderwijk.com/wordpress/wordpress-custom-post-widget/?"
+"utm_source=wordpress&utm_medium=plugin&utm_campaign=custom_post_widget\" "
+"target=\"_blank\">plugin webbplats</a> att ta reda på mer om hur du använder "
+"denna plugin. <a href=\"%1$s\" style=\"float:right;\">Göm Meddelande</a>"

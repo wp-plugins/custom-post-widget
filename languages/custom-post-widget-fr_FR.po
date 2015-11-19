@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Custom Post Widget v1.9.2\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/custom-post-widget\n"
-"POT-Creation-Date: 2015-03-12 17:22+0100\n"
-"PO-Revision-Date: 2015-03-12 17:23+0100\n"
+"POT-Creation-Date: 2015-09-26 14:31+0200\n"
+"PO-Revision-Date: 2015-09-26 14:31+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: fr_FR\n"
@@ -16,7 +16,7 @@ msgstr ""
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 1.7.5\n"
+"X-Generator: Poedit 1.8.5\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPath-1: ..\n"
 
@@ -28,10 +28,17 @@ msgstr "Informations sur le bloc de contenu"
 #, php-format
 msgid ""
 "Thank you for using the Custom Post Widget plugin. Visit the <a href="
-"\"http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/\" target="
-"\"_blank\">plugin website</a> to find out more about using this plugin. <a "
-"href=\"%1$s\" style=\"float:right;\">Hide Notice</a>"
+"\"http://www.vanderwijk.com/wordpress/wordpress-custom-post-widget/?"
+"utm_source=wordpress&utm_medium=plugin&utm_campaign=custom_post_widget\" "
+"target=\"_blank\">plugin website</a> to find out more about using this "
+"plugin. <a href=\"%1$s\" style=\"float:right;\">Hide Notice</a>"
 msgstr ""
+"Merci d'utiliser le plugin Custom Post Widget. Visitez le <a href=\"http://"
+"www.vanderwijk.com/wordpress/wordpress-custom-post-widget/?"
+"utm_source=wordpress&utm_medium=plugin&utm_campaign=custom_post_widget\" "
+"target=\"_blank\">site web de plugin</a> pour en savoir plus sur "
+"l'utilisation de ce plugin. <a href=\"%1$s\" style=\"float:right;\">Masquer "
+"Avis</a>"
 
 # @ custom-post-widget
 #: ../popup.php:17 ../popup.php:18
@@ -91,11 +98,11 @@ msgstr "Afficher le titre du bloc"
 
 #: ../post-widget.php:63
 msgid "Show featured image"
-msgstr ""
+msgstr "Afficher l'image à la une"
 
 #: ../post-widget.php:68
 msgid "Do not apply content filters"
-msgstr ""
+msgstr "Ne pas appliquer des filtres de contenu"
 
 # @ custom-post-widget
 #: ../post-widget.php:84
